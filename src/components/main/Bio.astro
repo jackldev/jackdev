@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content'
+
+import AnimationFadeIn from 'shared/AnimationFadeIn.astro'
+import Socials from 'shared/Socials.astro'
+import Tools from 'shared/Tools.astro'
+import Image from 'shared/Image.astro'
+
+const bio = await getCollection('bio')
+const { slugs, title, description, image } = bio[0].data
+---
+
+<section class="py-20 grid [&>*]:grid-stack section" id={slugs}>
+  <AnimationFadeIn>
+    <Image
+      class="w-full aspect-[18/4] object-fill dark:filter dark:grayscale dark:invert smx:aspect-auto 3xsx:aspect-[4/8] 3xsx:object-cover"
+      src={image.src}
+      alt={image.alt}
+      width={image.width}
+      height={image.height}
+    />
+  </AnimationFadeIn>
+
+  <AnimationFadeIn>
+    <div class="relative z-[1] wrapper">
+      <div class="grid-2 gap-32 smx:grid-1 smx:gap-20">
+        <div>
+          <h2 class="-mb-6">{title}</h2>
+          <p
+            class="w-4/5 mb-12 text-lg leading-[1.75] whitespace-pre-line 3xsx:w-full"
+          >
+            {description}
+          </p>
+
+          <Socials direction="flex-row" show />
+        </div>
+
+        <Tools />
+      </div>
+    </div>
+  </AnimationFadeIn>
+</section>

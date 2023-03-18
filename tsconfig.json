@@ -1,0 +1,34 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "types": ["@astrojs/image/client", "vite/client"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "baseUrl": ".",
+    "paths": {
+      "main/*": ["src/components/main/*"],
+      "shared/*": ["src/components/shared/*"],
+      "store/*": ["src/store/*"],
+      "layouts/*": ["src/layouts/*"],
+      "public/*": ["src/public/*"],
+      "styles/*": ["src/styles/*"],
+      "types/*": ["src/types/*"]
+    },
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "strictNullChecks": true
+  },
+  "include": ["env.d.ts", "**/*.ts", "**/*.tsx", "**/*.astro"],
+  "exclude": ["node_modules"]
+}

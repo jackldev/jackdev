@@ -1,0 +1,40 @@
+---
+import ITop from 'shared/Icons/ITop'
+---
+
+<div class="w-[1300px] fixed bottom-0 z-[1] flex justify-end top:w-[90%]">
+  <button
+    class="no-underline bg-transparent border-0 opacity-100 visible curser-pointer transition-[opacity] delay-150 ease-out duration-300 focus:outline-none top"
+    title="Go To Top"
+  >
+    <ITop client:load />
+  </button>
+</div>
+
+<script>
+  const top = document.querySelector('.top')
+  const target = document.querySelector('.target')
+
+  const observer = new IntersectionObserver(
+    entries => top!.classList.toggle('hide', !entries[0].isIntersecting),
+    {
+      rootMargin: '0px',
+      threshold: [1]
+    }
+  )
+
+  if (target !== null) observer.observe(target)
+
+  top!.addEventListener(
+    'click',
+    e => {
+      e.stopImmediatePropagation()
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    },
+    true
+  )
+</script>

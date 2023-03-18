@@ -1,0 +1,16 @@
+---
+import IDown from 'shared/Icons/IDown'
+---
+
+<div class="mt-16 flex justify-center cursor-pointer down" title="Scroll Down">
+  <IDown client:load />
+</div>
+
+<script>
+  const down = document.querySelector('.down')
+  const section = document.getElementById('projects')
+
+  down!.addEventListener('click', () => {
+    section!.scrollIntoView({ block: 'start', behavior: 'smooth' })
+  })
+</script>

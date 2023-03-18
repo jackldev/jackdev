@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content'
+
+import Form from 'main/Contact/Form'
+import AnimationFadeIn from 'shared/AnimationFadeIn.astro'
+
+const contact = await getCollection('contact')
+const { slugs, title, subtitle } = contact[0].data
+---
+
+<section class="py-20 section" id={slugs}>
+  <AnimationFadeIn>
+    <div class="wrapper">
+      <h2 class="mb-6">{title}</h2>
+      <p class="max-w-[30rem] mb-10 text-2xl xsx:text-[1.9rem]">
+        {subtitle}
+      </p>
+
+      <Form client:visible />
+    </div>
+  </AnimationFadeIn>
+</section>

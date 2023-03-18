@@ -1,0 +1,12 @@
+---
+import { getCollection } from 'astro:content'
+
+import Layout from 'layouts/Layout.astro'
+import Error from 'main/Error.astro'
+
+const error = await getCollection('error')
+---
+
+<Layout title={error[0].data.title}>
+  <Error />
+</Layout>

@@ -1,0 +1,24 @@
+---
+import { Image } from '@astrojs/image/components'
+
+interface AstroProps {
+  class: any
+  src: string
+  alt: string
+  width: number
+  height: number
+}
+
+const { class: className, src, alt, width, height } = Astro.props as AstroProps
+---
+
+<Image
+  class={className}
+  src={src}
+  alt={alt}
+  width={width}
+  height={height}
+  format="webp"
+  quality={80}
+  loading="lazy"
+/>

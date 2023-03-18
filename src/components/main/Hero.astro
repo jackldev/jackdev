@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content'
+
+import AnimationFadeIn from 'shared/AnimationFadeIn.astro'
+import Image from 'shared/Image.astro'
+import IDown from 'shared/Down.astro'
+
+const hero = await getCollection('hero')
+const { slugs, title, subtitle, image } = hero[0].data
+---
+
+<section class="grid [&>*]:grid-stack targets section" id={slugs}>
+  <AnimationFadeIn>
+    <Image
+      class="w-full h-screen object-cover dark:filter dark:grayscale dark:invert"
+      src={image.src}
+      alt={image.alt}
+      width={image.width}
+      height={image.height}
+    />
+  </AnimationFadeIn>
+
+  <AnimationFadeIn>
+    <div
+      class="relative z-[1] w-full h-screen bg-gradient-to-b from-transparent to-black dark:to-bgwhite"
+    >
+    </div>
+  </AnimationFadeIn>
+
+  <AnimationFadeIn>
+    <div class="relative z-[1] wrapper h-full flexcenter text-center">
+      <div class="max-w-[70rem] h-fit">
+        <p class="text-3xl text-white dark:text-black 3xsx:text-[2.25rem]">
+          {subtitle}
+        </p>
+        <h1 class="mb-4 text-white dark:text-black">{title}</h1>
+
+        <IDown />
+      </div>
+    </div>
+  </AnimationFadeIn>
+</section>

@@ -1,0 +1,8 @@
+---
+  id: 0
+  slugs: "footer"
+  title: "One Page Dev"
+  description: "I'm a freelance front end developer. I develop modern, responsive websites and like to built with CSS, HTML, JAVASCRIPT and TYPESCRIPT."
+  copy: 'One Pag eDev'
+  link: 'https://opdev.site'
+---

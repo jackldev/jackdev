@@ -1,0 +1,67 @@
+{
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "overrides": [
+    {
+      "files": ["*.astro"],
+      "plugins": ["astro"],
+      "env": {
+        "node": true,
+        "astro/astro": true,
+        "es2020": true
+      },
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "extraFileExtensions": [".astro"],
+        "sourceType": "module"
+      },
+      "rules": {
+        "astro/no-conflict-set-directives": "error",
+        "astro/no-unused-define-vars-in-style": "error",
+        "react/jsx-key": "warn",
+        "@typescript-eslint/no-explicit-any": "warn"
+      }
+    },
+    {
+      "files": ["**/*.astro/*.js", "*.astro/*.js"],
+      "env": {
+        "browser": true,
+        "es2021": true
+      },
+      "parserOptions": {
+        "sourceType": "module"
+      },
+      "rules": {
+        "prettier/prettier": "off"
+      }
+    }
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/no-unknown-property": "off",
+    "prettier/prettier": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+}

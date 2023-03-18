@@ -1,0 +1,21 @@
+<div
+  class="opacity-0 transition-all delay-150 ease-in-out duration-300 animation"
+>
+  <slot />
+</div>
+
+<script>
+  const elementHidden = document.querySelectorAll('.animation')
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible')
+      } else {
+        entry.target.classList.remove('visible')
+      }
+    })
+  })
+
+  elementHidden.forEach(element => observer.observe(element))
+</script>

@@ -1,0 +1,43 @@
+---
+import { ToastContainer } from 'react-toastify'
+
+import Header from 'main/Header/Header.astro'
+import Footer from 'main/Footer.astro'
+import Seo from 'shared/Seo.astro'
+
+import 'react-toastify/dist/ReactToastify.css'
+
+interface AstroProps {
+  title: string
+}
+
+const { title } = Astro.props as AstroProps
+---
+
+<html lang="en">
+  <Seo title={title} />
+  <ToastContainer
+    position="top-right"
+    autoClose={5000}
+    hideProgressBar={false}
+    newestOnTop={false}
+    closeOnClick
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+    theme="light"
+    client:only
+  />
+
+  <body>
+    <div class="w-full min-h-screen flex flex-col">
+      <Header />
+      <main class="flex-initial">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+    <script></script>
+  </body>
+</html>
