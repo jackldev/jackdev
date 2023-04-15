@@ -10,7 +10,7 @@ const bio = await getCollection('bio')
 const { slugs, title, description, image } = bio[0].data
 ---
 
-<section class="py-20 grid [&>*]:grid-stack section" id={slugs}>
+<section class="py-28 grid [&>*]:grid-stack section smx:py-20" id={slugs}>
   <AnimationFadeIn>
     <Image
       class="w-full aspect-[18/4] object-fill dark:filter dark:grayscale dark:invert smx:aspect-auto 3xsx:aspect-[4/8] 3xsx:object-cover"
@@ -23,7 +23,7 @@ const { slugs, title, description, image } = bio[0].data
 
   <AnimationFadeIn>
     <div class="relative z-[1] wrapper">
-      <div class="grid-2 gap-32 smx:grid-1 smx:gap-20">
+      <div class="grid-2 gap-40 smx:grid-1 smx:gap-20">
         <div>
           <h2 class="-mb-6">{title}</h2>
           <p

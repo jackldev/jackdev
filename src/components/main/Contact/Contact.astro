@@ -8,7 +8,7 @@ const contact = await getCollection('contact')
 const { slugs, title, subtitle } = contact[0].data
 ---
 
-<section class="py-20 section" id={slugs}>
+<section class="pt-28 pb-20 section smx:pt-20" id={slugs}>
   <AnimationFadeIn>
     <div class="wrapper">
       <h2 class="mb-6">{title}</h2>

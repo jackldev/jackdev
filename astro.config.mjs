@@ -33,4 +33,5 @@ export default defineConfig({
   }), sitemap({
     customPages: [`${baseUrl}`]
   }), robotsTxt(), prefetch(), react()],
+  output: "static",
 });

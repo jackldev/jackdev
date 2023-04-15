@@ -23,16 +23,41 @@ const Navigation = ({ navs }: NavProps) => {
     const links = document.querySelectorAll('.links')
     const idElement = document.querySelectorAll('.section')
 
+    const paths = window.location.pathname
+
+    const scrollId = window.localStorage.getItem(`scrollId`) as string
+
     if (links !== null) {
       links.forEach((link, id) =>
         link.addEventListener('click', () => {
-          idElement[id + 1].scrollIntoView({
-            block: 'start',
-            behavior: 'smooth'
-          })
+          window.localStorage.setItem(`scrollId`, `${id + 1}`)
+
+          if (paths !== '/') {
+            window.location.replace('/')
+          }
+
+          if (idElement[+scrollId]) {
+            idElement[id + 1].scrollIntoView({
+              block: 'start',
+              behavior: 'smooth'
+            })
+          }
         })
       )
     }
+
+    if (idElement[+scrollId]) {
+      idElement[+scrollId].scrollIntoView({
+        block: 'start',
+        behavior: 'smooth'
+      })
+    }
+
+    const timer = setTimeout(() => {
+      window.localStorage.removeItem('scrollId')
+    }, 7000)
+
+    return () => clearTimeout(timer)
   }, [])
 
   const s = {

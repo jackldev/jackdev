@@ -83,7 +83,7 @@ const Form = () => {
   return (
     <ContactForm classname={styles.base} name="contact" handleSubmit={onSubmit}>
       <div className="flex flex-col gap-6">
-        <div className="flex justify-between gap-y-6 gap-x-32 smx:flex-col">
+        <div className="flex justify-between gap-y-6 gap-x-40 smx:flex-col">
           <Input
             nameId="name"
             titleId="Name"
