@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content'
 import Layout from 'layouts/Layout.astro'
 import Hero from 'main/Hero.astro'
 import Projects from 'main/Projects.astro'
+import Sides from 'main/Sides.astro'
 import Bio from 'main/Bio.astro'
 import Contact from 'main/Contact/Contact.astro'
 
@@ -13,6 +14,7 @@ const seo = await getCollection('seo')
 <Layout title={seo[0].data.metaDescription}>
   <Hero />
   <Projects />
+  <Sides />
   <Bio />
   <Contact />
 </Layout>

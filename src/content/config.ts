@@ -19,6 +19,8 @@ const navCollection = defineCollection({ schema: navSchema })
 const heroCollection = defineCollection({ schema: heroSchema })
 const projectCollection = defineCollection({ schema: projectSchema })
 const projectsCollection = defineCollection({ schema: projectsSchema })
+const sideCollection = defineCollection({ schema: projectSchema })
+const sidesCollection = defineCollection({ schema: projectsSchema })
 const bioCollection = defineCollection({ schema: bioSchema })
 const toolsCollection = defineCollection({ schema: toolsSchema })
 const contactCollection = defineCollection({ schema: contactSchema })
@@ -32,6 +34,8 @@ export const collections = {
   hero: heroCollection,
   project: projectCollection,
   projects: projectsCollection,
+  side: sideCollection,
+  sides: sidesCollection,
   bio: bioCollection,
   tools: toolsCollection,
   contact: contactCollection,

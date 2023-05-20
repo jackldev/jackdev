@@ -1,0 +1,93 @@
+---
+import { getCollection } from 'astro:content'
+
+import AnimationFadeIn from 'shared/AnimationFadeIn.astro'
+import Image from 'shared/Image.astro'
+import IView from 'shared/Icons/IView'
+import IOpen from 'shared/Icons/IOpen'
+
+const side = await getCollection('side')
+const { slugs, title, subtitle } = side[0].data
+
+const sides = await getCollection('sides')
+---
+
+<section class="pt-20 pb-28 section smx:pb-20" id={slugs}>
+  <div class="wrapper">
+    <AnimationFadeIn>
+      <div class="mb-16 text-center">
+        <h2 class="mb-2">{title}</h2>
+        <p class="max-w-[30rem] mx-auto text-2xl xsx:text-[1.9rem]">
+          {subtitle}
+        </p>
+      </div>
+    </AnimationFadeIn>
+
+    <div class="grid-2 gap-40 smx:grid-1 smx:gap-20">
+      {
+        sides
+          .sort((a, b) => +b.data.date - +a.data.date)
+          .map(({ data }) => (
+            <AnimationFadeIn>
+              <div class="flex flex-col gap-6">
+                <a
+                  class="grid [&>*]:grid-stack shadow-md rounded-[15px] group"
+                  href={data.link}
+                  target="_blank"
+                  rel="prefetch"
+                >
+                  <Image
+                    class="w-full aspect-auto object-cover rounded-[15px]"
+                    src={data.image.src}
+                    alt={data.image.alt}
+                    width={data.image.width}
+                    height={data.image.height}
+                  />
+
+                  <div class="w-fit h-fit my-6 ml-auto mr-6 p-2 bg-bgwhite bg-opacity-30 rounded-[5px] invisible group-hover:visible transition-visible delay-150 ease-out">
+                    <IOpen />
+                  </div>
+                </a>
+
+                <div class="flex flex-col gap-10">
+                  <div class="flex justify-between items-end gap-24">
+                    <div>
+                      <h3>{data.title}</h3>
+                      <p>{data.date}</p>
+                    </div>
+
+                    <a
+                      class="w-[2rem] mb-2"
+                      href={data.link}
+                      target="_blank"
+                      rel="prefetch"
+                    >
+                      <IView />
+                    </a>
+                  </div>
+
+                  <div>
+                    <h3 class="mb-2 text-2xl">{data.subtitle}</h3>
+                    <p class="max-w-[90%]">{data.description}</p>
+                  </div>
+
+                  <div>
+                    <h3 class="mb-2 text-2xl">Tools</h3>
+
+                    <div class="flex flex-wrap items-center gap-4">
+                      {data.techs.map(tech => (
+                        <button class="py-3 px-5 bg-white dark:bg-black bg-opacity-50 text-black dark:text-white rounded-[5px] text-sm font-main font-semibold uppercase cursor-default smx:px-4">
+                          {tech}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </AnimationFadeIn>
+          ))
+      }
+    <div/>
+    </div>
+  </div>
+</section>
