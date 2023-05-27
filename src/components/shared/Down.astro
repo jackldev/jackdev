@@ -1,5 +1,5 @@
 ---
-import IDown from 'shared/Icons/IDown'
+import IDown from "shared/Icons/IDown";
 ---
 
 <div class="mt-16 flex justify-center cursor-pointer down" title="Scroll Down">
@@ -7,10 +7,10 @@ import IDown from 'shared/Icons/IDown'
 </div>
 
 <script>
-  const down = document.querySelector('.down')
-  const section = document.getElementById('projects')
+  const down = document.querySelector(".down");
+  const section = document.getElementById("projects");
 
-  down!.addEventListener('click', () => {
-    section!.scrollIntoView({ block: 'start', behavior: 'smooth' })
-  })
+  down!.addEventListener("click", () => {
+    section!.scrollIntoView({ block: "start", behavior: "smooth" });
+  });
 </script>

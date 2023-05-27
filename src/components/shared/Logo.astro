@@ -1,9 +1,9 @@
 ---
-import ILogo from 'shared/Icons/ILogo'
+import ILogo from "shared/Icons/ILogo";
 
-import { getCollection } from 'astro:content'
+import { getCollection } from "astro:content";
 
-const seo = await getCollection('seo')
+const seo = await getCollection("seo");
 ---
 
 <div class="relative z-[1] w-[4rem] h-[4rem] logo">
@@ -13,11 +13,11 @@ const seo = await getCollection('seo')
 </div>
 
 <script>
-  const logo = document.querySelector('.logo')
+  const logo = document.querySelector(".logo");
 
-  logo!.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+  logo!.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
 
-    if (window.location.pathname !== '/') return window.location.replace('/')
-  })
+    if (window.location.pathname !== "/") return window.location.replace("/");
+  });
 </script>

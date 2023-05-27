@@ -5,17 +5,17 @@
 </div>
 
 <script>
-  const elementHidden = document.querySelectorAll('.animation')
+  const elementHidden = document.querySelectorAll(".animation");
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible')
+        entry.target.classList.add("visible");
       } else {
-        entry.target.classList.remove('visible')
+        entry.target.classList.remove("visible");
       }
-    })
-  })
+    });
+  });
 
-  elementHidden.forEach(element => observer.observe(element))
+  elementHidden.forEach((element) => observer.observe(element));
 </script>

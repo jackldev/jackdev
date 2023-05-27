@@ -1,12 +1,12 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection } from "astro:content";
 
-import AnimationFadeIn from 'shared/AnimationFadeIn.astro'
-import Image from 'shared/Image.astro'
-import IDown from 'shared/Down.astro'
+import AnimationFadeIn from "shared/AnimationFadeIn.astro";
+import Image from "shared/Image.astro";
+import IDown from "shared/Down.astro";
 
-const hero = await getCollection('hero')
-const { slugs, title, subtitle, image } = hero[0].data
+const hero = await getCollection("hero");
+const { slugs, title, subtitle, image } = hero[0].data;
 ---
 
 <section class="grid [&>*]:grid-stack targets section" id={slugs}>

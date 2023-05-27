@@ -1,15 +1,15 @@
 ---
-import { getCollection } from 'astro:content'
-import { SEO } from 'astro-seo'
+import { getCollection } from "astro:content";
+import { SEO } from "astro-seo";
 
-import 'styles/base.css'
+import "styles/base.css";
 
 interface AstroProps {
-  title: string
-  description: string
+  title: string;
+  description: string;
 }
 
-const seo = await getCollection('seo')
+const seo = await getCollection("seo");
 const {
   metaTitle,
   metaDescription,
@@ -19,10 +19,10 @@ const {
   metaAuthor,
   metaType,
   metaTwitter,
-  metaKeywords
-} = seo[0].data
+  metaKeywords,
+} = seo[0].data;
 
-const { title, description } = Astro.props as AstroProps
+const { title, description } = Astro.props as AstroProps;
 ---
 
 <head>
@@ -36,14 +36,14 @@ const { title, description } = Astro.props as AstroProps
         title: metaTitle,
         type: metaType,
         image: metaImage,
-        url: metaSiteurl
+        url: metaSiteurl,
       },
       article: { authors: [metaAuthor] },
       image: { alt: metaAlt },
-      optional: { description: metaDescription }
+      optional: { description: metaDescription },
     }}
     twitter={{ creator: metaTwitter }}
-    extend={{ meta: [{ name: 'keywords', content: metaKeywords }] }}
+    extend={{ meta: [{ name: "keywords", content: metaKeywords }] }}
   />
   <link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
 </head>

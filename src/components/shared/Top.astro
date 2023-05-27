@@ -1,5 +1,5 @@
 ---
-import ITop from 'shared/Icons/ITop'
+import ITop from "shared/Icons/ITop";
 ---
 
 <div class="w-[1300px] fixed bottom-0 z-[1] flex justify-end top:w-[90%]">
@@ -12,29 +12,29 @@ import ITop from 'shared/Icons/ITop'
 </div>
 
 <script>
-  const top = document.querySelector('.top')
-  const target = document.querySelector('.target')
+  const top = document.querySelector(".top");
+  const target = document.querySelector(".target");
 
   const observer = new IntersectionObserver(
-    entries => top!.classList.toggle('hide', !entries[0].isIntersecting),
+    (entries) => top!.classList.toggle("hide", !entries[0].isIntersecting),
     {
-      rootMargin: '0px',
-      threshold: [1]
+      rootMargin: "0px",
+      threshold: [1],
     }
-  )
+  );
 
-  if (target !== null) observer.observe(target)
+  if (target !== null) observer.observe(target);
 
   top!.addEventListener(
-    'click',
-    e => {
-      e.stopImmediatePropagation()
+    "click",
+    (e) => {
+      e.stopImmediatePropagation();
 
       window.scrollTo({
         top: 0,
-        behavior: 'smooth'
-      })
+        behavior: "smooth",
+      });
     },
     true
-  )
+  );
 </script>

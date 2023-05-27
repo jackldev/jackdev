@@ -1,15 +1,15 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection } from "astro:content";
 
-import AnimationFadeIn from 'shared/AnimationFadeIn.astro'
-import Image from 'shared/Image.astro'
-import IView from 'shared/Icons/IView'
-import IOpen from 'shared/Icons/IOpen'
+import AnimationFadeIn from "shared/AnimationFadeIn.astro";
+import Image from "shared/Image.astro";
+import IView from "shared/Icons/IView";
+import IOpen from "shared/Icons/IOpen";
 
-const project = await getCollection('project')
-const { slugs, title, subtitle } = project[0].data
+const project = await getCollection("project");
+const { slugs, title, subtitle } = project[0].data;
 
-const projects = await getCollection('projects')
+const projects = await getCollection("projects");
 ---
 
 <section class="pt-20 pb-28 section smx:pb-20" id={slugs}>
@@ -75,7 +75,7 @@ const projects = await getCollection('projects')
                     <h3 class="mb-2 text-2xl">Tools</h3>
 
                     <div class="flex flex-wrap items-center gap-4">
-                      {data.techs.map(tech => (
+                      {data.techs.map((tech) => (
                         <button class="py-3 px-5 bg-white dark:bg-black bg-opacity-50 text-black dark:text-white rounded-[5px] text-sm font-main font-semibold uppercase cursor-default smx:px-4">
                           {tech}
                         </button>

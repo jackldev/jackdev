@@ -1,13 +1,13 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection } from "astro:content";
 
-import Logo from 'shared/Logo.astro'
-import Navigation from 'main/Header/Navigation'
-import Hamburger from 'main/Header/Hamburger'
+import Logo from "shared/Logo.astro";
+import Navigation from "main/Header/Navigation";
+import Hamburger from "main/Header/Hamburger";
 
-const navs = await getCollection('nav', ({ data }) => {
-  return data.slugs !== 'hero'
-})
+const navs = await getCollection("nav", ({ data }) => {
+  return data.slugs !== "hero";
+});
 ---
 
 <header
@@ -23,21 +23,21 @@ const navs = await getCollection('nav', ({ data }) => {
 </header>
 
 <script>
-  const nav = document.querySelector('.navigation')
-  const targets = document.querySelectorAll('.targets')
+  const nav = document.querySelector(".navigation");
+  const targets = document.querySelectorAll(".targets");
 
   if (nav !== null) {
     const observer = new IntersectionObserver(
-      entries => nav.classList.toggle('active', !entries[0].isIntersecting),
+      (entries) => nav.classList.toggle("active", !entries[0].isIntersecting),
       {
-        rootMargin: '0px',
-        threshold: [1]
+        rootMargin: "0px",
+        threshold: [1],
       }
-    )
+    );
 
     if (targets !== null)
-      targets.forEach(index => {
-        if (index) observer.observe(index)
-      })
+      targets.forEach((index) => {
+        if (index) observer.observe(index);
+      });
   }
 </script>

@@ -1,12 +1,12 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection } from "astro:content";
 
-import ILogo from 'shared/Icons/ILogo'
-import Socials from 'shared/Socials.astro'
-import Top from 'shared/Top.astro'
+import ILogo from "shared/Icons/ILogo";
+import Socials from "shared/Socials.astro";
+import Top from "shared/Top.astro";
 
-const footer = await getCollection('footer')
-const { slugs, description, copy, link } = footer[0].data
+const footer = await getCollection("footer");
+const { slugs, description, copy, link } = footer[0].data;
 ---
 
 <section class="pt-20 pb-8 bg-black dark:bg-bgwhite" id={slugs}>

@@ -12,7 +12,7 @@ const { slugs, title, subtitle } = side[0].data
 const sides = await getCollection('sides')
 ---
 
-<section class="pt-20 pb-28 section smx:pb-20" id={slugs}>
+<section class="pt-20 pb-28 smx:pb-20" id={`${slugs}s`}>
   <div class="wrapper">
     <AnimationFadeIn>
       <div class="mb-16 text-center">

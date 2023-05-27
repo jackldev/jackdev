@@ -1,11 +1,11 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection } from "astro:content";
 
-import Form from 'main/Contact/Form'
-import AnimationFadeIn from 'shared/AnimationFadeIn.astro'
+import Form from "main/Contact/Form";
+import AnimationFadeIn from "shared/AnimationFadeIn.astro";
 
-const contact = await getCollection('contact')
-const { slugs, title, subtitle } = contact[0].data
+const contact = await getCollection("contact");
+const { slugs, title, subtitle } = contact[0].data;
 ---
 
 <section class="pt-28 pb-20 section smx:pt-20" id={slugs}>

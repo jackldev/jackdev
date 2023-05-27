@@ -1,15 +1,15 @@
 ---
-import { Image } from '@astrojs/image/components'
+import { Image } from "@astrojs/image/components";
 
 interface AstroProps {
-  class: any
-  src: string
-  alt: string
-  width: number
-  height: number
+  class: any;
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
 }
 
-const { class: className, src, alt, width, height } = Astro.props as AstroProps
+const { class: className, src, alt, width, height } = Astro.props as AstroProps;
 ---
 
 <Image
