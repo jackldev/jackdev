@@ -1,18 +1,18 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection } from "astro:content";
 
-import AnimationFadeIn from 'shared/AnimationFadeIn.astro'
-import Image from 'shared/Image.astro'
-import IView from 'shared/Icons/IView'
-import IOpen from 'shared/Icons/IOpen'
+import AnimationFadeIn from "shared/AnimationFadeIn.astro";
+import Image from "shared/Image.astro";
+import IView from "shared/Icons/IView";
+import IOpen from "shared/Icons/IOpen";
 
-const side = await getCollection('side')
-const { slugs, title, subtitle } = side[0].data
+const side = await getCollection("side");
+const { slugs, title, subtitle } = side[0].data;
 
-const sides = await getCollection('sides')
+const sides = await getCollection("sides");
 ---
 
-<section class="pt-20 pb-28 smx:pb-20" id={`${slugs}s`}>
+<section class="pt-20 pb-28 smx:pb-20">
   <div class="wrapper">
     <AnimationFadeIn>
       <div class="mb-16 text-center">
@@ -75,7 +75,7 @@ const sides = await getCollection('sides')
                     <h3 class="mb-2 text-2xl">Tools</h3>
 
                     <div class="flex flex-wrap items-center gap-4">
-                      {data.techs.map(tech => (
+                      {data.techs.map((tech) => (
                         <button class="py-3 px-5 bg-white dark:bg-black bg-opacity-50 text-black dark:text-white rounded-[5px] text-sm font-main font-semibold uppercase cursor-default smx:px-4">
                           {tech}
                         </button>
@@ -87,7 +87,7 @@ const sides = await getCollection('sides')
             </AnimationFadeIn>
           ))
       }
-    <div/>
+      <div></div>
     </div>
   </div>
 </section>
