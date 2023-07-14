@@ -7,16 +7,16 @@ export const colors = {
 };
 
 export const sizes = {
-	small: "uppercase text-xs font-bold font-main",
-	base: "uppercase text-base font-bold font-main",
-	large: "uppercase text-lg font-bold font-main",
+	small: "uppercase text-xs",
+	base: "uppercase text-base",
+	large: "uppercase text-lg",
 };
 
 export const positions = {
 	base: "w-fit",
-	center: "block w-fit rounded-[5px] mx-auto ",
-	right: "block w-fit rounded-[5px] ml-auto",
-	left: "block w-fit rounded-[5px] mr-auto",
+	center: "block w-fit rounded-sm mx-auto ",
+	right: "block w-fit rounded-sm ml-auto",
+	left: "block w-fit rounded-sm mr-auto",
 };
 
 export const space = {

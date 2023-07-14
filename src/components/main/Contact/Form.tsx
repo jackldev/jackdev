@@ -99,7 +99,6 @@ const Form = () => {
 						errors={errors}
 						errorText="Please enter a valid name."
 						handleChange={handleChange}
-						show={false}
 					/>
 					<Input
 						nameId="email"
@@ -116,7 +115,6 @@ const Form = () => {
 						errors={errors}
 						errorText="Please enter a valid email."
 						handleChange={handleChange}
-						show={false}
 					/>
 				</div>
 
@@ -127,12 +125,10 @@ const Form = () => {
 					register={register}
 					validationSchema={{
 						required: true,
-						maxLength: 5000,
 					}}
 					errors={errors}
 					errorText="Please enter a valid message."
 					handleChange={handleChange}
-					show={true}
 				/>
 
 				<Checkbox

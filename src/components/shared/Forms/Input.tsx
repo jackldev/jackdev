@@ -9,17 +9,14 @@ const Input = ({
 	validationSchema,
 	errors,
 	errorText,
-	show,
 	handleChange,
 }: FormProps) => {
 	return (
 		<fieldset className="w-full">
-			<div className="flex justify-between items-end">
-				<label className="mb-2 text-2xl font-bold font-main" htmlFor={nameId}>
-					{titleId}
-				</label>
-				{show && <p className="text-sm">{`${value.length}/10`}</p>}
-			</div>
+			<label className="mb-2 text-xl font-main" htmlFor={nameId}>
+				{titleId}
+			</label>
+
 			<input
 				{...register(nameId, validationSchema)}
 				className="w-full py-3 px-6 text-base font-main rounded border-b-[2px] border-solid border-teal bg-transparent text-white dark:text-black placeholder:text-white placeholder:dark:text-black placeholder:text-opacity-80 focus:outline-none"

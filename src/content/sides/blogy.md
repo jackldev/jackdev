@@ -1,5 +1,5 @@
 ---
-  id: 1
+  id: 2
   date: "2023"
   title: "Blogy"
   subtitle: "Admin Blog Dashboard"

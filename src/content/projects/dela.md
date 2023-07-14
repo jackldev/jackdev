@@ -10,5 +10,5 @@
     alt: "dela"
     width: 1374
     height: 738
-  link: "https://dela-sushis.web.app/"
+  link: "https://dela-sushis.web.app"
 ---

@@ -31,13 +31,13 @@ const sides = await getCollection("sides");
             <AnimationFadeIn>
               <div class="flex flex-col gap-6">
                 <a
-                  class="grid [&>*]:grid-stack shadow-md rounded-[15px] group"
+                  class="grid [&>*]:grid-stack shadow-md rounded-md group"
                   href={data.link}
                   target="_blank"
                   rel="prefetch"
                 >
                   <Image
-                    class="w-full aspect-auto object-cover rounded-[15px]"
+                    class="w-full aspect-auto object-cover rounded-md"
                     src={data.image.src}
                     alt={data.image.alt}
                     width={data.image.width}
@@ -52,31 +52,31 @@ const sides = await getCollection("sides");
                 <div class="flex flex-col gap-10">
                   <div class="flex justify-between items-end gap-24">
                     <div>
-                      <h3>{data.title}</h3>
+                      <h3 class="font-normal">{data.title}</h3>
                       <p>{data.date}</p>
                     </div>
 
                     <a
-                      class="w-[2rem] mb-2"
+                      class="w-[1.5rem] mb-2"
                       href={data.link}
                       target="_blank"
                       rel="prefetch"
                     >
-                      <IView />
+                      <IView link={data.link} />
                     </a>
                   </div>
 
                   <div>
-                    <h3 class="mb-2 text-2xl">{data.subtitle}</h3>
-                    <p class="max-w-[90%]">{data.description}</p>
+                    <h3 class="mb-2 text-2xl font-normal">{data.subtitle}</h3>
+                    <p class="max-w-[90%] text-opacity-80 dark:text-opacity-70">{data.description}</p>
                   </div>
 
                   <div>
-                    <h3 class="mb-2 text-2xl">Tools</h3>
+                    <h3 class="mb-3 text-2xl font-normal">Tools</h3>
 
                     <div class="flex flex-wrap items-center gap-4">
                       {data.techs.map((tech) => (
-                        <button class="py-3 px-5 bg-white dark:bg-black bg-opacity-50 text-black dark:text-white rounded-[5px] text-sm font-main font-semibold uppercase cursor-default smx:px-4">
+                        <button class="py-3 px-5 bg-white dark:bg-black bg-opacity-90 text-black dark:text-white rounded-sm text-sm font-main uppercase cursor-default smx:px-4 2xsx:text-xs">
                           {tech}
                         </button>
                       ))}

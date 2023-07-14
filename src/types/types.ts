@@ -7,7 +7,6 @@ export interface FormProps {
 	validationSchema?: any;
 	errors: any;
 	errorText: string;
-	show?: boolean;
 	handleChange: (
 		e:
 			| React.ChangeEvent<HTMLInputElement>
