@@ -5,7 +5,7 @@
     - DatoCms
     - Contentful
     - Cosmicjs
-    - GraphCms
+    - HyGraph
     - Prismic
     - Sanity.io
     - Strapi

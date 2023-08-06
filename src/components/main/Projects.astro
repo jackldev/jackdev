@@ -4,7 +4,6 @@ import { getCollection } from "astro:content";
 import AnimationFadeIn from "shared/AnimationFadeIn.astro";
 import Image from "shared/Image.astro";
 import IView from "shared/Icons/IView";
-import IOpen from "shared/Icons/IOpen";
 
 const project = await getCollection("project");
 const { slugs, title, subtitle } = project[0].data;
@@ -31,22 +30,18 @@ const projects = await getCollection("projects");
             <AnimationFadeIn>
               <div class="flex flex-col gap-6">
                 <a
-                  class="grid [&>*]:grid-stack shadow-md rounded-md group"
+                  class="grid [&>*]:grid-stack shadow-md rounded-md"
                   href={data.link}
                   target="_blank"
                   rel="prefetch"
                 >
                   <Image
-                    class="w-full aspect-auto object-cover rounded-md"
+                    class="w-full aspect-auto object-cover rounded-md opacity-80 hover:opacity-95 trasition-all delay-200 ease-in"
                     src={data.image.src}
                     alt={data.image.alt}
                     width={data.image.width}
                     height={data.image.height}
                   />
-
-                  <div class="w-fit h-fit my-6 ml-auto mr-6 p-2 bg-bgwhite bg-opacity-30 rounded-[5px] invisible group-hover:visible transition-visible delay-150 ease-out">
-                    <IOpen />
-                  </div>
                 </a>
 
                 <div class="flex flex-col gap-10">
@@ -68,7 +63,9 @@ const projects = await getCollection("projects");
 
                   <div>
                     <h3 class="mb-2 text-2xl font-normal">{data.subtitle}</h3>
-                    <p class="max-w-[90%] text-opacity-80 dark:text-opacity-70">{data.description}</p>
+                    <p class="max-w-[90%] text-opacity-80 dark:text-opacity-70">
+                      {data.description}
+                    </p>
                   </div>
 
                   <div>
@@ -76,7 +73,7 @@ const projects = await getCollection("projects");
 
                     <div class="flex flex-wrap items-center gap-4">
                       {data.techs.map((tech) => (
-                        <button class="py-3 px-6 bg-white dark:bg-black bg-opacity-90 text-black dark:text-white rounded-sm text-sm font-main uppercase cursor-default smx:px-4 2xsx:text-xs">
+                        <button class="py-3 px-6 bg-white/60 dark:bg-black/60 bg-opacity-90 text-black/80 dark:text-white rounded-sm text-sm font-main font-semibold uppercase cursor-default smx:px-4 2xsx:text-xs">
                           {tech}
                         </button>
                       ))}
