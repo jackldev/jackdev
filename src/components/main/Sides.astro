@@ -4,10 +4,9 @@ import { getCollection } from "astro:content";
 import AnimationFadeIn from "shared/AnimationFadeIn.astro";
 import Image from "shared/Image.astro";
 import IView from "shared/Icons/IView";
-import IOpen from "shared/Icons/IOpen";
 
 const side = await getCollection("side");
-const { slugs, title, subtitle } = side[0].data;
+const { title, subtitle } = side[0].data;
 
 const sides = await getCollection("sides");
 ---
