@@ -1,11 +1,11 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content'
 
-import AnimationFadeIn from "shared/AnimationFadeIn.astro";
-import { colors, positions, sizes, space } from "shared/Button/index";
+import AnimationFadeIn from 'shared/AnimationFadeIn.astro'
+import { colors, positions, sizes, space } from 'shared/Button/index'
 
-const error = await getCollection("error");
-const { slugs, title, subtitle, link, text } = error[0].data;
+const error = await getCollection('error')
+const { slugs, title, subtitle, link, text } = error[0].data
 ---
 
 <section

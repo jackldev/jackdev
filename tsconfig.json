@@ -1,7 +1,7 @@
 {
-  "extends": "astro/tsconfigs/strict",
+  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "types": ["@astrojs/image/client", "vite/client"],
+    "types": ["vite/client"],
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "baseUrl": ".",

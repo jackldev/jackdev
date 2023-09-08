@@ -1,18 +1,18 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image as Images } from 'astro:assets'
 
 interface AstroProps {
-  class: any;
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
+  class: any
+  src: string
+  alt: string
+  width: number
+  height: number
 }
 
-const { class: className, src, alt, width, height } = Astro.props as AstroProps;
+const { class: className, src, alt, width, height } = Astro.props as AstroProps
 ---
 
-<Image
+<Images
   class={className}
   src={src}
   alt={alt}

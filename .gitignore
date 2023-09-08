@@ -21,6 +21,9 @@ yarn-error.log*
 /.pnp
 .pnp.js
 
+# eslint
+.eslintrc.json
+
 # Firebase
 .firebase
 .firebaserc
