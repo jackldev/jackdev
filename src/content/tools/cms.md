@@ -3,7 +3,6 @@
   title: "CMS"
   tools:
     - DatoCms
-    - Contentful
     - Cosmicjs
     - HyGraph
     - Prismic

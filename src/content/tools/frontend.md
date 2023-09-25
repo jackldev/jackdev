@@ -8,5 +8,4 @@
     - Gatsby
     - Tailwind CSS
     - S(CSS)
-    - Styled Component
 ---
