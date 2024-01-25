@@ -5,7 +5,7 @@
     - React
     - Next
     - Astro
-    - Gatsby
+    - Sveltekit
     - Tailwind CSS
     - S(CSS)
 ---

@@ -6,6 +6,7 @@
     - Cloudinary
     - MongoDB
     - PostgreSQL
+    - MySQL
     - Shopify
     - Medusa
 ---
