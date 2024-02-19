@@ -1,6 +1,6 @@
 ---
   id: 1
-  date: "2023"
+  date: "2024"
   title: "Aurum"
   subtitle: "Watch Ecommerce"
   description: "Elevate your style with Aurum, the perfect combination of elegance and technology. This exquisite watch, powered by Sveltekit, seamlessly connects to Shopify for a seamless shopping experience."
