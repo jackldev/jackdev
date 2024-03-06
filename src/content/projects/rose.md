@@ -6,7 +6,7 @@
   description: "Immerse yourself in the allure of Rose, an ecommerce store that combines the power of Nextjs and Medusa to create a seamless online shopping experience for flower enthusiasts."
   techs: ["NEXT", "TAILWIIND CSS", "MEDUSA", "STRIPE", "POSTGRESQL", "NORTHFLANK", "VERCEL"]
   image:
-    src: "/images/rose.jpg"
+    src: "/images/rose.webp"
     alt: "rose ecommerce"
     width: 1374
     height: 738
