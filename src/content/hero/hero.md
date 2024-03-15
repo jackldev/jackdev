@@ -6,7 +6,7 @@
   link: "#projects"
   text: "My Projects"
   image:
-    src: "/images/portfolio-hero.jpg"
+    src: "/images/portfolio-hero.webp"
     alt: "main image hero"
     width: 1920
     height: 1080
