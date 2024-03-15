@@ -1,14 +1,14 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content'
 
-import AnimationFadeIn from "shared/AnimationFadeIn.astro";
-import Image from "shared/Image.astro";
-import IView from "shared/Icons/IView";
+import AnimationFadeIn from 'shared/AnimationFadeIn.astro'
+import Image from 'shared/Image.astro'
+import IView from 'shared/Icons/IView'
 
-const project = await getCollection("project");
-const { slugs, title, subtitle } = project[0].data;
+const project = await getCollection('project')
+const { slugs, title, subtitle } = project[0].data
 
-const projects = await getCollection("projects");
+const projects = await getCollection('projects')
 ---
 
 <section class="pt-20 pb-28 section smx:pb-20" id={slugs}>
@@ -41,6 +41,7 @@ const projects = await getCollection("projects");
                     alt={data.image.alt}
                     width={data.image.width}
                     height={data.image.height}
+                    loading="lazy"
                   />
                 </a>
 

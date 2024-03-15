@@ -1,13 +1,13 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content'
 
-import AnimationFadeIn from "shared/AnimationFadeIn.astro";
-import Socials from "shared/Socials.astro";
-import Tools from "shared/Tools.astro";
-import Image from "shared/Image.astro";
+import AnimationFadeIn from 'shared/AnimationFadeIn.astro'
+import Socials from 'shared/Socials.astro'
+import Tools from 'shared/Tools.astro'
+import Image from 'shared/Image.astro'
 
-const bio = await getCollection("bio");
-const { slugs, title, description, image } = bio[0].data;
+const bio = await getCollection('bio')
+const { slugs, title, description, image } = bio[0].data
 ---
 
 <section class="py-28 grid [&>*]:grid-stack section smx:py-20" id={slugs}>
@@ -18,6 +18,7 @@ const { slugs, title, description, image } = bio[0].data;
       alt={image.alt}
       width={image.width}
       height={image.height}
+      loading="lazy"
     />
   </AnimationFadeIn>
 

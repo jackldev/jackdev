@@ -1,15 +1,15 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content'
 
-import Image from "shared/Image.astro";
+import Image from 'shared/Image.astro'
 
 interface AstroProps {
-  show: boolean;
-  direction: string;
+  show: boolean
+  direction: string
 }
 
-const { show, direction } = Astro.props as AstroProps;
-const socials = await getCollection("socials");
+const { show, direction } = Astro.props as AstroProps
+const socials = await getCollection('socials')
 ---
 
 <div
@@ -30,6 +30,7 @@ const socials = await getCollection("socials");
           alt={data.image.alt}
           width={data.image.width}
           height={data.image.height}
+          loading="eager"
         />
       </a>
     ))

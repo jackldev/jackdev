@@ -7,7 +7,7 @@
   text: "My Projects"
   image:
     src: "/images/portfolio-hero.webp"
-    alt: "main image hero"
+    alt: "main hero"
     width: 1920
     height: 1080
 ---
