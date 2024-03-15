@@ -2,9 +2,9 @@
   id: 0
   title: "Front End"
   tools:
-    - React
-    - Next
     - Astro
+    - Next
+    - React
     - Sveltekit
     - Tailwind CSS
     - S(CSS)

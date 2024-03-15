@@ -4,7 +4,7 @@
   title: "Jamala"
   subtitle: "Fashion Ecommerce"
   description: "Look no further than Jamala. We offer a wide range of jeans that are not only stylish but also comfortable. And guess what? Our website is built with Shopify and powered by NextJS for easy browsing and checkout."
-  techs: ["NEXT", "TAILWIIND CSS", "SHOPIFY", "CLOUDINARY", "MYSQL", "PLANETSCALE","VERCEL"]
+  techs: ["NEXT", "TAILWIIND CSS", "SHOPIFY", "CLOUDINARY", "MYSQL", "AIVEN","VERCEL"]
   image:
     src: "/images/jamala.webp"
     alt: "jamala ecommerce"

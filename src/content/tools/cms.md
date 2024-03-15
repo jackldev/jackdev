@@ -2,8 +2,8 @@
   id: 1
   title: "CMS"
   tools:
-    - DatoCms
     - Cosmicjs
+    - DatoCms
     - HyGraph
     - Prismic
     - Sanity.io
