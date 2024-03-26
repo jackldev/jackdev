@@ -76,9 +76,9 @@ const Navigation = ({ navs }: NavProps) => {
         .map(({ data }) => (
           <li
             key={data.id}
-            className="mr-12 capitalize overflow-hidden mdx:mr-0 mdx:py-2.5"
+            className="mr-12 overflow-hidden mdx:mr-0 mdx:py-2.5"
           >
-            <button className="font-main text-lg links text-white dark:text-black mdx:uppercase mdx:focus:outline-none mdx:text-[1.75rem]">
+            <button className="font-main capitalize text-lg links text-white dark:text-black mdx:uppercase mdx:focus:outline-none mdx:text-[1.75rem]">
               {data.title}
             </button>
           </li>

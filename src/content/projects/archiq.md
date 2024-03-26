@@ -1,10 +1,10 @@
 ---
   id: 4
-  date: "2022"
+  date: "2024"
   title: "Archiq"
-  subtitle: "Architect Portfolio"
+  subtitle: "Architect Landing Page"
   description: "A services architecture landing page is built on React to provide an effective and user-friendly design that delivers valuable assistance for businesses."
-  techs: ["GATSBY", "TAILWIND CSS", "COSMICJS", "NETLIFY"]
+  techs: ["SVELTEKIT", "TAILWIND CSS", "NETLIFY", "POSTGRESQL"]
   image:
     src: "/images/archiq.webp"
     alt: "archiq architect design"
