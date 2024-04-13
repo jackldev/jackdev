@@ -1,0 +1,49 @@
+---
+import IMoon from 'shared/Icons/IMoon.astro'
+import ISun from 'shared/Icons/ISun.astro'
+---
+
+<div
+  class="relative mr-4 flex justify-end items-center space-x-2 mdx:mx-0 mdx:my-6"
+>
+  <label class="w-12 flex items-center bg-gray-100 rounded-xl">
+    <input class="appearance-none peer" type="checkbox" id="togglebox" />
+
+    <div class="absolute inset-0 z-[1] flex justify-between">
+      <ISun className="scale-[0.8]" strokeColor="#333" />
+      <IMoon className="scale-[0.8]" strokeColor="#333" />
+    </div>
+
+    <span
+      class="relative z-[2] w-6 h-6 flex items-center rounded-2xl duration-300 ease-in-out cursor-pointer after:w-6 after:h-6 after:bg-teal after:rounded-2xl after:shadow-md after:duration-300 peer-checked:after:translate-x-6"
+    >
+    </span>
+  </label>
+</div>
+
+<script>
+  const checkbox = document.querySelector('#togglebox') as HTMLInputElement
+  const html = document.querySelector('html') as HTMLHtmlElement
+
+  if (localStorage.getItem('darkmode') === 'true') {
+    checkbox.checked = true
+    html.classList.add('dark')
+  }
+
+  if (localStorage.getItem('darkmode') === 'false') {
+    checkbox.checked = false
+    html.classList.remove('dark')
+  }
+
+  checkbox.addEventListener('click', (e) => {
+    e.stopImmediatePropagation()
+
+    localStorage.setItem('darkmode', `${checkbox.checked}`)
+
+    if (checkbox.checked) {
+      html.classList.add('dark')
+    } else {
+      html.classList.remove('dark')
+    }
+  })
+</script>

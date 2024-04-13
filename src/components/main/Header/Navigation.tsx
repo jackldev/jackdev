@@ -84,7 +84,7 @@ const Navigation = ({ navs }: NavProps) => {
           </li>
         ))}
 
-      <DarkMode />
+      {/* <DarkMode /> */}
     </ul>
   )
 }

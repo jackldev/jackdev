@@ -1,21 +1,22 @@
 ---
-import { ToastContainer } from "react-toastify";
+import { ToastContainer } from 'react-toastify'
 
-import Header from "main/Header/Header.astro";
-import Footer from "main/Footer.astro";
-import Seo from "shared/Seo.astro";
+import Header from 'main/Header/Header.astro'
+import Footer from 'main/Footer.astro'
+import Seo from 'shared/Seo.astro'
 
-import "react-toastify/dist/ReactToastify.css";
+import 'react-toastify/dist/ReactToastify.css'
 
 interface AstroProps {
-  title: string;
+  title: string
 }
 
-const { title } = Astro.props as AstroProps;
+const { title } = Astro.props as AstroProps
 ---
 
 <html lang="en">
   <Seo title={title} />
+
   <ToastContainer
     position="top-right"
     autoClose={5000}
@@ -27,7 +28,6 @@ const { title } = Astro.props as AstroProps;
     draggable
     pauseOnHover
     theme="light"
-    client:only
   />
 
   <body>

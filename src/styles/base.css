@@ -127,7 +127,7 @@
   .animation.visible {
     @apply opacity-100;
   }
-  
+
   /* NAVIGATION BACKGROUND */
   .navigation.active,
   .layout-navigation > .navigation {
@@ -145,8 +145,6 @@
   }
 
   .checklabel > .checkinput:checked + .checkspan:before {
-    @apply content absolute -top-1.5 left-2 text-2xl text-green font-bold;
+    @apply content absolute -top-1.5 left-2 text-2xl text-green-500 font-bold;
   }
 }
-
-@layer components{}
