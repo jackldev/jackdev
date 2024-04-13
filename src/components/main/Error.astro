@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content'
 
 import AnimationFadeIn from 'shared/AnimationFadeIn.astro'
-import { colors, positions, sizes, space } from 'shared/Button/index'
+import { colors, positions, sizes, space } from 'shared/Button/button'
 
 const error = await getCollection('error')
 const { slugs, title, subtitle, link, text } = error[0].data
@@ -30,3 +30,4 @@ const { slugs, title, subtitle, link, text } = error[0].data
     </div>
   </AnimationFadeIn>
 </section>
+shared/Button/button

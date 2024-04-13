@@ -119,5 +119,21 @@ module.exports = {
       colors: ['active']
     }
   },
-  plugins: [require('tailwind-scrollbar')]
+  plugins: [
+    require('tailwind-scrollbar'),
+    plugin(({ matchUtilities, theme }) => {
+      matchUtilities(
+        {
+          'animation-delay': (value) => {
+            return {
+              'animation-delay': value
+            }
+          }
+        },
+        {
+          values: theme('transitionDelay')
+        }
+      )
+    })
+  ]
 }

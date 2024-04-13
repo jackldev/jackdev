@@ -27,7 +27,8 @@ const { title } = Astro.props as AstroProp
     pauseOnFocusLoss
     draggable
     pauseOnHover
-    theme="light"
+    theme="dark"
+    client:load
   />
 
   <body>
@@ -38,6 +39,6 @@ const { title } = Astro.props as AstroProp
       </main>
       <Footer />
     </div>
-    <script></script>
+    <!-- <script></script> -->
   </body>
 </html>

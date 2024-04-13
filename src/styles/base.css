@@ -35,7 +35,7 @@
   }
 
   body {
-    @apply w-full h-full text-base text-bgwhite bg-black dark:text-black dark:bg-bgwhite;
+    @apply w-full h-full text-base text-light bg-dark dark:text-dark dark:bg-light;
   }
 
   h1,
@@ -44,7 +44,7 @@
   h4,
   h5,
   h6 {
-    @apply m-0 font-main uppercase leading-initial text-white dark:text-black;
+    @apply m-0 font-main uppercase leading-initial text-white dark:text-dark;
   }
 
   h1 {
@@ -60,15 +60,15 @@
   }
 
   a {
-    @apply w-fit no-underline cursor-pointer font-main font-normal text-white dark:text-black;
+    @apply w-fit no-underline cursor-pointer font-main font-normal text-white dark:text-dark;
   }
 
   p {
-    @apply m-0 font-main font-normal leading-[1.5] text-white dark:text-black;
+    @apply m-0 font-main font-normal leading-[1.5] text-white dark:text-dark;
   }
 
   span {
-    @apply text-black dark:text-white;
+    @apply text-dark dark:text-white;
   }
 
   ul,
@@ -131,7 +131,7 @@
   /* NAVIGATION BACKGROUND */
   .navigation.active,
   .layout-navigation > .navigation {
-    @apply bg-black dark:bg-bgwhite;
+    @apply bg-dark dark:bg-light;
   }
 
   /* TOP BUTTON */
