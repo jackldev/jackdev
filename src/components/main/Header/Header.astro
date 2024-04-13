@@ -2,9 +2,8 @@
 import { getCollection } from 'astro:content'
 
 import Logo from 'shared/Logo.astro'
-import Navigation from 'main/Header/Navigation'
-import Hamburger from 'main/Header/Hamburger'
-import Darkmode from 'shared/Darkmode/Darkmode.astro'
+import Navigation from 'main/Header/Navigation.astro'
+import Hamburger from 'main/Header/Hamburger.astro'
 
 const navs = await getCollection('nav', ({ data }) => {
   return data.slugs !== 'hero'
@@ -15,11 +14,12 @@ const navs = await getCollection('nav', ({ data }) => {
   class="fixed top-0 left-0 z-[10] w-full bg-transparent transition-all delay-150 ease-out navigation"
 >
   <div class="wrapper">
-    <nav class="w-full h-[5rem] flex items-center mdx:flex mdx:justify-between">
+    <nav
+      class="w-full h-[5rem] flex items-center max-[992px]:flex max-[992px]:justify-between"
+    >
       <Logo />
-      <Navigation client:load navs={navs} />
-      <Darkmode />
-      <Hamburger client:visible />
+      <Navigation navs={navs} />
+      <Hamburger />
     </nav>
   </div>
 </header>

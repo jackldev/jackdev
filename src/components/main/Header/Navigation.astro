@@ -1,0 +1,61 @@
+---
+import Darkmode from 'shared/Darkmode.astro'
+
+interface NavProps {
+  navs: {
+    data: {
+      id: number
+      slugs: string
+      title: string
+      link: string
+    }
+  }[]
+}
+
+const { navs } = Astro.props as NavProps
+---
+
+<ul
+  id="navigation"
+  class="relative list-none w-full ml-12 flex justify-end items-center max-[992px]:fixed max-[992px]:top-0 max-[992px]:left-0 max-[992px]:w-full max-[992px]:h-full max-[992px]:ml-0 max-[992px]:flex-col max-[992px]:justify-center max-[992px]:text-center max-[992px]:text-xl max-[992px]:bg-dark max-[992px]:dark:bg-light max-[992px]:opacity-0 max-[992px]:transition-all max-[992px]:delay-150 max-[992px]:ease-out max-[992px]:duration-300"
+>
+  {
+    navs
+      .sort((a, b) => a.data.id - b.data.id)
+      .map(({ data }) => (
+        <li class="mr-12 overflow-hidden max-[992px]:mr-0 max-[992px]:py-2.5">
+          <button class="font-main capitalize text-lg links text-light dark:text-dark max-[992px]:uppercase max-[992px]:focus:outline-none max-[992px]:text-[1.75rem]">
+            {data.title}
+          </button>
+        </li>
+      ))
+  }
+
+  <Darkmode />
+</ul>
+
+<script>
+  const hamburger = document.querySelector('#hamburger') as HTMLButtonElement
+  const navigation = document.querySelector('#navigation') as HTMLButtonElement
+  const icons = document.querySelectorAll('.icon') as NodeListOf<Element>
+
+  hamburger.addEventListener('click', () => {
+    icons.forEach((icon) => {
+      if (icon.classList.contains('hidden')) {
+        navigation.classList.replace(
+          'max-[992px]:opacity-0',
+          'max-[992px]:opacity-100'
+        )
+
+        icon.classList.remove('hidden')
+      } else {
+        navigation.classList.replace(
+          'max-[992px]:opacity-100',
+          'max-[992px]:opacity-0'
+        )
+
+        icon.classList.add('hidden')
+      }
+    })
+  })
+</script>

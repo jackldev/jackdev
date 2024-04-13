@@ -1,0 +1,14 @@
+---
+import { base } from '.'
+
+interface AnchorProp {
+  className: string
+  href: string
+}
+
+const { className, href } = Astro.props as AnchorProp
+---
+
+<a class={`${base} ${className}`} href={href} rel="prefetch">
+  <slot />
+</a>

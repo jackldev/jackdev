@@ -6,32 +6,32 @@ module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
-    screens: {
-      '4xl': '3840px', // 4k: 3840x2160
-      '3xl': '2560px', // wide: 2560x1440
-      '2xl': '1830px', // full: 1830x992
-      xl: '1300px', // laptop: 1300x720
-      lg: '1200px', // land L: 1200x568
-      md: '992px', // desktop: 992x512
-      sm: '900px', // land M: 900x430
-      xs: '720px', // tablet: 720x415
-      '2xs': '600px', // land S: 600x360
-      '3xs': '385px', // smart: 385x720
-      '4xs': '320px', // phone: 320x600
-      wrapper: '1300px',
+    // screens: {
+    //   '4xl': '3840px', // 4k: 3840x2160
+    //   '3xl': '2560px', // wide: 2560x1440
+    //   '2xl': '1830px', // full: 1830x992
+    //   xl: '1300px', // laptop: 1300x720
+    //   lg: '1200px', // land L: 1200x568
+    //   md: '992px', // desktop: 992x512
+    //   sm: '900px', // land M: 900x430
+    //   xs: '720px', // tablet: 720x415
+    //   '2xs': '600px', // land S: 600x360
+    //   '3xs': '385px', // smart: 385x720
+    //   '4xs': '320px', // phone: 320x600
+    //   wrapper: '1300px',
 
-      '3xlx': { max: '2560px' },
-      '2xlx': { max: '1830px' },
-      xlx: { max: '1300px' },
-      lgx: { max: '1200px' },
-      mdx: { max: '992px' },
-      smx: { max: '900px' },
-      xsx: { max: '720px' },
-      '2xsx': { max: '600px' },
-      '3xsx': { max: '385px' },
-      '4xsx': { max: '320px' },
-      top: { max: '1440px' }
-    },
+    //   '3xlx': { max: '2560px' },
+    //   '2xlx': { max: '1830px' },
+    //   xlx: { max: '1300px' },
+    //   lgx: { max: '1200px' },
+    //   mdx: { max: '992px' },
+    //   smx: { max: '900px' },
+    //   xsx: { max: '720px' },
+    //   '2xsx': { max: '600px' },
+    //   '3xsx': { max: '385px' },
+    //   '4xsx': { max: '320px' },
+    //   top: { max: '1440px' }
+    // },
     colors: {
       transparent: 'transparent',
       inherit: 'inherit',
@@ -100,7 +100,7 @@ module.exports = {
       },
       keyframes: {
         fadein: {
-          from: { opacity: 0.2, transform: 'translateX(5px)' },
+          from: { opacity: 0.2, transform: 'translateX(-5px)' },
           to: { opacity: 1, transform: 'translateX(0px)' }
         },
         fadeout: {
