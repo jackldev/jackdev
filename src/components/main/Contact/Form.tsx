@@ -4,10 +4,15 @@ import isEmail from 'validator/lib/isEmail'
 
 import type { ContactProp } from 'types/types'
 
-import Input from 'shared/Forms/Input'
-import Textarea from 'shared/Forms/Textarea'
-import Checkbox from 'shared/Forms/Checkbox'
-import { colors, sizes, positions, space } from 'shared/Button/button'
+import Input from 'components/shared/Forms/Input'
+import Textarea from 'components/shared/Forms/Textarea'
+import Checkbox from 'components/shared/Forms/Checkbox'
+import {
+  colors,
+  sizes,
+  positions,
+  space
+} from 'components/shared/Button/button'
 
 const formUrl = `${import.meta.env.PUBLIC_FORM_URL}`
 

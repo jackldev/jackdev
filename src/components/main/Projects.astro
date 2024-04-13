@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content'
 
-import AnimationFadeIn from 'shared/AnimationFadeIn.astro'
-import Image from 'shared/Image.astro'
-import IView from 'shared/Icons/IView.astro'
+import AnimationFadeIn from 'components/shared/AnimationFadeIn.astro'
+import Image from 'components/shared/Image.astro'
+import IView from 'components/shared/Icons/IView.astro'
 
 const project = await getCollection('project')
 const { slugs, title, subtitle } = project[0].data
@@ -11,8 +11,8 @@ const { slugs, title, subtitle } = project[0].data
 const projects = await getCollection('projects')
 ---
 
-<section class="pt-20 pb-28 section smx:pb-20" id={slugs}>
-  <div class="wrapper">
+<section id={slugs}>
+  <div class="wrapper targets">
     <AnimationFadeIn>
       <div class="mb-16 text-center">
         <h2 class="mb-2">{title}</h2>

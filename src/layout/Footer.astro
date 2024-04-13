@@ -1,15 +1,15 @@
 ---
 import { getCollection } from 'astro:content'
 
-import ILogo from 'shared/Icons/ILogo.astro'
-import Socials from 'shared/Socials.astro'
-import Top from 'shared/Top.astro'
+import ILogo from 'components/shared/Icons/ILogo.astro'
+import Socials from 'components/shared/Socials.astro'
+import Top from 'components/shared/Top.astro'
 
 const footer = await getCollection('footer')
 const { slugs, description, copy, link } = footer[0].data
 ---
 
-<section class="pt-20 pb-8 bg-black dark:bg-bgwhite" id={slugs}>
+<footer class="pt-20 pb-8 bg-black dark:bg-bgwhite" id={slugs}>
   <div class="wrapper">
     <div class="pb-20">
       <div class="flex flex-col justify-center items-center text-center gap-12">
@@ -43,4 +43,4 @@ const { slugs, description, copy, link } = footer[0].data
 
     <Top />
   </div>
-</section>
+</footer>

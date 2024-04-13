@@ -1,6 +1,6 @@
 ---
-  id: 3
+  id: 2
   slugs: "contact"
   title: "Contact"
-  link: "#contact"
+  link: "contact"
 ---

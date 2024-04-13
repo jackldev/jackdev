@@ -1,6 +1,6 @@
 ---
-  id: 1
+  id: 0
   slugs: "projects"
   title: "Projects"
-  link: "#projects"
+  link: "projects"
 ---

@@ -1,5 +1,5 @@
 ---
-import Darkmode from 'shared/Darkmode.astro'
+import Darkmode from 'components/shared/Darkmode.astro'
 
 interface NavProps {
   navs: {
@@ -24,9 +24,12 @@ const { navs } = Astro.props as NavProps
       .sort((a, b) => a.data.id - b.data.id)
       .map(({ data }) => (
         <li class="mr-12 overflow-hidden max-[992px]:mr-0 max-[992px]:py-2.5">
-          <button class="font-main capitalize text-lg links text-light dark:text-dark max-[992px]:uppercase max-[992px]:focus:outline-none max-[992px]:text-[1.75rem]">
+          <a
+            class="font-main capitalize text-lg links text-light dark:text-dark max-[992px]:uppercase max-[992px]:focus:outline-none max-[992px]:text-[1.75rem]"
+            href={data.link}
+          >
             {data.title}
-          </button>
+          </a>
         </li>
       ))
   }

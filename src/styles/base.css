@@ -129,8 +129,7 @@
   }
 
   /* NAVIGATION BACKGROUND */
-  .navigation.active,
-  .layout-navigation > .navigation {
+  #header.active {
     @apply bg-dark dark:bg-light;
   }
 

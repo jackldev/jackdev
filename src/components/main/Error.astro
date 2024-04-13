@@ -1,22 +1,27 @@
 ---
 import { getCollection } from 'astro:content'
 
-import AnimationFadeIn from 'shared/AnimationFadeIn.astro'
-import { colors, positions, sizes, space } from 'shared/Button/button'
+import AnimationFadeIn from 'components/shared/AnimationFadeIn.astro'
+import {
+  colors,
+  positions,
+  sizes,
+  space
+} from 'components/shared/Button/button'
 
 const error = await getCollection('error')
 const { slugs, title, subtitle, link, text } = error[0].data
 ---
 
 <section
-  class="w-full h-screen flex items-center justify-center targets mdx:h-fit mdx:py-20"
+  class="w-full h-screen flex items-center justify-center targets"
   id={slugs}
 >
   <AnimationFadeIn>
     <div class="wrapper">
       <div class="flex flex-col justify-center text-center">
-        <h1 class="text-error dark:text-black">{title}</h1>
-        <p class="max-w-[27rem] mx-auto text-3xl dark:text-black 4xsx:">
+        <h1 class="text-error dark:text-dark">{title}</h1>
+        <p class="max-w-[27rem] mx-auto text-3xl dark:text-dark">
           {subtitle}
         </p>
 

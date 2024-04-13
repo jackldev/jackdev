@@ -1,15 +1,15 @@
 ---
 import { getCollection } from 'astro:content'
 
-import AnimationFadeIn from 'shared/AnimationFadeIn.astro'
-import Image from 'shared/Image.astro'
-import IDown from 'shared/Down.astro'
+import AnimationFadeIn from 'components/shared/AnimationFadeIn.astro'
+import Image from 'components/shared/Image.astro'
+import IDown from 'components/shared/Down.astro'
 
 const hero = await getCollection('hero')
 const { slugs, title, subtitle, image } = hero[0].data
 ---
 
-<section class="grid [&>*]:grid-stack targets section" id={slugs}>
+<section class="grid [&>*]:grid-stack targets" id={slugs}>
   <AnimationFadeIn>
     <Image
       class="w-full h-screen object-cover dark:filter dark:grayscale dark:invert"
@@ -23,7 +23,7 @@ const { slugs, title, subtitle, image } = hero[0].data
 
   <AnimationFadeIn>
     <div
-      class="relative z-[1] w-full h-screen bg-gradient-to-b from-transparent to-black dark:to-bgwhite"
+      class="relative z-[1] w-full h-screen bg-gradient-to-b from-transparent to-dark dark:to-light"
     >
     </div>
   </AnimationFadeIn>
@@ -31,12 +31,10 @@ const { slugs, title, subtitle, image } = hero[0].data
   <AnimationFadeIn>
     <div class="relative z-[1] wrapper h-full flexcenter text-center">
       <div class="max-w-[70rem] h-fit">
-        <p
-          class="text-3xl text-white/80 dark:text-black/80 3xsx:text-[2.25rem]"
-        >
+        <p class="text-[2.25rem] text-light/80 dark:text-light/80 sm:text-3xl">
           {subtitle}
         </p>
-        <h1 class="mb-4 text-white/90 font-normal dark:text-black/90">
+        <h1 class="mb-4 text-light/90 font-normal dark:text-light/90">
           {title}
         </h1>
 

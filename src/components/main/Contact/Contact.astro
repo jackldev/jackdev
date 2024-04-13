@@ -1,14 +1,14 @@
 ---
 import { getCollection } from 'astro:content'
 
-import Form from 'main/Contact/Form'
-import AnimationFadeIn from 'shared/AnimationFadeIn.astro'
+import Form from 'components/main/Contact/Form'
+import AnimationFadeIn from 'components/shared/AnimationFadeIn.astro'
 
 const contact = await getCollection('contact')
 const { slugs, title, subtitle } = contact[0].data
 ---
 
-<section class="py-20 section sm:pt-28" id={slugs}>
+<section id={slugs}>
   <AnimationFadeIn>
     <div class="wrapper">
       <h2 class="mb-6">{title}</h2>

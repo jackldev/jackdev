@@ -6,10 +6,8 @@
     "jsxImportSource": "react",
     "baseUrl": ".",
     "paths": {
-      "main/*": ["src/components/main/*"],
-      "shared/*": ["src/components/shared/*"],
-      "store/*": ["src/store/*"],
-      "layouts/*": ["src/layouts/*"],
+      "components/*": ["src/components/*"],
+      "layout/*": ["src/layout/*"],
       "public/*": ["src/public/*"],
       "styles/*": ["src/styles/*"],
       "types/*": ["src/types/*"]
