@@ -1,10 +1,10 @@
 ---
-interface AstroProps {
+interface AstroProp {
   strokeColor: string
   className?: string
 }
 
-const { strokeColor = 'currentColor', className } = Astro.props as AstroProps
+const { strokeColor = 'currentColor', className } = Astro.props as AstroProp
 ---
 
 <svg

@@ -1,7 +1,7 @@
 ---
 import { Image as Images } from 'astro:assets'
 
-interface AstroProps {
+interface AstroProp {
   class: string
   src: string
   alt: string
@@ -17,7 +17,7 @@ const {
   width,
   height,
   loading
-} = Astro.props as AstroProps
+} = Astro.props as AstroProp
 ---
 
 <Images

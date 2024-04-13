@@ -3,12 +3,12 @@ import { getCollection } from 'astro:content'
 
 import Image from 'shared/Image.astro'
 
-interface AstroProps {
+interface AstroProp {
   show: boolean
   direction: string
 }
 
-const { show, direction } = Astro.props as AstroProps
+const { show, direction } = Astro.props as AstroProp
 const socials = await getCollection('socials')
 ---
 

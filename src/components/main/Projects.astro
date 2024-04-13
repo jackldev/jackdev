@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content'
 
 import AnimationFadeIn from 'shared/AnimationFadeIn.astro'
 import Image from 'shared/Image.astro'
-import IView from 'shared/Icons/IView'
+import IView from 'shared/Icons/IView.astro'
 
 const project = await getCollection('project')
 const { slugs, title, subtitle } = project[0].data

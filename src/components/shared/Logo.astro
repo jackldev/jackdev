@@ -1,23 +1,23 @@
 ---
-import ILogo from "shared/Icons/ILogo";
+import ILogo from 'shared/Icons/ILogo.astro'
 
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content'
 
-const seo = await getCollection("seo");
+const seo = await getCollection('seo')
 ---
 
-<div class="relative z-[1] w-[4rem] h-[4rem] logo">
+<div class="relative z-[1] w-[3rem] h-[3rem] logo">
   <button class="flex items-center dark:invert" title={seo[0].data.metaTitle}>
-    <ILogo client:load />
+    <ILogo strokeColor="#fff" />
   </button>
 </div>
 
 <script>
-  const logo = document.querySelector(".logo");
+  const logo = document.querySelector('.logo')
 
-  logo!.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  logo!.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
 
-    if (window.location.pathname !== "/") return window.location.replace("/");
-  });
+    if (window.location.pathname !== '/') return window.location.replace('/')
+  })
 </script>
