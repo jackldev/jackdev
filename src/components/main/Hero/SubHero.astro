@@ -1,0 +1,7 @@
+---
+import { getCollection } from 'astro:content'
+
+const project = await getCollection('project')
+---
+
+<div id={project[0].data.slugs} class="text-light">projects</div>

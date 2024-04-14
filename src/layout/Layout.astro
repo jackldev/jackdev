@@ -31,7 +31,9 @@ const { title } = Astro.props as AstroProp
     client:load
   />
 
-  <body>
+  <body
+    class="bg-[url('/images/bg-gradient.webp')] dark:bg-[url('/images/bg-dark-gradient.webp')] bg-no-repeat bg-cover"
+  >
     <div class="flex flex-col gap-16">
       <Header />
       <main class="min-h-screen">

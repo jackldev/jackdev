@@ -13,7 +13,7 @@ const { slugs, title, description, image } = bio[0].data
 <section class="grid [&>*]:grid-stack" id={slugs}>
   <AnimationFadeIn>
     <Image
-      class="w-full aspect-[18/4] object-fill dark:filter dark:grayscale dark:invert smx:aspect-auto 3xsx:aspect-[4/8] 3xsx:object-cover"
+      class="w-full aspect-auto object-cover dark:invert sm:object-fill sm:aspect-[4/8] xl:aspect-[18/4]"
       src={image.src}
       alt={image.alt}
       width={image.width}
@@ -24,10 +24,10 @@ const { slugs, title, description, image } = bio[0].data
 
   <AnimationFadeIn>
     <div class="relative z-[1] wrapper">
-      <div class="grid-2 gap-40 smx:grid-1 smx:gap-20">
+      <div class="grid grid-cols-2 gap-20 sm:grid-cols-2 sm:gap-40">
         <div>
           <h2>{title}</h2>
-          <p class="w-4/5 mt-6 mb-12 text-lg leading-[1.75] 3xsx:w-full">
+          <p class="w-full mt-6 mb-12 text-lg leading-[1.75] sm:w-4/5">
             {description}
           </p>
 

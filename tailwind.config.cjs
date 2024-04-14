@@ -37,11 +37,12 @@ module.exports = {
       inherit: 'inherit',
 
       slate: colors.slate,
+      stone: colors.stone,
       gray: colors.neutral,
       red: colors.red,
       green: colors.green,
       dark: '#111111',
-      light: '#FFFFFF',
+      light: '#e6edef',
       teal: '#1D93B1',
 
       white: '#e6edef',

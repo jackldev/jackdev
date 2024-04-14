@@ -15,7 +15,7 @@ const socials = await getCollection('socials')
 <div
   class={`
   ${show ? `invert-0` : `invert dark:invert-0`}
-  ${direction} w-fit flexbetween gap-4 transition-all delay-150 ease-out`}
+  ${direction} w-fit flex justify-between items-center gap-4 transition-all delay-150 ease-out`}
 >
   {
     socials.map(({ data }) => (

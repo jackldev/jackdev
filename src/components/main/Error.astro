@@ -13,10 +13,7 @@ const error = await getCollection('error')
 const { slugs, title, subtitle, link, text } = error[0].data
 ---
 
-<section
-  class="w-full h-screen flex items-center justify-center targets"
-  id={slugs}
->
+<section class="w-full h-screen flex items-center justify-center" id={slugs}>
   <AnimationFadeIn>
     <div class="wrapper">
       <div class="flex flex-col justify-center text-center">
@@ -35,4 +32,3 @@ const { slugs, title, subtitle, link, text } = error[0].data
     </div>
   </AnimationFadeIn>
 </section>
-shared/Button/button

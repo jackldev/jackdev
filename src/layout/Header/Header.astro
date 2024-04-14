@@ -12,7 +12,7 @@ const navs = await getCollection('nav', ({ data }) => {
 
 <header
   id="header"
-  class="sticky top-0 left-0 z-[10] w-full bg-transparent transition-all delay-300 ease-out"
+  class="sticky top-0 left-0 z-[10] w-full bg-transparent transition-all delay-150 ease-out duration-500"
 >
   <div class="wrapper">
     <nav
@@ -26,19 +26,24 @@ const navs = await getCollection('nav', ({ data }) => {
 </header>
 
 <script>
-  const nav = document.querySelector('#header')
-  const targets = document.querySelectorAll('.targets')
+  let scrollPos: number
 
-  const observer = new IntersectionObserver(
-    (entries) => nav.classList.toggle('active', !entries[0].isIntersecting),
-    {
-      rootMargin: '0px',
-      threshold: [1]
+  window.addEventListener('scroll', (e) => {
+    e.stopImmediatePropagation()
+
+    const nav = document.querySelector('#header') as HTMLButtonElement
+
+    let scrollTop = window.scrollY || document.documentElement.scrollTop
+
+    if (scrollTop === 0) {
+      nav.classList.remove('active')
+      scrollPos = 0
     }
-  )
 
-  if (targets !== null)
-    targets.forEach((index) => {
-      if (index) observer.observe(index)
-    })
+    if (scrollTop > scrollPos) {
+      nav.classList.add('active')
+    }
+
+    scrollPos = scrollTop
+  })
 </script>

@@ -31,11 +31,11 @@
   }
 
   html {
-    @apply w-full h-screen text-root;
+    @apply text-root;
   }
 
   body {
-    @apply w-full h-full text-base text-light bg-dark dark:text-dark dark:bg-light;
+    @apply text-base bg-dark dark:bg-light;
   }
 
   h1,
@@ -44,7 +44,7 @@
   h4,
   h5,
   h6 {
-    @apply m-0 font-main uppercase leading-initial text-white dark:text-dark;
+    @apply m-0 font-main uppercase leading-initial;
   }
 
   h1 {
@@ -60,15 +60,11 @@
   }
 
   a {
-    @apply w-fit no-underline cursor-pointer font-main font-normal text-white dark:text-dark;
+    @apply w-fit no-underline cursor-pointer font-main font-normal;
   }
 
   p {
-    @apply m-0 font-main font-normal leading-[1.5] text-white dark:text-dark;
-  }
-
-  span {
-    @apply text-dark dark:text-white;
+    @apply m-0 font-main font-normal leading-[1.5];
   }
 
   ul,
@@ -79,18 +75,6 @@
 
   button {
     @apply border-0 p-0 cursor-pointer;
-  }
-
-  figure {
-    @apply m-0;
-  }
-
-  cite {
-    @apply not-italic;
-  }
-
-  fieldset {
-    @apply border-0 p-0 m-0;
   }
 }
 
@@ -107,22 +91,6 @@
     grid-area: auto;
   }
 
-  .grid-1 {
-    @apply grid grid-cols-1 auto-rows-auto;
-  }
-
-  .grid-2 {
-    @apply grid grid-cols-2 auto-rows-auto;
-  }
-
-  .flexcenter {
-    @apply flex justify-center items-center;
-  }
-
-  .flexbetween {
-    @apply flex justify-between items-center;
-  }
-
   /* ANIMATION FADE */
   .animation.visible {
     @apply opacity-100;
@@ -130,7 +98,7 @@
 
   /* NAVIGATION BACKGROUND */
   #header.active {
-    @apply bg-dark dark:bg-light;
+    @apply bg-gradient-to-r from-dark/70 to-teal/20 dark:from-[#566977]/70 dark:to-slate-400/10 backdrop-blur-sm;
   }
 
   /* TOP BUTTON */
