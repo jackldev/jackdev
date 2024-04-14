@@ -17,15 +17,15 @@ const { navs } = Astro.props as NavProps
 
 <ul
   id="navigation"
-  class="relative list-none w-full ml-12 flex justify-end items-center max-[992px]:fixed max-[992px]:top-0 max-[992px]:left-0 max-[992px]:w-full max-[992px]:h-full max-[992px]:ml-0 max-[992px]:flex-col max-[992px]:justify-center max-[992px]:text-center max-[992px]:text-xl max-[992px]:bg-[url('/images/bg-gradient.webp')] max-[992px]:dark:bg-[url('/images/bg-dark-gradient.webp')] max-[992px]:bg-no-repeat max-[992px]:bg-cover max-[992px]:opacity-0 max-[992px]:transition-all max-[992px]:delay-150 max-[992px]:ease-out max-[992px]:duration-300"
+  class="relative list-none w-full flex gap-x-8 justify-end items-center max-[992px]:fixed max-[992px]:top-0 max-[992px]:left-0 max-[992px]:w-full max-[992px]:h-full max-[992px]:gap-y-4 max-[992px]:flex-col max-[992px]:justify-center max-[992px]:text-center max-[992px]:bg-[url('/images/bg-gradient.webp')] max-[992px]:dark:bg-[url('/images/bg-dark-gradient.webp')] max-[992px]:bg-no-repeat max-[992px]:bg-cover max-[992px]:opacity-0 max-[992px]:transition-all max-[992px]:delay-150 max-[992px]:ease-out max-[992px]:duration-300"
 >
   {
     navs
       .sort((a, b) => a.data.id - b.data.id)
       .map(({ data }) => (
-        <li class="mr-12 overflow-hidden max-[992px]:mr-0 max-[992px]:py-2.5">
+        <li class="overflow-hidden">
           <a
-            class="font-main capitalize text-lg links text-light max-[992px]:dark:text-dark max-[992px]:uppercase max-[992px]:focus:outline-none max-[992px]:text-[1.75rem]"
+            class="font-main uppercase text-sm links text-light max-[992px]:dark:text-dark max-[992px]:focus:outline-none max-[992px]:text-lg"
             href={data.link}
           >
             {data.title}

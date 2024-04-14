@@ -1,22 +1,22 @@
-export const base = 'font-main'
+export const base = 'font-main rounded-sm uppercase'
 
 export const colors = {
-  base: 'bg-transparent text-black',
-  primary: 'bg-teal text-white dark:text-white',
-  secondary: 'bg-black text-white dark:bg-white dark:text-black'
+  base: 'bg-transparent text-dark',
+  primary: 'bg-teal text-light dark:text-light',
+  secondary: 'bg-dark text-light dark:bg-light dark:text-dark'
 }
 
 export const sizes = {
-  small: 'uppercase text-xs',
-  base: 'uppercase text-base',
-  large: 'uppercase text-lg'
+  small: 'text-sm',
+  base: 'text-base',
+  large: 'text-lg'
 }
 
 export const positions = {
   base: 'w-fit',
-  center: 'block w-fit rounded-sm mx-auto ',
-  right: 'block w-fit rounded-sm ml-auto',
-  left: 'block w-fit rounded-sm mr-auto'
+  center: 'block w-fit mx-auto ',
+  right: 'block w-fit ml-auto',
+  left: 'block w-fit mr-auto'
 }
 
 export const space = {

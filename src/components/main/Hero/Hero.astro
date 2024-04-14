@@ -5,13 +5,14 @@ import MainHero from 'components/main/Hero/MainHero.astro'
 import SubHero from 'components/main/Hero/SubHero.astro'
 
 const hero = await getCollection('hero')
-const project = await getCollection('project')
 ---
 
 <section
-  class="-mt-[9rem] min-h-[100dvh] flex flex-col gap-20 items-center justify-center"
   id={hero[0].data.slugs}
+  class="-mt-[9rem] min-h-[100dvh] flex flex-col gap-24 justify-end"
 >
+  <div class="h-[10rem]"></div>
+
   <MainHero title={hero[0].data.title} subtitle={hero[0].data.subtitle} />
 
   <SubHero />

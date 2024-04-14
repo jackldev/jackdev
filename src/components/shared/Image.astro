@@ -20,13 +20,15 @@ const {
 } = Astro.props as AstroProp
 ---
 
-<Images
-  class={className}
-  src={src}
-  alt={alt}
-  width={width}
-  height={height}
-  format="webp"
-  quality={80}
-  loading={loading}
-/>
+<div class="animate-fade">
+  <Images
+    class={className}
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    format="webp"
+    quality={80}
+    loading={loading}
+  />
+</div>

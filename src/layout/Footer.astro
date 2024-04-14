@@ -17,7 +17,7 @@ const { slugs, description, copy, link } = footer[0].data
           <ILogo strokeColor="#fff" />
         </div>
         <p
-          class="max-w-[45rem] mx-auto text-base leading-[1.75] text-light dark:text-dark"
+          class="max-w-md mx-auto text-sm leading-relaxed text-light dark:text-dark"
         >
           {description}
         </p>
@@ -26,21 +26,20 @@ const { slugs, description, copy, link } = footer[0].data
       </div>
     </div>
 
-    <div
-      class="relative z-[2] w-fit mx-auto flex items-center gap-1 text-sm target"
-    >
-      <p class="font-main text-light dark:text-dark">
+    <div class="relative z-[2] w-fit flex gap-1 text-xs font-normal target">
+      <p class="font-main text-light/70 dark:text-dark">
         <span class="font-main">{copy}</span>
         {`© ${new Date().getFullYear()}.  Made by`}
       </p>
+
       <a
-        class="text-sm text-light dark:text-dark hover:text-red-500 transition delay-150 ease-out`"
+        class="text-xs text-red-400 dark:text-dark hover:text-red-500 transition delay-150 ease-out`"
         href={link}
         rel="noreferrer"
         target="_blank"
       >
-        JAck</a
-      >
+        OP
+      </a>
     </div>
 
     <Top />

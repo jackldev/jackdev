@@ -6,18 +6,16 @@ import Image from 'components/shared/Image.astro'
 import IView from 'components/shared/Icons/IView.astro'
 
 const project = await getCollection('project')
-const { slugs, title, subtitle } = project[0].data
-
 const projects = await getCollection('projects')
 ---
 
-<section id={slugs}>
+<section id={project[0].data.slugs}>
   <div class="wrapper">
     <AnimationFadeIn>
       <div class="mb-16 text-center">
-        <h2 class="mb-2">{title}</h2>
+        <h2 class="mb-2">{project[0].data.title}</h2>
         <p class="max-w-[30rem] mx-auto text-2xl xsx:text-[1.9rem]">
-          {subtitle}
+          {project[0].data.subtitle}
         </p>
       </div>
     </AnimationFadeIn>

@@ -13,14 +13,12 @@ const socials = await getCollection('socials')
 ---
 
 <div
-  class={`
-  ${show ? `invert-0` : `invert dark:invert-0`}
-  ${direction} w-fit flex justify-between items-center gap-4 transition-all delay-150 ease-out`}
+  class={`${show ? `invert-0` : `invert dark:invert-0`} ${direction} w-fit flex justify-between items-center gap-3`}
 >
   {
     socials.map(({ data }) => (
       <a
-        class="w-[2.5rem] h-[2.5rem]"
+        class="w-6 h-6 opacity-70 hover:opacity-100 transition-all delay-150 ease-out"
         href={data.link}
         title={data.title}
         target="_blank"
