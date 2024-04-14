@@ -1,31 +1,24 @@
 ---
+import type { NavProp } from 'types/types'
+
 import Darkmode from 'components/shared/Darkmode.astro'
 
-interface NavProps {
-  navs: {
-    data: {
-      id: number
-      slugs: string
-      title: string
-      link: string
-    }
-  }[]
-}
+const pathname = Astro.url.pathname
 
-const { navs } = Astro.props as NavProps
+const { navs } = Astro.props as NavProp
 ---
 
 <ul
   id="navigation"
-  class="relative list-none w-full flex gap-x-8 justify-end items-center max-[992px]:fixed max-[992px]:top-0 max-[992px]:left-0 max-[992px]:w-full max-[992px]:h-full max-[992px]:gap-y-4 max-[992px]:flex-col max-[992px]:justify-center max-[992px]:text-center max-[992px]:bg-[url('/images/bg-gradient.webp')] max-[992px]:dark:bg-[url('/images/bg-dark-gradient.webp')] max-[992px]:bg-no-repeat max-[992px]:bg-cover max-[992px]:opacity-0 max-[992px]:transition-all max-[992px]:delay-150 max-[992px]:ease-out max-[992px]:duration-300"
+  class="relative list-none w-full flex gap-x-8 justify-end items-center max-[992px]:fixed max-[992px]:top-0 max-[992px]:left-0 max-[992px]:w-full max-[992px]:h-full max-[992px]:gap-y-4 max-[992px]:flex-col max-[992px]:justify-center max-[992px]:text-center max-[992px]:bg-[url('/images/bg-gradient.webp')] max-[992px]:dark:bg-[url('/images/bg-dark-gradient.webp')] max-[992px]:bg-no-repeat max-[992px]:bg-cover max-[992px]:invisible max-[992px]:opacity-0 max-[992px]:transition-all max-[992px]:delay-150 max-[992px]:ease-out max-[992px]:duration-300"
 >
   {
     navs
       .sort((a, b) => a.data.id - b.data.id)
       .map(({ data }) => (
-        <li class="overflow-hidden">
+        <li>
           <a
-            class="font-main uppercase text-sm links text-light max-[992px]:dark:text-dark max-[992px]:focus:outline-none max-[992px]:text-lg"
+            class={`${pathname === data.link ? 'text-teal' : 'text-light dark:text-dark'} font-main uppercase text-sm links  max-[992px]:dark:text-dark max-[992px]:focus:outline-none max-[992px]:text-lg`}
             href={data.link}
           >
             {data.title}
@@ -50,11 +43,16 @@ const { navs } = Astro.props as NavProps
           'max-[992px]:opacity-100'
         )
 
+        navigation.classList.replace(
+          'max-[992px]:invisible',
+          'max-[992px]:visible'
+        )
+
         icon.classList.remove('hidden')
       } else {
         navigation.classList.replace(
-          'max-[992px]:opacity-100',
-          'max-[992px]:opacity-0'
+          'max-[992px]:visible',
+          'max-[992px]:invisible'
         )
 
         icon.classList.add('hidden')

@@ -12,8 +12,10 @@ import {
 import IView from 'components/shared/Icons/IView.astro'
 import Image from 'components/shared/Image.astro'
 
-const project = await getCollection('project')
-const projects = await getCollection('projects')
+const [project, projects] = await Promise.all([
+  getCollection('project'),
+  getCollection('projects')
+])
 ---
 
 <div class="wrapper">
@@ -32,7 +34,7 @@ const projects = await getCollection('projects')
                 {data.title}
               </h3>
 
-              <p class="text-lg uppercase text-light/60 dark:text-dark/60">
+              <p class="text-lg uppercase text-light/70 dark:text-dark/70">
                 {data.subtitle}
               </p>
             </div>
@@ -63,7 +65,7 @@ const projects = await getCollection('projects')
   </div>
 
   <Anchor
-    className={`mt-12 ${colors.primary} ${positions.center} ${sizes.base} ${space.small}`}
+    className={`mt-12 ${colors.primary} ${positions.center} ${sizes.small} ${space.small}`}
     href={project[0].data.link}
   >
     {project[0].data.text}

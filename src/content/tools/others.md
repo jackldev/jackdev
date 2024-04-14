@@ -1,12 +1,9 @@
 ---
-  id: 3
+  id: 4
   title: "Others"
   tools:
-    - Figma
     - Cloudinary
-    - MongoDB
-    - PostgreSQL
-    - MySQL
-    - Shopify
+    - Figma
     - Medusa
+    - Shopify
 ---

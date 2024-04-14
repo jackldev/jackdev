@@ -5,9 +5,7 @@ import Navigation from 'layout/Header/Navigation.astro'
 import Hamburger from 'layout/Header/Hamburger.astro'
 import Logo from 'components/shared/Logo.astro'
 
-const navs = await getCollection('nav', ({ data }) => {
-  return data.slugs !== 'hero'
-})
+const navs = await getCollection('nav')
 ---
 
 <header

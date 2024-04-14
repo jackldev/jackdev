@@ -1,3 +1,14 @@
+export interface NavProp {
+  navs: {
+    data: {
+      id: number
+      slugs: string
+      title: string
+      link: string
+    }
+  }[]
+}
+
 export interface FormProp {
   nameId: string
   titleId: string

@@ -5,10 +5,11 @@ import Image from 'components/shared/Image.astro'
 
 interface AstroProp {
   show: boolean
-  direction: string
+  direction: 'flex-row' | 'flex-col'
 }
 
 const { show, direction } = Astro.props as AstroProp
+
 const socials = await getCollection('socials')
 ---
 

@@ -20,7 +20,6 @@ module.exports = {
       teal: '#1D93B1'
     },
     fontFamily: {
-      inherit: 'inherit',
       main: ['Oswald', 'serif']
     },
     extend: {

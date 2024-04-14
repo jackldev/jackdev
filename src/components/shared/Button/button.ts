@@ -20,7 +20,7 @@ export const positions = {
 }
 
 export const space = {
-  small: 'py-1 px-4 sm:px-5',
-  base: 'py-2 px-6 sm:px-7',
+  small: 'py-2 px-4 sm:px-5',
+  base: 'py-3 px-6 sm:px-7',
   large: 'py-3 px-7 sm:px-8'
 }

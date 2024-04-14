@@ -2,48 +2,35 @@
 import { getCollection } from 'astro:content'
 import { SEO } from 'astro-seo'
 
-import 'styles/base.css'
-
 interface AstroProp {
   title: string
   description: string
 }
 
-const seo = await getCollection('seo')
-const {
-  metaTitle,
-  metaDescription,
-  metaSiteurl,
-  metaImage,
-  metaAlt,
-  metaAuthor,
-  metaType,
-  metaTwitter,
-  metaKeywords
-} = seo[0].data
-
 const { title, description } = Astro.props as AstroProp
+
+const seo = await getCollection('seo')
 ---
 
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <SEO
-    title={`${metaTitle} | ${title}`}
-    description={description}
+    title={`${seo[0].data.metaTitle} | ${title}`}
+    description={description || seo[0].data.metaDescription}
     openGraph={{
       basic: {
-        title: metaTitle,
-        type: metaType,
-        image: metaImage,
-        url: metaSiteurl
+        title: seo[0].data.metaTitle,
+        type: seo[0].data.metaType,
+        image: seo[0].data.metaImage,
+        url: seo[0].data.metaSiteurl
       },
-      article: { authors: [metaAuthor] },
-      image: { alt: metaAlt },
-      optional: { description: metaDescription }
+      article: { authors: [seo[0].data.metaAuthor] },
+      image: { alt: seo[0].data.metaAlt },
+      optional: { description: seo[0].data.metaDescription }
     }}
-    twitter={{ creator: metaTwitter }}
-    extend={{ meta: [{ name: 'keywords', content: metaKeywords }] }}
+    twitter={{ creator: seo[0].data.metaTwitter }}
+    extend={{ meta: [{ name: 'keywords', content: seo[0].data.metaKeywords }] }}
   />
   <link rel="icon" type="image/x-icon" href="/icons/favicon.ico" />
 </head>

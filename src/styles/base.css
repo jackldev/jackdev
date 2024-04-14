@@ -23,6 +23,13 @@
   src: url('/fonts/Oswald-Regular.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'Oswald';
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/Oswald-Light.woff2') format('woff2');
+}
+
 @layer base {
   *,
   *:before,
@@ -56,10 +63,6 @@
   dd {
     @apply list-none;
   }
-
-  button {
-    @apply border-0;
-  }
 }
 
 @layer utilities {
@@ -82,7 +85,7 @@
 
   /* NAVIGATION BACKGROUND */
   #header.active {
-    @apply bg-gradient-to-r from-dark/70 to-teal/20 dark:from-[#566977]/70 dark:to-slate-400/10 backdrop-blur-sm;
+    @apply bg-gradient-to-r from-dark/70 to-teal/20 dark:from-[#B9B9B9]/70 dark:to-slate-400/10 backdrop-blur-sm;
   }
 
   /* TOP BUTTON */
@@ -96,6 +99,6 @@
   }
 
   .checklabel > .checkinput:checked + .checkspan:before {
-    @apply content absolute -top-1.5 left-2 text-2xl text-green-500 font-bold;
+    @apply content absolute -top-1.5 left-[0.15rem] text-2xl text-green-500 font-bold;
   }
 }

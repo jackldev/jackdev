@@ -5,77 +5,71 @@ import AnimationFadeIn from 'components/shared/AnimationFadeIn.astro'
 import Image from 'components/shared/Image.astro'
 import IView from 'components/shared/Icons/IView.astro'
 
-const project = await getCollection('project')
-const projects = await getCollection('projects')
+const [project, projects] = await Promise.all([
+  getCollection('project'),
+  getCollection('projects')
+])
 ---
 
 <section id={project[0].data.slugs}>
   <div class="wrapper">
     <AnimationFadeIn>
-      <div class="mb-16 text-center">
-        <h2 class="mb-2">{project[0].data.title}</h2>
-        <p class="max-w-[30rem] mx-auto text-2xl xsx:text-[1.9rem]">
+      <div class="text-center text-light dark:text-dark">
+        <h2 class="text-6xl">{project[0].data.title}</h2>
+        <p class="mt-2 max-w-[11.5rem] mx-auto text-lg opacity-70">
           {project[0].data.subtitle}
         </p>
       </div>
     </AnimationFadeIn>
 
-    <div class="grid grid-cols-1 gap-40 sm:grid-cols-2 sm:gap-40">
+    <div class="mt-16 grid grid-cols-1 gap-16 sm:grid-cols-2 xl:gap-24">
       {
         projects
           .sort((a, b) => +b.data.date - +a.data.date)
           .map(({ data }) => (
             <AnimationFadeIn>
-              <div class="flex flex-col gap-6">
-                <a
-                  class="grid [&>*]:grid-stack shadow-md rounded-md"
-                  href={data.link}
-                  target="_blank"
-                  rel="prefetch"
-                >
-                  <Image
-                    class="w-full aspect-auto object-cover rounded-md opacity-80 hover:opacity-95 trasition-all delay-200 ease-in"
-                    src={data.image.src}
-                    alt={data.image.alt}
-                    width={data.image.width}
-                    height={data.image.height}
-                    loading="lazy"
-                  />
-                </a>
+              <div class="grid grid-cols-1 gap-4 lg:gap-2 lg:grid-cols-[6rem_auto]">
+                <div class="flex flex-row flex-wrap gap-2 lg:flex-col">
+                  {data.techs.map((tech) => (
+                    <p class="text-light dark:text-dark text-xs text-left font-normal uppercase tracking-wide lg:text-sm">
+                      {tech}
+                    </p>
+                  ))}
+                </div>
 
-                <div class="flex flex-col gap-10">
-                  <div class="flex justify-between items-end gap-24">
-                    <div>
-                      <h3 class="font-normal">{data.title}</h3>
-                      <p>{data.date}</p>
+                <div class="flex flex-col gap-4">
+                  <a
+                    class="grid [&>*]:grid-stack shadow-md rounded-md group"
+                    href={data.link}
+                    target="_blank"
+                    rel="prefetch"
+                  >
+                    <IView
+                      className="ml-auto relative top-5 right-5 z-[1] invisible transition-all delay-200 ease-in group-hover:visible"
+                      link={data.link}
+                    />
+
+                    <Image
+                      class="w-full aspect-auto object-cover rounded-md opacity-80 group-hover:opacity-100 transition-all delay-200 ease-in"
+                      src={data.image.src}
+                      alt={data.image.alt}
+                      width={data.image.width}
+                      height={data.image.height}
+                      loading="lazy"
+                    />
+                  </a>
+
+                  <div class="flex flex-col gap-3 text-light dark:text-dark">
+                    <div class="flex gap-12 justify-between items-center">
+                      <h3 class="text-base font-normal">{data.subtitle}</h3>
+                      <p class="text-sm opacity-90">{data.date}</p>
                     </div>
 
-                    <a
-                      class="w-[1.5rem] mb-2"
-                      href={data.link}
-                      target="_blank"
-                      rel="prefetch"
-                    >
-                      <IView link={data.link} />
-                    </a>
-                  </div>
-
-                  <div>
-                    <h3 class="mb-2 text-2xl font-normal">{data.subtitle}</h3>
-                    <p class="max-w-[90%] text-opacity-80 dark:text-opacity-70">
-                      {data.description}
-                    </p>
-                  </div>
-
-                  <div>
-                    <h3 class="mb-3 text-2xl font-normal">Tools</h3>
-
-                    <div class="flex flex-wrap items-center gap-4">
-                      {data.techs.map((tech) => (
-                        <button class="py-3 px-6 bg-white/60 dark:bg-black/60 bg-opacity-90 text-black/80 dark:text-white rounded-sm text-sm font-main font-semibold uppercase cursor-default smx:px-4 2xsx:text-xs">
-                          {tech}
-                        </button>
-                      ))}
+                    <div>
+                      <h3 class="text-xl">{data.title}</h3>
+                      <p class="mt-1 text-sm font-normal tracking-wide opacity-70">
+                        {data.description}
+                      </p>
                     </div>
                   </div>
                 </div>

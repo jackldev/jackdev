@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content'
 
 import AnimationFadeIn from 'components/shared/AnimationFadeIn.astro'
+import Anchor from 'components/shared/Button/Anchor.astro'
 import {
   colors,
   positions,
@@ -10,25 +11,25 @@ import {
 } from 'components/shared/Button/button'
 
 const error = await getCollection('error')
-const { slugs, title, subtitle, link, text } = error[0].data
 ---
 
-<section class="w-full h-screen flex items-center justify-center" id={slugs}>
-  <AnimationFadeIn>
-    <div class="wrapper">
-      <div class="flex flex-col justify-center text-center">
-        <h1 class="text-error dark:text-dark">{title}</h1>
-        <p class="max-w-[27rem] mx-auto text-3xl dark:text-dark">
-          {subtitle}
-        </p>
+<section class="sm:-my-12 h-[95dvh]" id={error[0].data.slugs}>
+  <div class="wrapper h-full flex text-center justify-center items-center">
+    <AnimationFadeIn className="text-light dark:text-dark">
+      <h1 class="max-w-sm text-9xl text-light dark:text-dark">
+        {error[0].data.title}
+      </h1>
 
-        <a
-          class={`mt-16 ${colors.primary} ${sizes.large} ${positions.center} ${space.base}`}
-          href={link}
-        >
-          {text}
-        </a>
-      </div>
-    </div>
-  </AnimationFadeIn>
+      <p class="mt-4 max-w-[27rem] mx-auto text-xl dark:text-dark">
+        {error[0].data.subtitle}
+      </p>
+
+      <Anchor
+        className={`mt-10 ${colors.primary} ${sizes.small} ${positions.center} ${space.small}`}
+        href={error[0].data.link}
+      >
+        {error[0].data.text}
+      </Anchor>
+    </AnimationFadeIn>
+  </div>
 </section>

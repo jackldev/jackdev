@@ -5,11 +5,15 @@ import ILogo from 'components/shared/Icons/ILogo.astro'
 import Socials from 'components/shared/Socials.astro'
 import Top from 'components/shared/Top.astro'
 
-const footer = await getCollection('footer')
-const { slugs, description, copy, link } = footer[0].data
+const [footer, navs] = await Promise.all([
+  getCollection('footer'),
+  getCollection('nav')
+])
+
+const pathname = Astro.url.pathname
 ---
 
-<footer class="pt-20 pb-8" id={slugs}>
+<footer class="pb-8" id={footer[0].data.slugs}>
   <div class="wrapper">
     <div class="pb-20">
       <div class="flex flex-col justify-center items-center text-center gap-12">
@@ -19,22 +23,39 @@ const { slugs, description, copy, link } = footer[0].data
         <p
           class="max-w-md mx-auto text-sm leading-relaxed text-light dark:text-dark"
         >
-          {description}
+          {footer[0].data.description}
         </p>
 
         <Socials direction="flex-row" show />
+
+        <ul class="flex gap-4">
+          {
+            navs
+              .sort((a, b) => a.data.id - b.data.id)
+              .map(({ data }) => (
+                <li>
+                  <a
+                    class={`${pathname === data.link ? 'text-teal' : 'text-light dark:text-dark'} font-main uppercase text-sm links  max-[992px]:dark:text-dark max-[992px]:focus:outline-none max-[992px]:text-lg`}
+                    href={data.link}
+                  >
+                    {data.title}
+                  </a>
+                </li>
+              ))
+          }
+        </ul>
       </div>
     </div>
 
     <div class="relative z-[2] w-fit flex gap-1 text-xs font-normal target">
       <p class="font-main text-light/70 dark:text-dark">
-        <span class="font-main">{copy}</span>
+        <span class="font-main">{footer[0].data.copy}</span>
         {`© ${new Date().getFullYear()}.  Made by`}
       </p>
 
       <a
-        class="text-xs text-red-400 dark:text-dark hover:text-red-500 transition delay-150 ease-out`"
-        href={link}
+        class="text-xs text-red-400 hover:text-red-500 transition delay-150 ease-out`"
+        href={footer[0].data.link}
         rel="noreferrer"
         target="_blank"
       >

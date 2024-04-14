@@ -8,12 +8,12 @@ const { title, subtitle } = Astro.props as { title: string; subtitle: string }
 <AnimationFadeIn className="w-full flex place-content-center">
   <div class="relative z-[1] wrapper h-full flex justify-center text-center">
     <div class="">
-      <p class="uppercase text-light/70 text-2xl">
+      <p class="uppercase text-light/70 dark:text-dark/70 text-2xl">
         {subtitle}
       </p>
 
       <h1
-        class="max-w-[50rem] mt-4 text-6xl leading-snug text-light/90 font-normal sm:mt-0 sm:text-7xl sm:leading-snug md:text-7xl md:leading-tight"
+        class="max-w-[50rem] mt-4 text-6xl leading-snug text-light/90 dark:text-dark/90 font-normal sm:mt-0 sm:text-7xl sm:leading-snug md:text-7xl md:leading-tight"
       >
         {title}
       </h1>

@@ -11,7 +11,8 @@ import {
   colors,
   sizes,
   positions,
-  space
+  space,
+  base
 } from 'components/shared/Button/button'
 
 const formUrl = `${import.meta.env.PUBLIC_FORM_URL}`
@@ -55,53 +56,51 @@ const Form = () => {
         onSubmit={onSubmit}
       >
         <div className="flex flex-col gap-6">
-          <div className="flex flex-col justify-between gap-y-6 gap-x-40 sm:flex-row">
-            <Input
-              nameId="name"
-              titleId="Name"
-              type="text"
-              register={register}
-              validationSchema={{
-                required: true,
-                minLength: 3,
-                maxLength: 20,
-                pattern: /^[A-Za-z]+$/i
-              }}
-              errors={errors}
-              errorText="Please enter a valid name."
-            />
-            <Input
-              nameId="email"
-              titleId="Email"
-              type="email"
-              register={register}
-              validationSchema={{
-                required: true,
-                validate: (input: string) => isEmail(input),
-                minLength: 6,
-                pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i
-              }}
-              errors={errors}
-              errorText="Please enter a valid email."
-            />
-          </div>
-
-          <Textarea
-            nameId="message"
-            titleId="Message"
+          <Input
+            nameId="name"
+            titleId="Name"
+            type="text"
             register={register}
             validationSchema={{
-              required: true
+              required: true,
+              minLength: 3,
+              maxLength: 20,
+              pattern: /^[A-Za-z]+$/i
             }}
             errors={errors}
-            errorText="Please enter a valid message."
+            errorText="Please enter a valid name."
           />
-
-          <Checkbox register={register} errors={errors} />
+          <Input
+            nameId="email"
+            titleId="Email"
+            type="email"
+            register={register}
+            validationSchema={{
+              required: true,
+              validate: (input: string) => isEmail(input),
+              minLength: 6,
+              pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i
+            }}
+            errors={errors}
+            errorText="Please enter a valid email."
+          />
         </div>
 
+        <Textarea
+          nameId="message"
+          titleId="Message"
+          register={register}
+          validationSchema={{
+            required: true
+          }}
+          errors={errors}
+          errorText="Please enter a valid message."
+        />
+
+        <Checkbox register={register} errors={errors} />
+
         <button
-          className={`mt-10 ${colors.primary} ${sizes.base} ${positions.left} ${space.base}`}
+          className={`mt-3 ${base} ${colors.primary} ${sizes.small} ${positions.left} ${space.small}`}
           type="submit"
           disabled={isSubmitting}
         >

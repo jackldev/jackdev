@@ -1,5 +1,7 @@
 import type { FormProp } from 'types/types'
 
+import { error, input, label } from 'components/shared/Forms/forms'
+
 const Textarea = ({
   nameId,
   titleId,
@@ -10,20 +12,18 @@ const Textarea = ({
 }: FormProp) => {
   return (
     <fieldset>
-      <label className="mb-2 text-xl font-main" htmlFor={nameId}>
+      <label className={label} htmlFor={nameId}>
         {titleId}
       </label>
 
       <textarea
         {...register(nameId, validationSchema)}
-        className="w-full h-[12rem] resize-y py-3 px-6 text-base font-main rounded border-b-[2px] border-solid border-teal bg-transparent text-light dark:text-dark placeholder:text-light placeholder:dark:text-dark placeholder:text-opacity-80 focus:outline-none"
+        className={`${input} h-[12rem] resize-y`}
         id={nameId}
         name={nameId}
         placeholder={titleId}
       />
-      {errors[nameId] && (
-        <p className="mt-3 font-main text-red-500">{errorText}</p>
-      )}
+      {errors[nameId] && <p className={error}>{errorText}</p>}
     </fieldset>
   )
 }
