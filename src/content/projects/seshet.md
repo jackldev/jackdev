@@ -4,7 +4,7 @@
   title: "Seshet"
   subtitle: "Jewelry Ecommerce"
   description: "Our online store, built with Sveltekit on Shopify, brings you a curated selection of exquisite pieces to elevate your look. Whether you're shopping for yourself or browsing for a gift."
-  techs: ["SVELTEKIT", "TAILWIIND CSS", "SHOPIFY", "CLOUDINARY", "MYSQL", "AIVEN", "VERCEL"]
+  techs: ["SVELTEKIT", "TAILWIND CSS", "SHOPIFY", "CLOUDINARY", "MYSQL", "AIVEN", "VERCEL"]
   image:
     src: "/images/seshet.webp"
     alt: "seshet jewelry ecommerce"

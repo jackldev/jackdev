@@ -4,7 +4,7 @@
   title: "Venus"
   subtitle: "Vase Ecommerce"
   description: "Enhance your home decor with Venus, a designed vase perfect for displaying your beloved flowers. It is made with Shopify, NextJS, and SvelteKit to ensure a smooth and enjoyable shopping experience."
-  techs: ["SVELTEKIT", "TAILWIIND CSS", "SHOPIFY", "CLOUDINARY", "MYSQL", "AIVEN", "NETLIFY"]
+  techs: ["SVELTEKIT", "TAILWIND CSS", "SHOPIFY", "CLOUDINARY", "MYSQL", "AIVEN", "NETLIFY"]
   image:
     src: "/images/venus.webp"
     alt: "venus ecommerce"

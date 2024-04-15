@@ -4,7 +4,7 @@
   title: "Rose"
   subtitle: "Floral Ecommerce"
   description: "Immerse yourself in the allure of Rose, an ecommerce store that combines the power of Nextjs and Medusa to create a seamless online shopping experience for flower enthusiasts."
-  techs: ["NEXT", "TAILWIIND CSS", "MEDUSA", "STRIPE", "POSTGRESQL", "NORTHFLANK", "VERCEL"]
+  techs: ["NEXT", "TAILWIND CSS", "MEDUSA", "STRIPE", "POSTGRESQL", "NORTHFLANK", "VERCEL"]
   image:
     src: "/images/rose.webp"
     alt: "rose ecommerce"
