@@ -15,14 +15,16 @@ const [project, projects] = await Promise.all([
   <div class="wrapper">
     <AnimationFadeIn>
       <div class="text-center text-light dark:text-dark">
-        <h2 class="text-6xl">{project[0].data.title}</h2>
-        <p class="mt-2 max-w-[11.5rem] mx-auto text-lg opacity-70">
+        <h2 class="text-8xl sm:text-9xl">{project[0].data.title}</h2>
+        <p
+          class="mt-2 max-w-[12.5rem] mx-auto opacity-70 text-lg font-light sm:text-xl"
+        >
           {project[0].data.subtitle}
         </p>
       </div>
     </AnimationFadeIn>
 
-    <div class="mt-16 grid grid-cols-1 gap-16 sm:grid-cols-2 xl:gap-24">
+    <div class="mt-20 grid grid-cols-1 gap-16 sm:grid-cols-2 xl:gap-24">
       {
         projects
           .sort((a, b) => +b.data.date - +a.data.date)

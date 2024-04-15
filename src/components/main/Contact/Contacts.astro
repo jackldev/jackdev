@@ -7,12 +7,16 @@ import AnimationFadeIn from 'components/shared/AnimationFadeIn.astro'
 const contact = await getCollection('contact')
 ---
 
-<section class="sm:-my-12 h-[95dvh]" id={contact[0].data.slugs}>
-  <div class="wrapper h-full flex justify-center items-center">
-    <AnimationFadeIn className="w-full mx-auto lg:w-3/5">
+<section id={contact[0].data.slugs}>
+  <div class="wrapper">
+    <AnimationFadeIn className="w-full mx-auto flex flex-col gap-20 lg:w-3/5">
       <div class="text-center text-light dark:text-dark">
-        <h2 class="text-6xl">{contact[0].data.title}</h2>
-        <p class="mt-2 mb-10 max-w-[16rem] mx-auto text-lg opacity-70">
+        <h2 class="text-8xl sm:text-9xl">
+          {contact[0].data.title}
+        </h2>
+        <p
+          class="mt-2 max-w-[16rem] mx-auto opacity-70 text-lg font-light sm:text-xl"
+        >
           {contact[0].data.subtitle}
         </p>
       </div>

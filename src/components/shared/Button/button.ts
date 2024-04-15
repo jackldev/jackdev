@@ -2,7 +2,8 @@ export const base = 'font-main rounded-sm uppercase'
 
 export const colors = {
   base: 'bg-transparent text-dark',
-  primary: 'bg-teal text-light dark:text-light',
+  primary:
+    'bg-teal text-light dark:text-light bg-opacity-50 transition delay-200 ease-out hover:bg-opacity-100',
   secondary: 'bg-dark text-light dark:bg-light dark:text-dark'
 }
 

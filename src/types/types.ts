@@ -23,6 +23,7 @@ export interface FormProp {
 export interface ContactProp {
   name: string
   email: string
+  subject?: string
   message: string
   checkbox: boolean
 }

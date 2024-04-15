@@ -18,7 +18,7 @@ const Textarea = ({
 
       <textarea
         {...register(nameId, validationSchema)}
-        className={`${input} h-[12rem] resize-y`}
+        className={`${input} ${errors[nameId] ? 'border-red-500' : 'border-initial'} h-[14.5rem] resize-y`}
         id={nameId}
         name={nameId}
         placeholder={titleId}

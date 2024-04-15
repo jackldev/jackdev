@@ -21,7 +21,7 @@ const pathname = Astro.url.pathname
           <ILogo strokeColor="#fff" />
         </div>
         <p
-          class="max-w-md mx-auto text-sm leading-relaxed text-light dark:text-dark"
+          class="max-w-md mx-auto font-light text-base leading-relaxed text-light/80 dark:text-dark/80"
         >
           {footer[0].data.description}
         </p>
@@ -35,7 +35,7 @@ const pathname = Astro.url.pathname
               .map(({ data }) => (
                 <li>
                   <a
-                    class={`${pathname === data.link ? 'text-teal' : 'text-light dark:text-dark'} font-main uppercase text-sm links  max-[992px]:dark:text-dark max-[992px]:focus:outline-none max-[992px]:text-lg`}
+                    class={`${pathname === data.link ? 'text-teal' : 'text-light dark:text-dark'} font-main font-normal uppercase text-sm max-[992px]:dark:text-dark`}
                     href={data.link}
                   >
                     {data.title}

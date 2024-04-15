@@ -19,7 +19,7 @@ const Input = ({
 
       <input
         {...register(nameId, validationSchema)}
-        className={`${input}`}
+        className={`${input} ${errors[nameId] ? 'border-red-500' : 'border-initial'}`}
         id={nameId}
         type={type}
         name={nameId}

@@ -30,9 +30,9 @@ const [project, projects] = await Promise.all([
         .map(({ data }) => (
           <AnimationFadeIn className="flex flex-col gap-3">
             <div class="flex flex-col items-center justify-between  sm:flex-row">
-              <h3 class="text-center text-lg text-light dark:text-dark">
+              <p class="uppercase text-center text-lg text-light dark:text-dark">
                 {data.title}
-              </h3>
+              </p>
 
               <p class="text-lg uppercase text-light/70 dark:text-dark/70">
                 {data.subtitle}
@@ -65,7 +65,7 @@ const [project, projects] = await Promise.all([
   </div>
 
   <Anchor
-    className={`mt-12 ${colors.primary} ${positions.center} ${sizes.small} ${space.small}`}
+    className={`mt-12 font-normal ${colors.primary} ${positions.center} ${sizes.small} ${space.small}`}
     href={project[0].data.link}
   >
     {project[0].data.text}

@@ -4,8 +4,13 @@ import ISun from 'components/shared/Icons/ISun.astro'
 ---
 
 <div class="relative my-6 flex justify-end items-center space-x-2 lg:my-0">
-  <label class="w-8 flex items-center bg-gray-100 rounded-xl">
-    <input class="appearance-none peer" type="checkbox" id="toggle_box" />
+  <label class="w-8 flex items-center bg-gray-100 rounded-xl" for="toggle_box">
+    <input
+      id="toggle_box"
+      class="appearance-none peer"
+      name="checkbox"
+      type="checkbox"
+    />
 
     <div class="absolute inset-0 z-[1] flex justify-between">
       <ISun className="scale-[0.8]" strokeColor="#333" />
