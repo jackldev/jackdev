@@ -3,7 +3,7 @@
   date: "2024"
   title: "Archiq"
   subtitle: "Architect Landing Page"
-  description: "A services architecture landing page is built on React to provide an effective and user-friendly design that delivers valuable assistance for businesses."
+  description: "A services architecture landing page is built on Sveltekit to provide an effective and user-friendly design that delivers valuable assistance for businesses."
   techs: ["SVELTEKIT", "TAILWIND CSS", "NETLIFY", "POSTGRESQL"]
   image:
     src: "/images/archiq.webp"
