@@ -85,7 +85,7 @@
 
   /* NAVIGATION BACKGROUND */
   #header.active {
-    @apply bg-gradient-to-r from-dark/70 to-teal/20 dark:from-[#B9B9B9]/70 dark:to-slate-400/10 backdrop-blur-sm;
+    @apply bg-gradient-to-r from-dark via-slate-800 to-dark dark:from-light dark:via-gray-300 dark:to-slate-100;
   }
 
   /* TOP BUTTON */

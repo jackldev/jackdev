@@ -9,6 +9,24 @@ export interface NavProp {
   }[]
 }
 
+export interface ProjectProp {
+  data: {
+    id: number
+    title: string
+    link: string
+    subtitle: string
+    date: Date
+    description: string
+    techs: string[]
+    image: {
+      src: string
+      alt: string
+      width: number
+      height: number
+    }
+  }
+}
+
 export interface FormProp {
   nameId: string
   titleId: string

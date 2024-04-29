@@ -4,11 +4,16 @@ import { getCollection } from 'astro:content'
 import AnimationFadeIn from 'components/shared/AnimationFadeIn.astro'
 import Image from 'components/shared/Image.astro'
 import IView from 'components/shared/Icons/IView.astro'
+import DateFormat from 'components/shared/DateFormat.astro'
+
+import { projectFormat } from 'lib/projectFormat'
 
 const [project, projects] = await Promise.all([
   getCollection('project'),
   getCollection('projects')
 ])
+
+const formattedProjects = projectFormat({ projects })
 ---
 
 <section id={project[0].data.slugs}>
@@ -26,58 +31,58 @@ const [project, projects] = await Promise.all([
 
     <div class="mt-20 grid grid-cols-1 gap-16 sm:grid-cols-2 xl:gap-24">
       {
-        projects
-          .sort((a, b) => +b.data.date - +a.data.date)
-          .map(({ data }) => (
-            <AnimationFadeIn>
-              <div class="grid grid-cols-1 gap-4 lg:gap-2 lg:grid-cols-[6rem_auto]">
-                <div class="flex flex-row flex-wrap gap-2 lg:flex-col">
-                  {data.techs.map((tech) => (
-                    <p class="text-light dark:text-dark text-xs text-left font-normal uppercase tracking-wide lg:text-sm">
-                      {tech}
+        formattedProjects?.map(({ data }) => (
+          <AnimationFadeIn>
+            <div class="grid grid-cols-1 gap-4 lg:gap-2 lg:grid-cols-[6rem_auto]">
+              <div class="flex flex-row flex-wrap gap-2 lg:flex-col">
+                {data.techs.map((tech) => (
+                  <p class="text-light dark:text-dark text-xs text-left font-normal uppercase tracking-wide lg:text-sm">
+                    {tech}
+                  </p>
+                ))}
+              </div>
+
+              <div class="flex flex-col gap-4">
+                <a
+                  class="grid [&>*]:grid-stack shadow-md rounded-md group"
+                  href={data.link}
+                  target="_blank"
+                  rel="prefetch"
+                >
+                  <IView
+                    className="ml-auto relative top-5 right-5 z-[1] invisible transition-all delay-200 ease-in group-hover:visible"
+                    link={data.link}
+                  />
+
+                  <Image
+                    class="w-full aspect-auto object-cover rounded-md opacity-80 group-hover:opacity-100 transition-all delay-200 ease-in"
+                    src={data.image.src}
+                    alt={data.image.alt}
+                    width={data.image.width}
+                    height={data.image.height}
+                    loading="lazy"
+                  />
+                </a>
+
+                <div class="flex flex-col gap-3 text-light dark:text-dark">
+                  <div class="flex gap-12 justify-between items-center">
+                    <h3 class="text-base font-normal">{data.subtitle}</h3>
+                    <p class="text-sm opacity-90">
+                      <DateFormat date={data.date} />
                     </p>
-                  ))}
-                </div>
+                  </div>
 
-                <div class="flex flex-col gap-4">
-                  <a
-                    class="grid [&>*]:grid-stack shadow-md rounded-md group"
-                    href={data.link}
-                    target="_blank"
-                    rel="prefetch"
-                  >
-                    <IView
-                      className="ml-auto relative top-5 right-5 z-[1] invisible transition-all delay-200 ease-in group-hover:visible"
-                      link={data.link}
-                    />
-
-                    <Image
-                      class="w-full aspect-auto object-cover rounded-md opacity-80 group-hover:opacity-100 transition-all delay-200 ease-in"
-                      src={data.image.src}
-                      alt={data.image.alt}
-                      width={data.image.width}
-                      height={data.image.height}
-                      loading="lazy"
-                    />
-                  </a>
-
-                  <div class="flex flex-col gap-3 text-light dark:text-dark">
-                    <div class="flex gap-12 justify-between items-center">
-                      <h3 class="text-base font-normal">{data.subtitle}</h3>
-                      <p class="text-sm opacity-90">{data.date}</p>
-                    </div>
-
-                    <div>
-                      <h3 class="text-xl">{data.title}</h3>
-                      <p class="mt-1 text-sm font-normal tracking-wide opacity-70">
-                        {data.description}
-                      </p>
-                    </div>
+                  <div>
+                    <h3 class="text-xl">{data.title}</h3>
+                    <p class="mt-1 text-sm font-normal tracking-wide opacity-70">
+                      {data.description}
+                    </p>
                   </div>
                 </div>
               </div>
-            </AnimationFadeIn>
-          ))
+            </div>
+          </AnimationFadeIn>
+        ))
       }
     </div>
   </div>

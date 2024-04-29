@@ -12,10 +12,14 @@ import {
 import IView from 'components/shared/Icons/IView.astro'
 import Image from 'components/shared/Image.astro'
 
+import { projectFormat } from 'lib/projectFormat'
+
 const [project, projects] = await Promise.all([
   getCollection('project'),
   getCollection('projects')
 ])
+
+const formattedProjects = projectFormat({ projects, limit: 3 })
 ---
 
 <div class="wrapper">
@@ -24,43 +28,40 @@ const [project, projects] = await Promise.all([
     class="mb-4 grid gap-12 grid-cols-1 lg:gap-24 xl:grid-cols-3 xl:[&>div:nth-child(2)]:mt-32"
   >
     {
-      projects
-        .slice(0, 3)
-        .sort((a, b) => +b.data.date - +a.data.date)
-        .map(({ data }) => (
-          <AnimationFadeIn className="flex flex-col gap-3">
-            <div class="flex flex-col items-center justify-between  sm:flex-row">
-              <p class="uppercase text-center text-lg text-light dark:text-dark">
-                {data.title}
-              </p>
+      formattedProjects?.map(({ data }) => (
+        <AnimationFadeIn className="flex flex-col gap-3">
+          <div class="flex flex-col items-center justify-between  sm:flex-row">
+            <p class="uppercase text-center text-lg text-light dark:text-dark">
+              {data.title}
+            </p>
 
-              <p class="text-lg uppercase text-light/70 dark:text-dark/70">
-                {data.subtitle}
-              </p>
-            </div>
+            <p class="text-lg uppercase text-light/70 dark:text-dark/70">
+              {data.subtitle}
+            </p>
+          </div>
 
-            <a
-              class="grid [&>*]:grid-stack shadow-md rounded-md group"
-              href={data.link}
-              target="_blank"
-              rel="prefetch"
-            >
-              <IView
-                className="ml-auto relative top-5 right-5 z-[1] invisible transition-all delay-200 ease-in group-hover:visible"
-                link={data.link}
-              />
+          <a
+            class="grid [&>*]:grid-stack shadow-md rounded-md group"
+            href={data.link}
+            target="_blank"
+            rel="prefetch"
+          >
+            <IView
+              className="ml-auto relative top-5 right-5 z-[1] invisible transition-all delay-200 ease-in group-hover:visible"
+              link={data.link}
+            />
 
-              <Image
-                class="w-full aspect-auto object-cover rounded-md opacity-80 transition-all delay-200 ease-in group-hover:opacity-100"
-                src={data.image.src}
-                alt={data.image.alt}
-                width={data.image.width}
-                height={data.image.height}
-                loading="lazy"
-              />
-            </a>
-          </AnimationFadeIn>
-        ))
+            <Image
+              class="w-full aspect-auto object-cover rounded-md opacity-80 transition-all delay-200 ease-in group-hover:opacity-100"
+              src={data.image.src}
+              alt={data.image.alt}
+              width={data.image.width}
+              height={data.image.height}
+              loading="lazy"
+            />
+          </a>
+        </AnimationFadeIn>
+      ))
     }
   </div>
 

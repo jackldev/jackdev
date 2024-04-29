@@ -38,7 +38,7 @@ export const projectSchema = z.object({
 
 export const projectsSchema = z.object({
   id: z.number(),
-  date: z.string(),
+  date: z.date(),
   title: z.string(),
   subtitle: z.string(),
   description: z.string(),

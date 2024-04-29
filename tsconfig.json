@@ -10,7 +10,8 @@
       "layout/*": ["src/layout/*"],
       "public/*": ["src/public/*"],
       "styles/*": ["src/styles/*"],
-      "types/*": ["src/types/*"]
+      "types/*": ["src/types/*"],
+      "lib/*": ["src/lib/*"]
     },
     "target": "ESNext",
     "module": "ESNext",
