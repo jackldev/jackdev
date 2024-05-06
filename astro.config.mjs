@@ -19,6 +19,7 @@ const baseUrl = 'https://opdev.site'
 // https://astro.build/config
 export default defineConfig({
   site: `${baseUrl}`,
+  trailingSlash: 'never',
   integrations: [
     tailwind({
       config: {
