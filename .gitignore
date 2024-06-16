@@ -21,9 +21,6 @@ yarn-error.log*
 /.pnp
 .pnp.js
 
-# eslint
-.eslintrc.json
-
 # Firebase
 .firebase
 .firebaserc
@@ -39,9 +36,6 @@ firebase.json
 # misc
 .DS_Store
 *.pem
-
-#Prettier
-.prettierrc.json
 
 # production
 /build
