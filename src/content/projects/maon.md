@@ -7,6 +7,7 @@
   techs: 
   - NEXT JS
   - TAILWIND CSS
+  - TYPESCRIPT
   - CLOUDINARY
   - PRISMIC
   - POSTGRESQL

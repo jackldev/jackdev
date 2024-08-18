@@ -7,6 +7,7 @@
   techs: 
   - NEXT
   - TAILWIND CSS
+  - TYPESCRIPT
   - SHOPIFY
   - CLOUDINARY
   - MYSQL

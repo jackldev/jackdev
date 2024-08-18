@@ -7,6 +7,7 @@
   techs: 
   - NEXT
   - TAILWIND CSS
+  - TYPESCRIPT
   - VERCEL
   - POSTGRESQL
   - CLOUDINARY
