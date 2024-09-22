@@ -1,7 +1,7 @@
 ---
   id: 1
-  title: "opdevsite@gmail.com"
-  link: "mailto:opdevsite@gmail.com"
+  title: "codezenwork@gmail.com"
+  link: "mailto:codezenwork@gmail.com"
   image:
     src: "/icons/email.svg"
     alt: "mail social icon"
