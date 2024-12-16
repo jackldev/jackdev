@@ -1,22 +1,21 @@
 ---
   id: 2
-  date: 2024-03-10
-  title: Tyche
-  subtitle: Wallet Ecommerce
-  description: Introducing Tyche- the ultimate wallet crafted with genuine leather and built for convenience. This sleek design securely holds your cards and money- offering easy access and durability. Explore our shop now!
+  date: 2024-12-16
+  title: Galio
+  subtitle: Food Ecommerce
+  description: Galio is the perfect solution for your sushi restaurant to seamlessly accept online orders. This user-friendly platform is built with Next and Stripe, ensuring a smooth and secure payment experience for your customers.
   techs: 
   - NEXT
   - TAILWIND CSS
   - TYPESCRIPT
-  - SHOPIFY
   - CLOUDINARY
-  - MYSQL
-  - AIVEN
+  - POSTGRESQL
+  - STRIPE
   - VERCEL
   image:
-    src: /images/tyche.webp
-    alt: tyche ecommerce
+    src: /images/galio.webp
+    alt: galio ecommerce
     width: 1374
     height: 738
-  link: https://tyche-wallet.vercel.app
+  link: https://galio-sushi.vercel.app
 ---
