@@ -1,5 +1,4 @@
 import plugin from 'tailwindcss/plugin'
-import colors from 'tailwindcss/colors'
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -8,19 +7,7 @@ module.exports = {
   theme: {
     colors: {
       transparent: 'transparent',
-      inherit: 'inherit',
-
-      slate: colors.slate,
-      stone: colors.stone,
-      gray: colors.neutral,
-      red: colors.red,
-      green: colors.green,
-      dark: '#111111',
-      light: '#e6edef',
-      teal: '#1D93B1'
-    },
-    fontFamily: {
-      main: ['Oswald', 'serif']
+      inherit: 'inherit'
     },
     extend: {
       backgroundImage: {

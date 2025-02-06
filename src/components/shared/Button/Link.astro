@@ -2,11 +2,11 @@
 import { base } from 'components/shared/Button/button'
 
 interface AnchorProp {
-  className: string
+  class: string
   href: string
 }
 
-const { className, href } = Astro.props as AnchorProp
+const { class: className, href } = Astro.props as AnchorProp
 ---
 
 <a class={`${base} ${className}`} href={href} rel="prefetch">

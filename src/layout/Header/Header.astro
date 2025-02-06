@@ -10,10 +10,10 @@ const navs = await getCollection('nav')
 
 <header
   id="header"
-  class="sticky top-0 left-0 z-[10] w-full transition-all delay-300 ease-out duration-500"
+  class="sticky top-0 left-0 z-[10] w-full transition-all delay-300 duration-500 ease-out"
 >
   <div class="wrapper">
-    <nav class="w-full h-12 flex items-center max-[992px]:justify-between">
+    <nav class="flex h-12 w-full items-center max-[992px]:justify-between">
       <Logo />
       <Navigation navs={navs} />
       <Hamburger />

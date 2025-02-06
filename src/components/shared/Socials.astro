@@ -3,29 +3,30 @@ import { getCollection } from 'astro:content'
 
 import Image from 'components/shared/Image.astro'
 
-interface AstroProp {
+type SocialProp = {
   show: boolean
   direction: 'flex-row' | 'flex-col'
 }
 
-const { show, direction } = Astro.props as AstroProp
+const { show, direction } = Astro.props as SocialProp
 
 const socials = await getCollection('socials')
 ---
 
 <div
-  class={`${show ? `invert-0` : `invert dark:invert-0`} ${direction} w-fit flex justify-between items-center gap-3`}
+  class={`${show ? `invert-0` : `invert dark:invert-0`} ${direction} flex w-fit items-center justify-between gap-3`}
 >
   {
     socials.map(({ data }) => (
       <a
-        class="w-6 h-6 opacity-70 hover:opacity-100 transition-all delay-150 ease-out"
+        class="h-6 w-6 opacity-70 transition-all delay-150 ease-out hover:opacity-100"
         href={data.link}
         title={data.title}
         target="_blank"
       >
         <Image
           src={data.image.src}
+          fallbackImg="/icons/qmark.webp"
           alt={data.image.alt}
           width={data.image.width}
           height={data.image.height}

@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind utilities;
-@tailwind components;
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @font-face {
   font-family: 'Oswald';
@@ -30,11 +30,19 @@
   src: url('/fonts/Oswald-Light.woff2') format('woff2');
 }
 
+@theme {
+  --color-dark: hsl(0, 0%, 7%);
+  --color-light: hsl(193, 22%, 92%);
+  --color-teal: hsl(192, 72%, 40%);
+
+  --font-main: 'Oswald', 'serif';
+}
+
 @layer base {
   *,
   *:before,
   *:after {
-    @apply p-0 m-0 box-border;
+    @apply m-0 box-border p-0;
   }
 
   body {
@@ -51,7 +59,7 @@
   }
 
   a {
-    @apply no-underline font-main font-normal;
+    @apply font-main font-normal no-underline;
   }
 
   p {
@@ -65,17 +73,21 @@
   }
 }
 
+@utility grid-stack {
+  grid-area: 1/-1;
+}
+
+@utility grid-stack-auto {
+  grid-area: 1/-1;
+}
+
+@utility content {
+  content: '\2713' !important;
+}
+
 @layer utilities {
   .wrapper {
-    @apply max-w-[1300px] w-[90%] h-full mx-auto;
-  }
-
-  .grid-stack {
-    grid-area: 1/-1;
-  }
-
-  .grid-stack-auto {
-    grid-area: auto;
+    @apply mx-auto h-full w-[90%] max-w-[1300px];
   }
 
   /* ANIMATION FADE */
@@ -85,20 +97,15 @@
 
   /* NAVIGATION BACKGROUND */
   #header.active {
-    @apply bg-gradient-to-r from-dark via-slate-800 to-dark dark:from-light dark:via-gray-300 dark:to-slate-100;
+    @apply from-dark to-dark dark:from-light bg-gradient-to-r via-slate-800 dark:via-gray-300 dark:to-slate-100;
   }
 
   /* TOP BUTTON */
   .top.hide {
-    @apply opacity-0 hidden;
-  }
-
-  /* FORM CHECKBOX */
-  .content {
-    content: '\2713' !important;
+    @apply hidden opacity-0;
   }
 
   .checklabel > .checkinput:checked + .checkspan:before {
-    @apply content absolute -top-1.5 left-[0.15rem] text-2xl text-green-500 font-bold;
+    @apply content absolute -top-1.5 left-[0.15rem] text-2xl font-bold text-green-500;
   }
 }

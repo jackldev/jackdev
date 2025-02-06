@@ -1,9 +1,10 @@
 ---
 import { Image as Images } from 'astro:assets'
 
-interface AstroProp {
+type ImageProp = {
   class: string
   src: string
+  fallbackImg: string
   alt: string
   width: number
   height: number
@@ -13,11 +14,17 @@ interface AstroProp {
 const {
   class: className,
   src,
+  fallbackImg,
   alt,
   width,
   height,
   loading
-} = Astro.props as AstroProp
+} = Astro.props as ImageProp
+
+const handleError = (currentTarget: EventTarget & HTMLImageElement) => {
+  currentTarget.onerror = null // prevents looping
+  currentTarget.src = fallbackImg
+}
 ---
 
 <div class="animate-fade">
@@ -30,5 +37,7 @@ const {
     format="webp"
     quality={80}
     loading={loading}
+    onError={({ currentTarget }: { currentTarget: any }) =>
+      handleError(currentTarget)}
   />
 </div>

@@ -1,13 +1,13 @@
 ---
 interface AstroProp {
   strokeColor: string
-  className?: string
+  class?: string
   link: string
 }
 
 const {
   strokeColor = 'currentColor',
-  className,
+  class: className,
   link
 } = Astro.props as AstroProp
 ---

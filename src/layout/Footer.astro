@@ -16,12 +16,12 @@ const pathname = Astro.url.pathname
 <footer class="pb-8" id={footer[0].data.slugs}>
   <div class="wrapper">
     <div class="pb-20">
-      <div class="flex flex-col justify-center items-center text-center gap-12">
+      <div class="flex flex-col items-center justify-center gap-12 text-center">
         <div class="dark:invert">
           <ILogo strokeColor="#fff" />
         </div>
         <p
-          class="max-w-md mx-auto font-light text-base leading-relaxed text-light/80 dark:text-dark/80"
+          class="text-light/80 dark:text-dark/80 mx-auto max-w-md text-base leading-relaxed font-light"
         >
           {footer[0].data.description}
         </p>
@@ -35,7 +35,7 @@ const pathname = Astro.url.pathname
               .map(({ data }) => (
                 <li>
                   <a
-                    class={`${pathname === data.link ? 'text-teal' : 'text-light dark:text-dark'} font-main font-normal uppercase text-sm max-[992px]:dark:text-dark`}
+                    class={`${pathname === data.link ? 'text-teal' : 'text-light dark:text-dark'} font-main max-[992px]:dark:text-dark text-sm font-normal uppercase`}
                     href={data.link}
                   >
                     {data.title}
@@ -47,19 +47,19 @@ const pathname = Astro.url.pathname
       </div>
     </div>
 
-    <div class="relative z-[2] w-fit flex gap-1 text-xs font-normal target">
+    <div class="target relative z-[2] flex w-fit gap-1 text-xs font-normal">
       <p class="font-main text-light/70 dark:text-dark">
         <span class="font-main">{footer[0].data.copy}</span>
         {`© ${new Date().getFullYear()}.  Made by`}
       </p>
 
       <a
-        class="text-xs text-red-400 hover:text-red-500 transition delay-150 ease-out`"
+        class="ease-out` text-xs text-red-400 transition delay-150 hover:text-red-500"
         href={footer[0].data.link}
         rel="noreferrer"
         target="_blank"
       >
-        OP
+        Codezen
       </a>
     </div>
 

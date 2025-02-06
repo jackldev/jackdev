@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content'
 
 import AnimationFadeIn from 'components/shared/AnimationFadeIn.astro'
-import Anchor from 'components/shared/Button/Anchor.astro'
+import Link from 'components/shared/Button/Link.astro'
 import {
   colors,
   positions,
@@ -25,35 +25,36 @@ const formattedProjects = projectFormat({ projects, limit: 3 })
 <div class="wrapper">
   <div
     id={project[0].data.slugs}
-    class="mb-4 grid gap-12 grid-cols-1 lg:gap-24 xl:grid-cols-3 xl:[&>div:nth-child(2)]:mt-32"
+    class="mb-4 grid grid-cols-1 gap-12 lg:gap-24 xl:grid-cols-3 xl:[&>div:nth-child(2)]:mt-32"
   >
     {
       formattedProjects?.map(({ data }) => (
-        <AnimationFadeIn className="flex flex-col gap-3">
-          <div class="flex flex-col items-center justify-between  sm:flex-row">
-            <p class="uppercase text-center text-lg text-light dark:text-dark">
+        <AnimationFadeIn class="flex flex-col gap-3">
+          <div class="flex flex-col items-center justify-between sm:flex-row">
+            <p class="text-light dark:text-dark text-center text-lg uppercase">
               {data.title}
             </p>
 
-            <p class="text-lg uppercase text-light/70 dark:text-dark/70">
+            <p class="text-light/70 dark:text-dark/70 text-lg uppercase">
               {data.subtitle}
             </p>
           </div>
 
           <a
-            class="grid [&>*]:grid-stack shadow-md rounded-md group"
+            class="[&>*]:grid-stack group grid rounded-md shadow-md"
             href={data.link}
             target="_blank"
             rel="prefetch"
           >
             <IView
-              className="ml-auto relative top-5 right-5 z-[1] invisible transition-all delay-200 ease-in group-hover:visible"
+              class="invisible relative top-5 right-5 z-[1] ml-auto transition-all delay-200 ease-in group-hover:visible"
               link={data.link}
             />
 
             <Image
-              class="w-full aspect-auto object-cover rounded-md opacity-80 transition-all delay-200 ease-in group-hover:opacity-100"
+              class="aspect-auto w-full rounded-md object-cover opacity-80 transition-all delay-200 ease-in group-hover:opacity-100"
               src={data.image.src}
+              fallbackImg="/images/placeholder.webp"
               alt={data.image.alt}
               width={data.image.width}
               height={data.image.height}
@@ -65,10 +66,10 @@ const formattedProjects = projectFormat({ projects, limit: 3 })
     }
   </div>
 
-  <Anchor
-    className={`mt-12 font-normal ${colors.primary} ${positions.center} ${sizes.small} ${space.small}`}
+  <Link
+    class={`mt-12 font-normal ${colors.primary} ${positions.center} ${sizes.small} ${space.small}`}
     href={project[0].data.link}
   >
     {project[0].data.text}
-  </Anchor>
+  </Link>
 </div>

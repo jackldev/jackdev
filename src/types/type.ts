@@ -1,4 +1,9 @@
-export interface NavProp {
+export type IconProp = {
+  strokeColor: string
+  class?: string
+}
+
+export type NavProp = {
   navs: {
     data: {
       id: number
@@ -9,7 +14,7 @@ export interface NavProp {
   }[]
 }
 
-export interface ProjectProp {
+export type ProjectProp = {
   data: {
     id: number
     title: string
@@ -27,7 +32,7 @@ export interface ProjectProp {
   }
 }
 
-export interface FormProp {
+export type FormProp = {
   nameId: string
   titleId: string
   type?: string
@@ -38,7 +43,7 @@ export interface FormProp {
   children?: React.ReactNode
 }
 
-export interface ContactProp {
+export type ContactProp = {
   name: string
   email: string
   subject?: string

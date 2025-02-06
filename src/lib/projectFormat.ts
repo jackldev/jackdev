@@ -1,4 +1,4 @@
-import type { ProjectProp } from 'types/types'
+import type { ProjectProp } from 'types/type.ts'
 
 export function projectFormat({
   projects,

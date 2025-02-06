@@ -1,10 +1,7 @@
 ---
-interface AstroProp {
-  strokeColor: string
-  className?: string
-}
+import type { IconProp } from 'types/type.ts'
 
-const { strokeColor = '#000', className } = Astro.props as AstroProp
+const { strokeColor = '#000', class: className } = Astro.props as IconProp
 ---
 
 <svg

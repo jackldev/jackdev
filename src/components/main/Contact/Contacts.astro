@@ -9,13 +9,13 @@ const contact = await getCollection('contact')
 
 <section id={contact[0].data.slugs}>
   <div class="wrapper">
-    <AnimationFadeIn className="w-full mx-auto flex flex-col gap-20 lg:w-3/5">
-      <div class="text-center text-light dark:text-dark">
+    <AnimationFadeIn class="mx-auto flex w-full flex-col gap-20 lg:w-3/5">
+      <div class="text-light dark:text-dark text-center">
         <h2 class="text-8xl sm:text-9xl">
           {contact[0].data.title}
         </h2>
         <p
-          class="mt-2 max-w-[16rem] mx-auto opacity-70 text-lg font-light sm:text-xl"
+          class="mx-auto mt-2 max-w-[16rem] text-lg font-light opacity-70 sm:text-xl"
         >
           {contact[0].data.subtitle}
         </p>

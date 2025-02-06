@@ -19,10 +19,10 @@ const formattedProjects = projectFormat({ projects })
 <section id={project[0].data.slugs}>
   <div class="wrapper">
     <AnimationFadeIn>
-      <div class="text-center text-light dark:text-dark">
+      <div class="text-light dark:text-dark text-center">
         <h2 class="text-8xl sm:text-9xl">{project[0].data.title}</h2>
         <p
-          class="mt-2 max-w-[12.5rem] mx-auto opacity-70 text-lg font-light sm:text-xl"
+          class="mx-auto mt-2 max-w-[12.5rem] text-lg font-light opacity-70 sm:text-xl"
         >
           {project[0].data.subtitle}
         </p>
@@ -33,10 +33,10 @@ const formattedProjects = projectFormat({ projects })
       {
         formattedProjects?.map(({ data }) => (
           <AnimationFadeIn>
-            <div class="grid grid-cols-1 gap-4 lg:gap-2 lg:grid-cols-[6rem_auto]">
+            <div class="grid grid-cols-1 gap-4 lg:grid-cols-[6rem_auto] lg:gap-2">
               <div class="flex flex-row flex-wrap gap-2 lg:flex-col">
                 {data.techs.map((tech) => (
-                  <p class="text-light dark:text-dark text-xs text-left font-normal uppercase tracking-wide lg:text-sm">
+                  <p class="text-light dark:text-dark text-left text-xs font-normal tracking-wide uppercase lg:text-sm">
                     {tech}
                   </p>
                 ))}
@@ -44,19 +44,20 @@ const formattedProjects = projectFormat({ projects })
 
               <div class="flex flex-col gap-4">
                 <a
-                  class="grid [&>*]:grid-stack shadow-md rounded-md group"
+                  class="[&>*]:grid-stack group grid rounded-md shadow-md"
                   href={data.link}
                   target="_blank"
                   rel="prefetch"
                 >
                   <IView
-                    className="ml-auto relative top-5 right-5 z-[1] invisible transition-all delay-200 ease-in group-hover:visible"
+                    class="invisible relative top-5 right-5 z-[1] ml-auto transition-all delay-200 ease-in group-hover:visible"
                     link={data.link}
                   />
 
                   <Image
-                    class="w-full aspect-auto object-cover rounded-md opacity-80 group-hover:opacity-100 transition-all delay-200 ease-in"
+                    class="aspect-auto w-full rounded-md object-cover opacity-80 transition-all delay-200 ease-in group-hover:opacity-100"
                     src={data.image.src}
+                    fallbackImg="/images/placeholder.webp"
                     alt={data.image.alt}
                     width={data.image.width}
                     height={data.image.height}
@@ -64,8 +65,8 @@ const formattedProjects = projectFormat({ projects })
                   />
                 </a>
 
-                <div class="flex flex-col gap-3 text-light dark:text-dark">
-                  <div class="flex gap-12 justify-between items-center">
+                <div class="text-light dark:text-dark flex flex-col gap-3">
+                  <div class="flex items-center justify-between gap-12">
                     <h3 class="text-base font-normal">{data.subtitle}</h3>
                     <p class="text-sm opacity-90">
                       <DateFormat date={data.date} />

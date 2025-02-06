@@ -16,5 +16,5 @@
     alt: boreas
     width: 1374
     height: 738
-  link: https://boreas-music.netlify.app
+  link: https://boreas-music.vercel.app
 ---

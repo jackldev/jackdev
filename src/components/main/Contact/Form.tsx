@@ -1,19 +1,19 @@
 import { FormProvider, useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
-import isEmail from 'validator/lib/isEmail'
+import validator from 'validator'
 
-import type { ContactProp } from 'types/types'
+import type { ContactProp } from 'types/type.ts'
 
-import Input from 'components/shared/Forms/Input'
-import Textarea from 'components/shared/Forms/Textarea'
-import Checkbox from 'components/shared/Forms/Checkbox'
+import Input from 'components/shared/Forms/Input.tsx'
+import Textarea from 'components/shared/Forms/Textarea.tsx'
+import Checkbox from 'components/shared/Forms/Checkbox.tsx'
 import {
   colors,
   sizes,
   positions,
   space,
   base
-} from 'components/shared/Button/button'
+} from 'components/shared/Button/button.ts'
 
 const formUrl = `${import.meta.env.PUBLIC_FORM_URL}`
 
@@ -51,8 +51,8 @@ const Form = () => {
   return (
     <FormProvider {...methods}>
       <form
+        className="flex w-full flex-col gap-8"
         name="contact"
-        className="w-full flex flex-col gap-8"
         onSubmit={onSubmit}
       >
         <Input
@@ -77,7 +77,7 @@ const Form = () => {
           register={register}
           validationSchema={{
             required: true,
-            validate: (input: string) => isEmail(input),
+            validate: (input: string) => validator.isEmail(input),
             minLength: 6,
             pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i
           }}

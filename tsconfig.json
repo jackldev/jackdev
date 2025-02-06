@@ -11,11 +11,12 @@
       "public/*": ["src/public/*"],
       "styles/*": ["src/styles/*"],
       "types/*": ["src/types/*"],
-      "lib/*": ["src/lib/*"]
+      "lib/*": ["src/lib/*"],
+      "schema/*": ["src/schema/*"]
     },
     "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "node",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -26,7 +27,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "plugins": [
+      {
+        "name": "@astrojs/ts-plugin"
+      }
+    ]
   },
   "include": ["env.d.ts", "**/*.ts", "**/*.tsx", "**/*.astro"],
   "exclude": ["node_modules"]

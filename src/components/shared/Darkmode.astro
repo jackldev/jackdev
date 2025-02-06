@@ -3,22 +3,22 @@ import IMoon from 'components/shared/Icons/IMoon.astro'
 import ISun from 'components/shared/Icons/ISun.astro'
 ---
 
-<div class="relative my-6 flex justify-end items-center space-x-2 lg:my-0">
-  <label class="w-8 flex items-center bg-gray-100 rounded-xl" for="toggle_box">
+<div class="relative my-6 flex items-center justify-end space-x-2 lg:my-0">
+  <label class="flex w-8 items-center rounded-xl bg-gray-100" for="toggle_box">
     <input
       id="toggle_box"
-      class="appearance-none peer"
+      class="peer appearance-none"
       name="checkbox"
       type="checkbox"
     />
 
     <div class="absolute inset-0 z-[1] flex justify-between">
-      <ISun className="scale-[0.8]" strokeColor="#333" />
-      <IMoon className="scale-[0.8]" strokeColor="#333" />
+      <ISun class="scale-[0.8]" strokeColor="#333" />
+      <IMoon class="scale-[0.8]" strokeColor="#333" />
     </div>
 
     <span
-      class="relative z-[2] w-4 h-4 flex items-center rounded-2xl duration-300 ease-in-out cursor-pointer after:w-4 after:h-4 after:bg-teal after:rounded-2xl after:shadow-md after:duration-300 peer-checked:after:translate-x-4"
+      class="after:bg-teal relative z-[2] flex h-4 w-4 cursor-pointer items-center rounded-2xl duration-300 ease-in-out after:h-4 after:w-4 after:rounded-2xl after:shadow-md after:duration-300 peer-checked:after:translate-x-4"
     >
     </span>
   </label>

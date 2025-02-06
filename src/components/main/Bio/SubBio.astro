@@ -11,15 +11,15 @@ const tools = await getCollection('tools')
     tools
       .sort((a, b) => a.data.id - b.data.id)
       .map(({ data }) => (
-        <div class="flex flex-col text-center items-center justify-center gap-4">
-          <h3 class="text-2xl font-normal text-light dark:text-dark">
+        <div class="flex flex-col items-center justify-center gap-4 text-center">
+          <h3 class="text-light dark:text-dark text-2xl font-normal">
             {data.title}
           </h3>
 
-          <div class="flex flex-wrap items-center gap-2 justify-center">
+          <div class="flex flex-wrap items-center justify-center gap-2">
             {data.tools.map((tool) => (
               <button
-                class={`${base} ${space.small} ${sizes.small} bg-light/60 dark:bg-dark/60 bg-opacity-90 text-dark/80 dark:text-light font-semibold dark:font-normal font-main uppercase cursor-default`}
+                class={`${base} ${space.small} ${sizes.small} bg-light/60 dark:bg-dark/60 bg-opacity-90 text-dark/80 dark:text-light font-main cursor-default font-semibold uppercase dark:font-normal`}
               >
                 {tool}
               </button>

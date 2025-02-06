@@ -1,6 +1,6 @@
-import type { FormProp } from 'types/types'
+import type { FormProp } from 'types/type.ts'
 
-import { error, input, label } from 'components/shared/Forms/forms'
+import { error, input, label } from 'components/shared/Forms/forms.ts'
 
 const Textarea = ({
   nameId,

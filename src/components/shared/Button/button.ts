@@ -1,4 +1,4 @@
-export const base = 'font-main rounded-sm uppercase'
+export const base = 'font-main rounded-sm uppercase cursor-pointer'
 
 export const colors = {
   base: 'bg-transparent text-dark',

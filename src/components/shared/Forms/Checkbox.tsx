@@ -1,4 +1,4 @@
-import { checkinput, checklabel, error } from 'components/shared/Forms/forms'
+import { checkinput, checklabel, error } from 'components/shared/Forms/forms.ts'
 
 interface CheckBoxProps {
   register: any
@@ -17,7 +17,7 @@ const CheckBox = ({ register, errors }: CheckBoxProps) => {
           id="checkbox"
         />
         {`I'm a human`}
-        <span className="block checkspan" />
+        <span className="checkspan block" />
       </label>
 
       {errors.checkbox && <p className={error}>Please check the checkbox</p>}
