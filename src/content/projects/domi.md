@@ -5,7 +5,7 @@
   subtitle: Interior Landing Page
   description: Leveraging the latest technologies like Nextjs and Sanity.io on our website, we offer a seamless browsing experience as you discover our design projects and services.
   techs: 
-  - NEXT
+  - NEXT JS
   - TAILWIND CSS
   - TYPESCRIPT
   - CLOUDINARY

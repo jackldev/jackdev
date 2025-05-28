@@ -5,7 +5,7 @@
   subtitle: Event Landing Page
   description: Planning an event? Look no further than Boreas for all your event booking needs! Our user-friendly platform is powered by Next, Postgresql, and Cloudinary to ensure a smooth and reliable booking process.
   techs: 
-  - NEXT
+  - NEXT JS
   - TAILWIND CSS
   - TYPESCRIPT
   - POSTGREQL

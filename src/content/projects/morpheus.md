@@ -5,7 +5,7 @@
   subtitle: Animal Landing Page
   description: A cutting-edge landing page designed for pet care centers. Built with Next JS and Hygraph, this sleek and modern design will impress pet lovers in the industry.
   techs: 
-  - NEXT
+  - NEXT JS
   - TAILWIND CSS
   - TYPESCRIPT
   - VERCEL

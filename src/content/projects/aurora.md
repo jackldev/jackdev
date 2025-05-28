@@ -5,7 +5,7 @@
   subtitle: Food Ecommerce
   description: Looking to satisfy your pizza cravings? Aurora is the ultimate solution for all your food delivery needs. Our landing page is built with Next.js and Stripe to ensure a seamless and secure checkout experience.
   techs: 
-  - NEXT
+  - NEXT JS
   - TAILWIND CSS
   - TYPESCRIPT
   - STRIPE

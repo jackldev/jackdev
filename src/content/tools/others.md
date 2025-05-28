@@ -4,6 +4,4 @@
   tools:
     - Cloudinary
     - Figma
-    - Medusa
-    - Shopify
 ---

@@ -5,7 +5,7 @@
   subtitle: Saas Language Service
   description: Looking to learn a new language? Look no further than Hermes, the Saas language site designed with Next.js for optimal performance and Stripe payment for hassle-free transactions.
   techs: 
-  - NEXT
+  - NEXT JS
   - TAILWIND CSS
   - TYPESCRIPT
   - STRIPE

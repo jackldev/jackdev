@@ -5,7 +5,7 @@
   subtitle: Food Ecommerce
   description: Galio is the perfect solution for your sushi restaurant to seamlessly accept online orders. This user-friendly platform is built with Next and Stripe, ensuring a smooth and secure payment experience for your customers.
   techs: 
-  - NEXT
+  - NEXT JS
   - TAILWIND CSS
   - TYPESCRIPT
   - CLOUDINARY

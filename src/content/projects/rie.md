@@ -5,7 +5,7 @@
   subtitle: Commerce Landing Page
   description: Check out our React Astro Landing Page. With minimalist design and easy customization- it's the perfect way to showcase your web agency services.
   techs: 
-  - REACT
+  - REACT JS
   - ASTRO
   - TAILWIND CSS
   - COSMICJS
