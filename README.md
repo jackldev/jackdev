@@ -1,6 +1,6 @@
 Title:
 
-- One Page Dev
+- Codezen
 
 Site:
 
@@ -40,4 +40,3 @@ Host:
 Mockup:
 
 - JUSTINMIND
-
