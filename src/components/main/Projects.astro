@@ -19,10 +19,10 @@ const formattedProjects = projectFormat({ projects })
 <section id={project[0].data.slugs}>
   <div class="wrapper">
     <AnimationFadeIn>
-      <div class="text-light dark:text-dark text-center">
-        <h2 class="text-8xl sm:text-9xl">{project[0].data.title}</h2>
+      <div class="text-center">
+        <h2 class="text-8xl">{project[0].data.title}</h2>
         <p
-          class="mx-auto mt-2 max-w-[12.5rem] text-lg font-light opacity-70 sm:text-xl"
+          class="mx-auto mt-2 max-w-[13rem] text-lg opacity-70 sm:text-xl dark:font-light"
         >
           {project[0].data.subtitle}
         </p>
@@ -33,53 +33,52 @@ const formattedProjects = projectFormat({ projects })
       {
         formattedProjects?.map(({ data }) => (
           <AnimationFadeIn>
-            <div class="grid grid-cols-1 gap-4 lg:grid-cols-[6rem_auto] lg:gap-2">
-              <div class="flex flex-row flex-wrap gap-2 lg:flex-col">
-                {data.techs.map((tech) => (
-                  <p class="text-light dark:text-dark text-left text-xs font-normal tracking-wide uppercase lg:text-sm">
-                    {tech}
+            <div class="flex flex-col gap-4">
+              <a
+                class="[&>*]:grid-stack group grid rounded-md shadow-md"
+                href={data.link}
+                target="_blank"
+                rel="prefetch"
+              >
+                <IView
+                  class="invisible relative top-5 right-5 z-[1] ml-auto transition-all delay-200 ease-in group-hover:visible"
+                  link={data.link}
+                />
+
+                <Image
+                  class="aspect-auto w-full rounded-md object-cover opacity-90 transition-all delay-200 ease-in group-hover:opacity-100"
+                  src={data.image.src}
+                  fallbackImg="/images/placeholder.webp"
+                  alt={data.image.alt}
+                  width={data.image.width}
+                  height={data.image.height}
+                  loading="lazy"
+                />
+              </a>
+
+              <div class="flex flex-col gap-3">
+                <div class="flex items-center justify-between gap-12 opacity-70">
+                  <h3 class="text-sm font-normal dark:font-light">{data.subtitle}</h3>
+                  <p class="text-sm">
+                    <DateFormat date={data.date} />
                   </p>
-                ))}
+                </div>
+
+                <div>
+                  <h3 class="text-xl font-normal">{data.title}</h3>
+                  <p class="text-dark/70 dark:text-light/70 mt-1 text-base tracking-wide dark:font-light">
+                    {data.description}
+                  </p>
+                </div>
               </div>
 
-              <div class="flex flex-col gap-4">
-                <a
-                  class="[&>*]:grid-stack group grid rounded-md shadow-md"
-                  href={data.link}
-                  target="_blank"
-                  rel="prefetch"
-                >
-                  <IView
-                    class="invisible relative top-5 right-5 z-[1] ml-auto transition-all delay-200 ease-in group-hover:visible"
-                    link={data.link}
-                  />
-
-                  <Image
-                    class="aspect-auto w-full rounded-md object-cover opacity-80 transition-all delay-200 ease-in group-hover:opacity-100"
-                    src={data.image.src}
-                    fallbackImg="/images/placeholder.webp"
-                    alt={data.image.alt}
-                    width={data.image.width}
-                    height={data.image.height}
-                    loading="lazy"
-                  />
-                </a>
-
-                <div class="text-light dark:text-dark flex flex-col gap-3">
-                  <div class="flex items-center justify-between gap-12">
-                    <h3 class="text-base font-normal">{data.subtitle}</h3>
-                    <p class="text-sm opacity-90">
-                      <DateFormat date={data.date} />
-                    </p>
-                  </div>
-
-                  <div>
-                    <h3 class="text-xl">{data.title}</h3>
-                    <p class="mt-1 text-sm font-light tracking-wide opacity-70 dark:opacity-90">
-                      {data.description}
-                    </p>
-                  </div>
-                </div>
+              <div class="flex flex-row items-center flex-wrap gap-x-3 [&>span:last-child]:hidden">
+                {data.techs.map((tech) => (
+                  <p class="mt-1 text-left text-xs tracking-wide uppercase lg:text-sm">
+                    {tech}
+                  </p>
+                    <span class="opacity-70">|</span>
+                ))}
               </div>
             </div>
           </AnimationFadeIn>

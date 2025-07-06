@@ -7,15 +7,13 @@ const { title, description } = Astro.props as {
 }
 ---
 
-<div
-  class="text-light dark:text-dark flex flex-col items-center justify-center gap-5 text-center"
->
-  <h2 class="text-8xl sm:text-9xl">{title}</h2>
+<div class="flex flex-col gap-6">
+  <h2 class="text-8xl">{title}</h2>
   <p
-    class="w-full text-lg leading-relaxed font-light tracking-wide opacity-70 sm:text-xl lg:w-1/2"
+    class="w-full text-lg leading-relaxed tracking-wide opacity-70 lg:w-2/3 dark:font-light"
   >
     {description}
   </p>
 
-  <Socials direction="mt-6 flex-row" show />
+  <Socials direction="mt-4 flex-row" show />
 </div>

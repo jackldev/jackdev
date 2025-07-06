@@ -1,28 +1,21 @@
-import { checkinput, checklabel, error } from 'components/shared/Forms/forms.ts'
+import type { CheckBoxProp } from 'types/type.ts'
 
-interface CheckBoxProps {
-  register: any
-  errors: any
-}
+import { error } from 'components/shared/Forms/forms.tsx'
 
-const CheckBox = ({ register, errors }: CheckBoxProps) => {
+const ChecksBox = ({ name, errors, children }: CheckBoxProp) => {
   return (
-    <fieldset className="relative w-fit">
-      <label className={checklabel} htmlFor="checkbox">
-        <input
-          className={checkinput}
-          {...register('checkbox', { required: true })}
-          type="checkbox"
-          name="checkbox"
-          id="checkbox"
-        />
-        {`I'm a human`}
-        <span className="checkspan block" />
+    <fieldset className="w-fit">
+      <label className="dark:text-light" htmlFor={name}>
+        {children}
+
+        <span className="font-main ml-1.5 inline-block cursor-pointer">
+          {`I'm a human`}
+        </span>
       </label>
 
-      {errors.checkbox && <p className={error}>Please check the checkbox</p>}
+      {errors ? <p className={error}>Please check the checkbox</p> : null}
     </fieldset>
   )
 }
 
-export default CheckBox
+export default ChecksBox

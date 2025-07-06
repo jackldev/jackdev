@@ -1,31 +1,26 @@
-import type { FormProp } from 'types/type.ts'
+import type { FieldError } from 'react-hook-form'
 
-import { error, input, label } from 'components/shared/Forms/forms.ts'
+import type { InputProp } from 'types/type.ts'
 
-const Input = ({
-  nameId,
-  titleId,
-  type,
-  register,
-  validationSchema,
-  errors,
-  errorText
-}: FormProp) => {
+import { error, input, label } from 'components/shared/Forms/forms.tsx'
+
+const Input = ({ name, title, errors, ...rest }: InputProp) => {
   return (
     <fieldset className="w-full">
-      <label className={label} htmlFor={nameId}>
-        {titleId}
+      <label className={label} htmlFor={name}>
+        {title}
       </label>
 
       <input
-        {...register(nameId, validationSchema)}
-        className={`${input} ${errors[nameId] ? 'border-red-500' : 'border-initial'}`}
-        id={nameId}
-        type={type}
-        name={nameId}
-        placeholder={titleId}
+        className={`${input} ${errors ? '!border-red-500' : 'border-initial'}`}
+        id={name}
+        name={name}
+        placeholder={title}
+        {...rest}
       />
-      {errors[nameId] && <p className={error}>{errorText}</p>}
+      {errors ? (
+        <p className={error}>{(errors as FieldError).message}</p>
+      ) : null}
     </fieldset>
   )
 }

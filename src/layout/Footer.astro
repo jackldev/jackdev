@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content'
 import ILogo from 'components/shared/Icons/ILogo.astro'
 import Socials from 'components/shared/Socials.astro'
 import Top from 'components/shared/Top.astro'
+import { DarkMode } from 'components/shared/DarkMode.tsx'
 
 const [footer, navs] = await Promise.all([
   getCollection('footer'),
@@ -13,20 +14,27 @@ const [footer, navs] = await Promise.all([
 const pathname = Astro.url.pathname
 ---
 
-<footer class="pb-8" id={footer[0].data.slugs}>
+<footer class="mt-10 pb-8" id={footer[0].data.slugs}>
   <div class="wrapper">
     <div class="pb-20">
       <div class="flex flex-col items-center justify-center gap-12 text-center">
-        <div class="dark:invert">
-          <ILogo strokeColor="#fff" />
-        </div>
-        <p
-          class="text-light/80 dark:text-dark/80 mx-auto max-w-md text-base leading-relaxed font-light"
-        >
-          {footer[0].data.description}
-        </p>
+        <div class="flex flex-col items-center">
+          <div class="flex items-center gap-1">
+            <span class="invert dark:invert-0">
+              <ILogo strokeColor="#000" />
+            </span>
 
-        <Socials direction="flex-row" show />
+            <span class="font-main text-2xl font-semibold uppercase">
+              {footer[0].data.title}
+            </span>
+          </div>
+
+          <p
+            class="max-w-lg text-base leading-relaxed opacity-70 dark:font-light"
+          >
+            {footer[0].data.description}
+          </p>
+        </div>
 
         <ul class="flex gap-4">
           {
@@ -35,7 +43,7 @@ const pathname = Astro.url.pathname
               .map(({ data }) => (
                 <li>
                   <a
-                    class={`${pathname === data.link ? 'text-teal' : 'text-light dark:text-dark'} font-main max-[992px]:dark:text-dark text-sm font-normal uppercase`}
+                    class={`${pathname === data.link ? 'text-teal' : 'dark:text-light text-black'} font-main max-[992px]:dark:text-dark text-sm font-normal uppercase`}
                     href={data.link}
                   >
                     {data.title}
@@ -44,11 +52,17 @@ const pathname = Astro.url.pathname
               ))
           }
         </ul>
+
+        <div class="flex items-center gap-3">
+          <Socials direction="flex-row" show />
+
+          <DarkMode client:load />
+        </div>
       </div>
     </div>
 
-    <div class="target relative z-[2] flex w-fit gap-1 text-xs font-normal">
-      <p class="font-main text-light/70 dark:text-dark">
+    <div class="target relative z-[2] flex w-fit gap-1 text-xs">
+      <p class="font-main text-dark/70 dark:text-light">
         <span class="font-main">{footer[0].data.copy}</span>
         {`© ${new Date().getFullYear()}.  Made by`}
       </p>

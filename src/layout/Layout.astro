@@ -1,45 +1,53 @@
 ---
-import { ToastContainer } from 'react-toastify'
-
 import Header from 'layout/Header/Header.astro'
 import Footer from 'layout/Footer.astro'
 import Seo from 'components/shared/Seo.astro'
+import { Toaster } from 'components/ui/sonner'
 
 import 'styles/base.css'
-import 'react-toastify/dist/ReactToastify.css'
 
 const { title } = Astro.props as {
   title: string
 }
 ---
 
+<script is:inline>
+  const getThemePreference = () => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme')
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light'
+  }
+  const isDark = getThemePreference() === 'dark'
+  document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
+
+  if (typeof localStorage !== 'undefined') {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains('dark')
+      localStorage.setItem('theme', isDark ? 'dark' : 'light')
+    })
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    })
+  }
+</script>
+
 <html lang="en">
   <Seo title={title} />
 
-  <body
-    class="bg-[url('/images/bg-gradient.webp')] bg-cover bg-no-repeat dark:bg-[url('/images/bg-dark-gradient.webp')]"
-  >
+  <body class="body_bg">
     <div class="flex flex-col gap-16">
       <Header />
-      <main class="min-h-[20dvh]">
+      <main class="min-h-[75dvh]">
         <slot />
       </main>
       <Footer />
     </div>
     <!-- <script></script> -->
 
-    <ToastContainer
-      position="top-right"
-      autoClose={5000}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      theme="dark"
-      client:load
-    />
+    <Toaster client:load />
   </body>
 </html>

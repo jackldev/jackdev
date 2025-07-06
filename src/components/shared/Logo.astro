@@ -6,13 +6,16 @@ import { getCollection } from 'astro:content'
 const seo = await getCollection('seo')
 ---
 
-<div class="logo relative z-[1] w-4">
-  <button class="flex items-center" title={seo[0].data.metaTitle}>
-    <span class="cursor-pointer dark:invert">
-      <ILogo strokeColor="#fff" />
-    </span>
-  </button>
-</div>
+<button
+  class="logo font-main text-dark dark:text-light relative z-[1] flex w-4 cursor-pointer items-center gap-1 text-2xl font-semibold uppercase"
+  title={seo[0].data.metaTitle}
+>
+  <span class="cursor-pointer invert dark:invert-0">
+    <ILogo strokeColor="#000" />
+  </span>
+
+  {seo[0].data.metaTitle}
+</button>
 
 <script>
   const logo = document.querySelector('.logo')

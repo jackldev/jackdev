@@ -13,6 +13,7 @@ export default [
       // '@typescript-eslint/ban-types': 'warn',
       '@typescript-eslint/consistent-type-definitions': 'off',
       'no-irregular-whitespace': 'off'
-    }
+    },
+    parser: "@typescript-eslint/parser",
   }
 ]

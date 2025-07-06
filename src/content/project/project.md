@@ -4,7 +4,7 @@
   title: "Projects"
   subtitle: "Here are some works I build with the latest tools"
   link: "/projects"
-  text: "Other Projects"
+  text: "More Projects"
   image:
     src: "/icons/open.svg"
     alt: "open link"

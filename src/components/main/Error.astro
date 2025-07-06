@@ -15,12 +15,12 @@ const error = await getCollection('error')
 
 <section class="h-[95dvh] sm:-my-12" id={error[0].data.slugs}>
   <div class="wrapper flex h-full items-center justify-center text-center">
-    <AnimationFadeIn class="text-light dark:text-dark">
-      <h1 class="text-light dark:text-dark max-w-sm text-9xl">
+    <AnimationFadeIn>
+      <h1 class="max-w-sm text-9xl">
         {error[0].data.title}
       </h1>
 
-      <p class="dark:text-dark mx-auto mt-4 max-w-[27rem] text-xl">
+      <p class="mx-auto mt-4 max-w-[27rem] text-xl">
         {error[0].data.subtitle}
       </p>
 

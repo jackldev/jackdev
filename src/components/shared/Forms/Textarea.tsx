@@ -1,29 +1,26 @@
-import type { FormProp } from 'types/type.ts'
+import type { FieldError } from 'react-hook-form'
 
-import { error, input, label } from 'components/shared/Forms/forms.ts'
+import type { TextAreaProp } from 'types/type.ts'
 
-const Textarea = ({
-  nameId,
-  titleId,
-  register,
-  validationSchema,
-  errors,
-  errorText
-}: FormProp) => {
+import { error, input, label } from 'components/shared/Forms/forms.tsx'
+
+const Textarea = ({ name, title, errors, ...rest }: TextAreaProp) => {
   return (
     <fieldset>
-      <label className={label} htmlFor={nameId}>
-        {titleId}
+      <label className={label} htmlFor={name}>
+        {title}
       </label>
 
       <textarea
-        {...register(nameId, validationSchema)}
-        className={`${input} ${errors[nameId] ? 'border-red-500' : 'border-initial'} h-[14.5rem] resize-y`}
-        id={nameId}
-        name={nameId}
-        placeholder={titleId}
+        className={`${input} ${errors ? '!border-red-500' : 'border-initial'} h-[9rem] resize-y`}
+        id={name}
+        name={name}
+        placeholder={title}
+        {...rest}
       />
-      {errors[nameId] && <p className={error}>{errorText}</p>}
+      {errors ? (
+        <p className={error}>{(errors as FieldError).message}</p>
+      ) : null}
     </fieldset>
   )
 }

@@ -1,70 +1,29 @@
 ---
 import { getCollection } from 'astro:content'
 
-import AnimationFadeIn from 'components/shared/AnimationFadeIn.astro'
 import Link from 'components/shared/Button/Link.astro'
 import {
   colors,
   positions,
   sizes,
   space
-} from 'components/shared/Button/button'
-import IView from 'components/shared/Icons/IView.astro'
-import Image from 'components/shared/Image.astro'
+} from 'components/shared/Button/button.tsx'
 
 import { projectFormat } from 'lib/projectFormat'
+import { CarouselHero } from './CarouselHero'
 
 const [project, projects] = await Promise.all([
   getCollection('project'),
   getCollection('projects')
 ])
 
-const formattedProjects = projectFormat({ projects, limit: 3 })
+const formattedProjects = projectFormat({ projects, limit: 5 })
 ---
 
 <div class="wrapper">
-  <div
-    id={project[0].data.slugs}
-    class="mb-4 grid grid-cols-1 gap-12 lg:gap-24 xl:grid-cols-3 xl:[&>div:nth-child(2)]:mt-32"
-  >
-    {
-      formattedProjects?.map(({ data }) => (
-        <AnimationFadeIn class="flex flex-col gap-3">
-          <div class="flex flex-col items-center justify-between sm:flex-row">
-            <p class="text-light dark:text-dark text-center text-lg uppercase">
-              {data.title}
-            </p>
+  <div class="translate-y-[-7.5rem]" id={project[0].data.slugs}></div>
 
-            <p class="text-light/70 dark:text-dark/70 text-lg uppercase">
-              {data.subtitle}
-            </p>
-          </div>
-
-          <a
-            class="[&>*]:grid-stack group grid rounded-md shadow-md"
-            href={data.link}
-            target="_blank"
-            rel="prefetch"
-          >
-            <IView
-              class="invisible relative top-5 right-5 z-[1] ml-auto transition-all delay-200 ease-in group-hover:visible"
-              link={data.link}
-            />
-
-            <Image
-              class="aspect-auto w-full rounded-md object-cover opacity-80 transition-all delay-200 ease-in group-hover:opacity-100"
-              src={data.image.src}
-              fallbackImg="/images/placeholder.webp"
-              alt={data.image.alt}
-              width={data.image.width}
-              height={data.image.height}
-              loading="lazy"
-            />
-          </a>
-        </AnimationFadeIn>
-      ))
-    }
-  </div>
+  <CarouselHero client:load formattedProjects={formattedProjects} />
 
   <Link
     class={`mt-12 font-normal ${colors.primary} ${positions.center} ${sizes.small} ${space.small}`}
