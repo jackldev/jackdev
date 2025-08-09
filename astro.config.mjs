@@ -7,9 +7,6 @@ import sitemap from '@astrojs/sitemap'
 import robotsTxt from 'astro-robots-txt'
 
 // https://astro.build/config
-import prefetch from '@astrojs/prefetch'
-
-// https://astro.build/config
 import react from '@astrojs/react'
 
 const baseUrl = 'https://codezen.work'
@@ -23,11 +20,11 @@ export default defineConfig({
       customPages: [`${baseUrl}`]
     }),
     robotsTxt(),
-    prefetch(),
     react({
       include: ['**/react/*']
     })
   ],
+  prefetch: true,
   vite: {
     plugins: [tailwindcss()]
   },
