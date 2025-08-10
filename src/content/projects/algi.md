@@ -5,16 +5,14 @@
   subtitle: Agriculture Landing Page
   description: Looking to create an eye-catching agriculture landing page? Look no further than Algi! Our platform, powered by Laravel and React, is designed to help you build a stunning online presence for your agricultural business.
   techs: 
-  - HTML
-  - CSS
-  - JS
-  - TYPESCRIPT
   - REACT JS
+  - TYPESCRIPT
   - TAILWIND CSS
   - LARAVEL
   - PHP
   - POSTGRESQL
   - CLOUDINARY
+  - VERCEL
   image:
     src: /images/algi.webp
     alt: algi agriculture

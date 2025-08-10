@@ -5,16 +5,14 @@
   subtitle: Travel Landing Page
   description: Ready to embark on your next hiking adventure? Berg is your go-to travel landing page for all things hiking tours. With a sleek design and built with React JS and Laravel, our website offers a seamless browsing experience. Start planning your dream hike today!
   techs: 
-  - HTML
-  - CSS
-  - JS
-  - TYPESCRIPT
   - REACT JS
+  - TYPESCRIPT
   - TAILWIND CSS
   - LARAVEL
   - PHP
   - POSTGRESQL
   - CLOUDINARY
+  - VERCEL
   image:
     src: /images/berg.webp
     alt: berg ecommerce
