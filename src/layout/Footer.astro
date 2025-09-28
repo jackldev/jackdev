@@ -43,7 +43,7 @@ const pathname = Astro.url.pathname
               .map(({ data }) => (
                 <li>
                   <a
-                    class={`${pathname === data.link ? 'text-teal' : 'dark:text-light text-black'} font-main dark:text-dark text-sm font-normal uppercase`}
+                    class={`${pathname === data.link ? 'text-teal dark:text-teal' : 'dark:text-light text-black'} font-main dark:text-dark text-sm font-normal uppercase`}
                     href={data.link}
                   >
                     {data.title}

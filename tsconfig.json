@@ -34,6 +34,6 @@
       }
     ]
   },
-  "include": ["env.d.ts", "**/*.ts", "**/*.tsx", "**/*.astro"],
-  "exclude": ["node_modules"]
+  "include": ["env.d.ts", "**/*.ts", "**/*.tsx", "**/*.astro", ".astro/types.d.ts"],
+  "exclude": ["node_modules", "dist"]
 }
