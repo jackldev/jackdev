@@ -1,18 +1,18 @@
 ---
   id: 11
-  date: 2025-09-07
-  title: Portfolio
-  subtitle: Design and marketing portfolio
-  description: A dynamic, minimal web design and marketing portfolio built with HTML, CSS, and JavaScript showcases your skills, projects, and designs. It features responsive layouts, interactive elements, a contact form.
+  date: 2025-10-05
+  title: Olio
+  subtitle: Full stack developer portfolio template
+  description: OLIO. A minimal full-stack developer portfolio should highlight your skills, projects, experience, and education concisely using clean HTML, CSS, and JavaScript.
   techs: 
   - HTML
   - CSS
   - JAVASCRIPT
   - CLOUDFLARE
   image:
-    src: /images/portfolio.webp
-    alt: design and marketing portfolio
+    src: /images/olio.webp
+    alt: full stack developer portfolio
     width: 1374
     height: 738
-  link: https://portfolio-design-mark-one.pages.dev
+  link: https://olio-demo.pages.dev
 ---
