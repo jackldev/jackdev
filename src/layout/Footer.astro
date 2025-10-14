@@ -20,23 +20,21 @@ const pathname = Astro.url.pathname
       <div class="flex flex-col items-center justify-center gap-12 text-center">
         <div class="flex flex-col items-center">
           <div class="flex items-center gap-1">
-            <span class="invert dark:invert-0">
+            <span class="scale-110 invert dark:invert-0">
               <ILogo strokeColor="#000" />
             </span>
 
-            <span class="font-main text-2xl font-semibold uppercase">
+            <!-- <span class="font-main text-2xl font-semibold uppercase">
               {footer[0].data.title}
-            </span>
+            </span> -->
           </div>
 
-          <p
-            class="max-w-lg text-base leading-relaxed opacity-70 dark:font-light"
-          >
+          <p class="mt-2 max-w-md">
             {footer[0].data.description}
           </p>
         </div>
 
-        <ul class="flex gap-4">
+        <ul class="flex flex-col gap-4">
           {
             navs
               .sort((a, b) => a.data.id - b.data.id)
@@ -53,8 +51,8 @@ const pathname = Astro.url.pathname
           }
         </ul>
 
-        <div class="flex items-center gap-3">
-          <Socials direction="flex-row" show />
+        <div class="flex items-center gap-6">
+          <Socials direction="flex-row" show loading="lazy" />
 
           <DarkMode client:load />
         </div>
@@ -62,19 +60,20 @@ const pathname = Astro.url.pathname
     </div>
 
     <div class="target relative z-[2] flex w-fit gap-1 text-xs">
-      <p class="font-main text-dark/70 dark:text-light">
+      <p class="tracking-wide">
         <span class="font-main">{footer[0].data.copy}</span>
-        {`© ${new Date().getFullYear()}.  Made by`}
+        {`© ${new Date().getFullYear()}. All Rights Reserved`}
+        <!-- {`© ${new Date().getFullYear()}.  Made by`} -->
       </p>
 
-      <a
+      <!-- <a
         class="ease-out` text-xs text-red-400 transition delay-150 hover:text-red-500"
         href={footer[0].data.link}
         rel="noreferrer"
         target="_blank"
       >
         Codezen
-      </a>
+      </a> -->
     </div>
 
     <Top />

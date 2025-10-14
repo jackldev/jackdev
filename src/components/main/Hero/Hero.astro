@@ -13,7 +13,11 @@ const hero = await getCollection('hero')
 >
   <div class="h-[10rem]"></div>
 
-  <MainHero title={hero[0].data.title} subtitle={hero[0].data.subtitle} />
+  <MainHero
+    title={hero[0].data.title}
+    subtitle={hero[0].data.subtitle}
+    description={hero[0].data.description}
+  />
 
   <SubHero />
 </section>

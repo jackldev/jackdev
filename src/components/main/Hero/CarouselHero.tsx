@@ -32,11 +32,9 @@ export function CarouselHero({
           <CarouselItem className="pl-12 lg:basis-1/3" key={idx}>
             <div className="flex flex-col gap-3">
               <div className="flex flex-col items-center justify-between sm:flex-row">
-                <p className="text-center text-lg uppercase">{data.title}</p>
+                <p className="font-semibold text-sm uppercase">{data.title}</p>
 
-                <p className="text-dark/70 dark:text-light/70 text-lg uppercase">
-                  {data.subtitle}
-                </p>
+                <p className="text-sm uppercase">{data.subtitle}</p>
               </div>
 
               <a
@@ -56,7 +54,8 @@ export function CarouselHero({
                   alt={data.image.alt}
                   width={data.image.width}
                   height={data.image.height}
-                  loading="lazy"
+                  loading="eager"
+                  fetchPriority="high"
                 />
               </a>
             </div>

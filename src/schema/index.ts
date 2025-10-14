@@ -24,6 +24,7 @@ export const heroSchema = z.object({
   slugs: z.string(),
   title: z.string(),
   subtitle: z.string(),
+  description: z.string(),
   link: z.string(),
   text: z.string()
 })

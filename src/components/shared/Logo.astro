@@ -7,18 +7,17 @@ const seo = await getCollection('seo')
 ---
 
 <button
-  class="logo font-main text-dark dark:text-light relative z-[1] flex w-4 cursor-pointer items-center gap-1 text-2xl font-semibold uppercase"
+  class="relative z-[1] w-4 cursor-pointer"
+  id="logo"
   title={seo[0].data.metaTitle}
 >
   <span class="cursor-pointer invert dark:invert-0">
     <ILogo strokeColor="#000" />
   </span>
-
-  {seo[0].data.metaTitle}
 </button>
 
 <script>
-  const logo = document.querySelector('.logo')
+  const logo = document.getElementById('logo')
 
   logo!.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })

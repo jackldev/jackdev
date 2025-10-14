@@ -8,10 +8,7 @@ import Logo from 'components/shared/Logo.astro'
 const navs = await getCollection('nav')
 ---
 
-<header
-  id="header"
-  class="sticky top-0 left-0 z-[10] w-full transition-all delay-300 duration-500 ease-out"
->
+<header class="sticky top-0 left-0 z-[10] w-full" id="header">
   <div class="wrapper">
     <nav class="flex h-12 w-full items-center max-[992px]:justify-between">
       <Logo />

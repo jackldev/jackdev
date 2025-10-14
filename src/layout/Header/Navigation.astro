@@ -8,7 +8,7 @@ const { navs } = Astro.props as NavProp
 
 <ul
   id="navigation"
-  class="navigation_bg relative flex w-full list-none items-center justify-end gap-x-7 max-[992px]:invisible max-[992px]:fixed max-[992px]:top-0 max-[992px]:left-0 max-[992px]:h-full max-[992px]:w-full max-[992px]:flex-col max-[992px]:justify-center max-[992px]:gap-y-4 max-[992px]:text-center max-[992px]:opacity-0 max-[992px]:transition-all max-[992px]:delay-150 max-[992px]:duration-300 max-[992px]:ease-out"
+  class="max-[992px]:bg-light dark:max-[992px]:bg-dark relative flex w-full list-none items-center justify-end gap-x-10 max-[992px]:invisible max-[992px]:fixed max-[992px]:top-0 max-[992px]:left-0 max-[992px]:h-full max-[992px]:w-full max-[992px]:flex-col max-[992px]:justify-center max-[992px]:gap-y-4 max-[992px]:text-center max-[992px]:opacity-0 max-[992px]:transition-all max-[992px]:delay-150 max-[992px]:duration-300 max-[992px]:ease-out lg:bg-transparent"
 >
   {
     navs
@@ -16,7 +16,7 @@ const { navs } = Astro.props as NavProp
       .map(({ data }) => (
         <li>
           <a
-            class={`${pathname === data.link ? 'text-teal' : 'text-dark dark:text-light'} font-main links text-sm uppercase max-[992px]:text-lg max-[992px]:focus:outline-none`}
+            class={`${pathname === data.link ? 'text-teal' : 'text-dark dark:text-light'} font-main links text-sm uppercase max-[992px]:text-2xl max-[992px]:font-bold max-[992px]:focus:outline-none lg:font-semibold`}
             href={data.link}
           >
             {data.title}
@@ -27,8 +27,8 @@ const { navs } = Astro.props as NavProp
 </ul>
 
 <script>
-  const hamburger = document.querySelector('#hamburger') as HTMLButtonElement
-  const navigation = document.querySelector('#navigation') as HTMLButtonElement
+  const hamburger = document.getElementById('hamburger') as HTMLButtonElement
+  const navigation = document.getElementById('navigation') as HTMLButtonElement
   const icons = document.querySelectorAll('.icon') as NodeListOf<Element>
 
   hamburger.addEventListener('click', () => {

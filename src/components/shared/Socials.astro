@@ -6,15 +6,16 @@ import Image from 'components/shared/Image.astro'
 type SocialProp = {
   show: boolean
   direction: 'flex-row' | 'flex-col'
+  loading: 'eager' | 'lazy'
 }
 
-const { show, direction } = Astro.props as SocialProp
+const { show, direction, loading } = Astro.props as SocialProp
 
 const socials = await getCollection('socials')
 ---
 
 <div
-  class={`${show ? `invert-0` : `invert dark:invert-0`} ${direction} flex w-fit items-center justify-between gap-3`}
+  class={`${show ? `invert-0` : `invert dark:invert-0`} ${direction} flex w-fit items-center justify-between gap-6`}
 >
   {
     socials.map(({ data }) => (
@@ -30,7 +31,7 @@ const socials = await getCollection('socials')
           alt={data.image.alt}
           width={data.image.width}
           height={data.image.height}
-          loading="lazy"
+          loading={loading}
         />
       </a>
     ))

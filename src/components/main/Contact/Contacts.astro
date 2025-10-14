@@ -11,12 +11,10 @@ const contact = await getCollection('contact')
   <div class="wrapper">
     <AnimationFadeIn class="mx-auto flex w-full flex-col gap-20 lg:w-3/5">
       <div class="text-center">
-        <h2 class="text-8xl">
+        <h2 class="text-7xl">
           {contact[0].data.title}
         </h2>
-        <p
-          class="mx-auto mt-2 max-w-[17rem] text-lg opacity-70 sm:text-xl dark:font-light"
-        >
+        <p class="mx-auto mt-2 max-w-[21rem] text-lg sm:text-xl">
           {contact[0].data.subtitle}
         </p>
       </div>

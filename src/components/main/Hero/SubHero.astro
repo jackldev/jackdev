@@ -26,7 +26,7 @@ const formattedProjects = projectFormat({ projects, limit: 5 })
   <CarouselHero client:load formattedProjects={formattedProjects} />
 
   <Link
-    class={`mt-12 font-normal ${colors.primary} ${positions.center} ${sizes.small} ${space.small}`}
+    class={`mt-12 ${colors.primary} ${positions.center} ${sizes.small} ${space.small}`}
     href={project[0].data.link}
   >
     {project[0].data.text}

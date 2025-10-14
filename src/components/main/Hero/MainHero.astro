@@ -2,21 +2,31 @@
 import AnimationFadeIn from 'components/shared/AnimationFadeIn.astro'
 import Down from 'components/shared/Down.astro'
 
-const { title, subtitle } = Astro.props as { title: string; subtitle: string }
+const { title, subtitle, description } = Astro.props as {
+  title: string
+  subtitle: string
+  description: string
+}
 ---
 
 <AnimationFadeIn class="flex w-full place-content-center">
   <div class="wrapper relative z-[1] flex h-full justify-center text-center">
     <div class="">
-      <p class="text-dark/70 dark:text-light/70 text-2xl uppercase">
+      <p class="text-dark/90 dark:text-light/90 text-lg uppercase xl:text-xl">
         {subtitle}
       </p>
 
       <h1
-        class="text-dark/90 dark:text-light/90 mt-4 max-w-[50rem] text-6xl leading-snug font-bold sm:mt-0 sm:text-7xl sm:leading-snug md:text-7xl md:leading-tight"
+        class="text-dark/90 dark:text-light/90 max-w-[50rem] text-7xl font-bold sm:text-7xl md:text-[7rem] xl:text-[10rem]"
       >
         {title}
       </h1>
+
+      <p
+        class="text-dark/70 dark:text-light/70 mt-4 sm:text-xl md:text-2xl xl:text-3xl"
+      >
+        {description}
+      </p>
 
       <Down />
     </div>

@@ -2,7 +2,7 @@
   id: 11
   date: 2025-10-05
   title: Olio
-  subtitle: Full stack developer portfolio template
+  subtitle: Developer portfolio
   description: OLIO. A minimal full-stack developer portfolio should highlight your skills, projects, experience, and education concisely using clean HTML, CSS, and JavaScript.
   techs: 
   - HTML

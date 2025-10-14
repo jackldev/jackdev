@@ -3,10 +3,11 @@ import ITop from 'components/shared/Icons/ITop.astro'
 ---
 
 <div
-  class="fixed bottom-2 z-[1] flex w-[1300px] animate-pulse justify-end max-[1440px]:w-[90%]"
+  class="fixed bottom-4 z-[1] flex w-[1300px] justify-end max-[1440px]:w-[90%]"
 >
   <button
-    class="curser-pointer top visible cursor-pointer border-0 bg-transparent no-underline opacity-100 transition-[opacity] delay-150 duration-300 ease-out focus:outline-none"
+    class="top curser-pointer visible cursor-pointer border-0 bg-transparent no-underline opacity-80 transition-[opacity] delay-150 duration-300 ease-out hover:opacity-100 focus:outline-none"
+    id="top"
     title="Go To Top"
   >
     <ITop class="scale-90" strokeColor="#1D93B1" />
@@ -14,7 +15,7 @@ import ITop from 'components/shared/Icons/ITop.astro'
 </div>
 
 <script>
-  const top = document.querySelector('.top')
+  const top = document.getElementById('top')
   const target = document.querySelector('.target')
 
   const observer = new IntersectionObserver(

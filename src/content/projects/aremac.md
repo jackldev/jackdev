@@ -2,7 +2,7 @@
   id: 4
   date: 2025-09-28
   title: Aremac
-  subtitle: Photographer Portfolio Template
+  subtitle: Photographer Portfolio
   description: AREMAC. Built with pure HTML, CSS, and JavaScript, this portfolio uses a dark theme to make photos stand out. A sticky navigation bar leads to sections like introduction, biography projects with modal pop-ups, and a contact form that sends data via email.
   techs: 
   - HTML
