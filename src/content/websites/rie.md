@@ -1,19 +1,24 @@
 ---
   id: 1
-  date: 2023-03-21
-  title: Rie
-  subtitle: Commerce Landing Page
-  description: Check out our React Astro Landing Page. With minimalist design and easy customization- it's the perfect way to showcase your web agency services.
+  date: 2024-03-21
+  title: Maon
+  subtitle: Photographer Portfolio
+  description: Maon is the perfect choice for photographers looking to create a beautiful portfolio. Built with Nextjs and Prismic, this website template offers a seamless user experience and stunning design options.
   techs: 
-  - REACT JS
-  - ASTRO
+  - HTML
+  - CSS
+  - JS
+  - TYPESCRIPT
+  - NEXT JS
   - TAILWIND CSS
-  - COSMICJS
-  - RENDER
+  - PRISMIC
+  - CLOUDINARY
+  - POSTGRESQL
+  - VERCEL
   image:
-    src: /images/rie.webp
-    alt: rie web agency
+    src: /images/maon.webp
+    alt: maon photographer
     width: 1374
     height: 738
-  link: https://rie-webagency.onrender.com
+  link: https://maon-photo.vercel.app
 ---
