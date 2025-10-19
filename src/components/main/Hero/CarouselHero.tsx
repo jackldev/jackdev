@@ -11,9 +11,9 @@ import {
 } from 'components/ui/carousel.tsx'
 
 export function CarouselHero({
-  formattedProjects
+  projects
 }: {
-  formattedProjects: ProjectProp[] | undefined
+  projects: ProjectProp[] | undefined
 }) {
   return (
     <Carousel
@@ -28,7 +28,7 @@ export function CarouselHero({
       ]}
     >
       <CarouselContent className="-ml-12">
-        {formattedProjects?.map(({ data }, idx) => (
+        {projects?.map(({ data }, idx) => (
           <CarouselItem className="pl-12 lg:basis-1/3" key={idx}>
             <div className="flex flex-col gap-3">
               <div className="flex flex-col items-center justify-between sm:flex-row">

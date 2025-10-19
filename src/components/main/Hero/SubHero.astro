@@ -11,24 +11,34 @@ import {
 
 import { projectFormat } from 'lib/projectFormat'
 import { CarouselHero } from './CarouselHero'
+import type { ProjectProp } from 'types/type'
+import AnimationFadeIn from 'components/shared/AnimationFadeIn.astro'
 
-const [project, projects] = await Promise.all([
+const [project, templates, websites] = await Promise.all([
   getCollection('project'),
-  getCollection('projects')
+  getCollection('templates'),
+  getCollection('websites')
 ])
 
-const formattedProjects = projectFormat({ projects, limit: 5 })
+const formattedTemplates = projectFormat({ projects: templates, limit: 2 })
+const formattedWebsites = projectFormat({ projects: websites, limit: 2 })
+const projects = [
+  ...(formattedTemplates as ProjectProp[]),
+  ...(formattedWebsites as ProjectProp[])
+]
 ---
 
-<div class="wrapper">
-  <div class="translate-y-[-7.5rem]" id={project[0].data.slugs}></div>
+<AnimationFadeIn>
+  <div class="wrapper">
+    <div class="translate-y-[-7.5rem]" id={project[0].data.slugs}></div>
 
-  <CarouselHero client:load formattedProjects={formattedProjects} />
+    <CarouselHero client:load projects={projects} />
 
-  <Link
-    class={`mt-12 ${colors.primary} ${positions.center} ${sizes.small} ${space.small}`}
-    href={project[0].data.link}
-  >
-    {project[0].data.text}
-  </Link>
-</div>
+    <Link
+      class={`mt-12 ${colors.primary} ${positions.center} ${sizes.small} ${space.small}`}
+      href={project[0].data.link}
+    >
+      {project[0].data.text}
+    </Link>
+  </div>
+</AnimationFadeIn>

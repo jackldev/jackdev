@@ -1,18 +1,19 @@
-import { defineCollection } from 'astro:content'
 import { glob } from 'astro/loaders'
+import { defineCollection } from 'astro:content'
 
 import {
-  seoSchema,
-  navSchema,
-  heroSchema,
-  projectSchema,
-  projectsSchema,
   bioSchema,
-  toolsSchema,
   contactSchema,
+  errorSchema,
   footerSchema,
+  heroSchema,
+  navSchema,
+  projectSchema,
+  seoSchema,
   socialsSchema,
-  errorSchema
+  templatesSchema,
+  toolsSchema,
+  websitesSchema
 } from 'schema/index.ts'
 
 const seoCollection = defineCollection({
@@ -31,12 +32,19 @@ const projectCollection = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/project' }),
   schema: projectSchema
 })
-const projectsCollection = defineCollection({
+const websitesCollection = defineCollection({
   loader: glob({
     pattern: '**/[^_]*.{md,mdx}',
-    base: './src/content/projects'
+    base: './src/content/websites'
   }),
-  schema: projectsSchema
+  schema: websitesSchema
+})
+const templatesCollection = defineCollection({
+  loader: glob({
+    pattern: '**/[^_]*.{md,mdx}',
+    base: './src/content/templates'
+  }),
+  schema: templatesSchema
 })
 const bioCollection = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/bio' }),
@@ -68,7 +76,8 @@ export const collections = {
   nav: navCollection,
   hero: heroCollection,
   project: projectCollection,
-  projects: projectsCollection,
+  websites: websitesCollection,
+  templates: templatesCollection,
   bio: bioCollection,
   tools: toolsCollection,
   contact: contactCollection,

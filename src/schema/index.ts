@@ -37,7 +37,23 @@ export const projectSchema = z.object({
   text: z.string()
 })
 
-export const projectsSchema = z.object({
+export const websitesSchema = z.object({
+  id: z.number(),
+  date: z.date(),
+  title: z.string(),
+  subtitle: z.string(),
+  description: z.string(),
+  techs: z.array(z.string()),
+  image: z.object({
+    src: z.string(),
+    alt: z.string(),
+    width: z.number(),
+    height: z.number()
+  }),
+  link: z.string()
+})
+
+export const templatesSchema = z.object({
   id: z.number(),
   date: z.date(),
   title: z.string(),

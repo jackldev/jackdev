@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content'
+
+import AnimationFadeIn from 'components/shared/AnimationFadeIn.astro'
+
+import { projectFormat } from 'lib/projectFormat'
+import SubProjects from './SubProjects.astro'
+
+const [project, templates, websites] = await Promise.all([
+  getCollection('project'),
+  getCollection('templates'),
+  getCollection('websites')
+])
+
+const formattedTemplates = projectFormat({ projects: templates })
+const formattedWebsites = projectFormat({ projects: websites })
+---
+
+<section id={project[0].data.slugs}>
+  <div class="wrapper">
+    <AnimationFadeIn>
+      <div class="text-center">
+        <h2 class="text-7xl">{project[0].data.title}</h2>
+        <p class="mx-auto mt-2 max-w-xs text-lg sm:text-xl">
+          {project[0].data.subtitle}
+        </p>
+      </div>
+    </AnimationFadeIn>
+
+    <SubProjects title="Templates" projects={formattedTemplates} />
+    <SubProjects title="Websites" projects={formattedWebsites} />
+  </div>
+</section>
