@@ -14,7 +14,7 @@
   image:
     src: /images/boreas.webp
     alt: boreas
-    width: 1374
-    height: 738
+    width: 1920
+    height: 1080
   link: https://boreas-music.vercel.app
 ---

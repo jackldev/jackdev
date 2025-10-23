@@ -2,7 +2,7 @@
 import AnimationFadeIn from 'components/shared/AnimationFadeIn.astro'
 import Image from 'components/shared/Image.astro'
 import IView from 'components/shared/Icons/IView.astro'
-import DateFormat from 'components/shared/DateFormat.astro'
+// import DateFormat from 'components/shared/DateFormat.astro'
 
 import type { ProjectProp } from 'types/type'
 
@@ -22,12 +22,12 @@ const { title, projects } = Astro.props as {
       projects?.map(({ data }) => (
         <AnimationFadeIn>
           <div class="flex flex-col gap-4">
-            <div class="flex items-center justify-between gap-12">
-              <h3 class="text-sm">{data.subtitle}</h3>
-              <p class="text-sm">
+            {/* <div class="flex items-center justify-between gap-12"> */}
+            <h3 class="ml-auto text-sm">{data.subtitle}</h3>
+            {/* <p class="text-sm">
                 <DateFormat date={data.date} />
-              </p>
-            </div>
+              </p> */}
+            {/* </div> */}
 
             <a
               class="[&>*]:grid-stack group grid rounded-md shadow-sm transition-shadow delay-150 ease-out hover:shadow-lg"

@@ -18,7 +18,7 @@
   image:
     src: /images/maon.webp
     alt: maon photographer
-    width: 1374
-    height: 738
+    width: 1920
+    height: 1080
   link: https://maon-photo.vercel.app
 ---

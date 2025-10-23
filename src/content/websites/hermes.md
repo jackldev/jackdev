@@ -14,7 +14,7 @@
   image:
     src: /images/hermes.webp
     alt: Saas Language Service
-    width: 1374
-    height: 738
+    width: 1920
+    height: 1080
   link: https://hermes-lingo.vercel.app
 ---

@@ -12,7 +12,7 @@
   image:
     src: /images/archiq.webp
     alt: archiq architect design
-    width: 1374
-    height: 738
+    width: 1920
+    height: 1080
   link: https://archiq-design.netlify.app
 ---

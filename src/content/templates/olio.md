@@ -2,7 +2,7 @@
   id: 12
   date: 2025-10-05
   title: Olio
-  subtitle: Developer portfolio
+  subtitle: Personal portfolio
   description: OLIO. A minimal full-stack developer portfolio should highlight your skills, projects, experience, and education concisely using clean HTML, CSS, and JavaScript.
   techs: 
   - HTML
@@ -12,7 +12,7 @@
   image:
     src: /images/olio.webp
     alt: full stack developer portfolio
-    width: 1374
-    height: 738
+    width: 1920
+    height: 1080
   link: https://olio-demo.pages.dev
 ---

@@ -12,7 +12,7 @@
   image:
     src: /images/camera.webp
     alt: aremac photographer portfolio
-    width: 1374
-    height: 738
+    width: 1920
+    height: 1080
   link: https://aremac-demo.pages.dev
 ---
