@@ -6,13 +6,11 @@ import AnimationFadeIn from 'components/shared/AnimationFadeIn.astro'
 import { projectFormat } from 'lib/projectFormat'
 import SubProjects from './SubProjects.astro'
 
-const [project, templates, websites] = await Promise.all([
+const [project, websites] = await Promise.all([
   getCollection('project'),
-  getCollection('templates'),
   getCollection('websites')
 ])
 
-const formattedTemplates = projectFormat({ projects: templates })
 const formattedWebsites = projectFormat({ projects: websites })
 ---
 
@@ -27,7 +25,6 @@ const formattedWebsites = projectFormat({ projects: websites })
       </div>
     </AnimationFadeIn>
 
-    <SubProjects title="Templates" projects={formattedTemplates} />
-    <SubProjects title="Websites" projects={formattedWebsites} />
+    <SubProjects projects={formattedWebsites} />
   </div>
 </section>

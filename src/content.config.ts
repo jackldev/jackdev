@@ -11,7 +11,6 @@ import {
   projectSchema,
   seoSchema,
   socialsSchema,
-  templatesSchema,
   toolsSchema,
   websitesSchema
 } from 'schema/index.ts'
@@ -38,13 +37,6 @@ const websitesCollection = defineCollection({
     base: './src/content/websites'
   }),
   schema: websitesSchema
-})
-const templatesCollection = defineCollection({
-  loader: glob({
-    pattern: '**/[^_]*.{md,mdx}',
-    base: './src/content/templates'
-  }),
-  schema: templatesSchema
 })
 const bioCollection = defineCollection({
   loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/bio' }),
@@ -77,7 +69,6 @@ export const collections = {
   hero: heroCollection,
   project: projectCollection,
   websites: websitesCollection,
-  templates: templatesCollection,
   bio: bioCollection,
   tools: toolsCollection,
   contact: contactCollection,

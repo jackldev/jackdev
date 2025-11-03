@@ -49,7 +49,7 @@ export function CarouselHero({
                 />
 
                 <img
-                  className="aspect-auto w-full rounded-md object-cover opacity-80 transition-all delay-200 ease-in group-hover:opacity-100"
+                  className="aspect-16/9 w-full rounded-md object-cover opacity-90 transition-all delay-200 ease-in group-hover:opacity-100"
                   src={data.image.src}
                   alt={data.image.alt}
                   width={data.image.width}
