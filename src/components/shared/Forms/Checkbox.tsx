@@ -8,7 +8,7 @@ const ChecksBox = ({ name, errors, children }: CheckBoxProp) => {
       <label className="dark:text-light" htmlFor={name}>
         {children}
 
-        <span className="font-main ml-1.5 inline-block cursor-pointer">
+        <span className="font-main ml-1.5 inline-block cursor-pointer text-sm">
           {`I'm a human`}
         </span>
       </label>

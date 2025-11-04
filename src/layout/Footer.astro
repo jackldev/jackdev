@@ -29,7 +29,7 @@ const pathname = Astro.url.pathname
             </span> -->
           </div>
 
-          <p class="mt-2 max-w-lg">
+          <p class="mt-2 max-w-sm text-sm">
             {footer[0].data.description}
           </p>
         </div>
@@ -41,7 +41,8 @@ const pathname = Astro.url.pathname
               .map(({ data }) => (
                 <li>
                   <a
-                    class={`${pathname === data.link ? 'text-teal dark:text-teal' : 'dark:text-light text-black'} font-main dark:text-dark text-sm font-normal uppercase`}
+                    class={`${pathname === data.link ? 'text-teal dark:text-teal' : 'dark:text-light text-black'} font-main dark:text-dark footer__link text-sm font-normal uppercase`}
+                    id={data.slugs}
                     href={data.link}
                   >
                     {data.title}

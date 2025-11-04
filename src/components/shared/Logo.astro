@@ -1,5 +1,5 @@
 ---
-import ILogo from 'components/shared/Icons/ILogo.astro'
+// import ILogo from 'components/shared/Icons/ILogo.astro'
 
 import { getCollection } from 'astro:content'
 
@@ -7,13 +7,15 @@ const seo = await getCollection('seo')
 ---
 
 <button
-  class="relative z-[1] w-4 cursor-pointer"
+  class="relative z-[1] flex w-4 cursor-pointer items-center gap-1"
   id="logo"
   title={seo[0].data.metaTitle}
 >
-  <span class="cursor-pointer invert dark:invert-0">
+  <!-- <div class="cursor-pointer invert dark:invert-0">
     <ILogo strokeColor="#000" />
-  </span>
+  </div> -->
+
+  <p class="mt-0.5 text-3xl font-semibold">{seo[0].data.metaTitle}</p>
 </button>
 
 <script>

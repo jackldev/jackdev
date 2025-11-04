@@ -16,7 +16,8 @@ const { navs } = Astro.props as NavProp
       .map(({ data }) => (
         <li>
           <a
-            class={`${pathname === data.link ? 'text-teal' : 'text-dark dark:text-light'} font-main links text-sm uppercase max-[992px]:text-2xl max-[992px]:font-bold max-[992px]:focus:outline-none lg:font-semibold`}
+            class={`${pathname === data.link ? 'text-teal' : 'text-dark dark:text-light'} font-main links nav__link text-sm uppercase max-[992px]:text-2xl max-[992px]:font-bold max-[992px]:focus:outline-none lg:font-semibold`}
+            id={data.slugs}
             href={data.link}
           >
             {data.title}
@@ -30,6 +31,9 @@ const { navs } = Astro.props as NavProp
   const hamburger = document.getElementById('hamburger') as HTMLButtonElement
   const navigation = document.getElementById('navigation') as HTMLButtonElement
   const icons = document.querySelectorAll('.icon') as NodeListOf<Element>
+  const sections = document.querySelectorAll('section[id]')
+  const navLinks = document.querySelectorAll('.nav__link')
+  const footerLinks = document.querySelectorAll('.footer__link')
 
   hamburger.addEventListener('click', () => {
     icons.forEach((icon) => {
@@ -55,4 +59,63 @@ const { navs } = Astro.props as NavProp
       }
     })
   })
+
+  function setActiveLink(id: string | undefined) {
+    navLinks.forEach((link) => {
+      link.classList.remove('active-link')
+      if (link.getAttribute('href') === `#${id}`) {
+        link.classList.add('active-link')
+      }
+    })
+
+    footerLinks.forEach((link) => {
+      link.classList.remove('active-link')
+      if (link.getAttribute('href') === `#${id}`) {
+        link.classList.add('active-link')
+      }
+    })
+  }
+
+  window.addEventListener('scroll', () => {
+    let current: string | null = ''
+
+    sections.forEach((section) => {
+      const sectionTop = (section as HTMLElement).offsetTop
+
+      if (pageYOffset >= sectionTop - 60) {
+        current = section.getAttribute('id')
+      }
+    })
+
+    setActiveLink(current)
+  })
+
+  function smoothScroll(element: Element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest'
+    })
+  }
+
+  function elementNavigation(links: NodeListOf<Element> | null) {
+    links?.forEach((link, id) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault()
+
+        const targetId: string | undefined = link
+          ?.getAttribute('href')
+          ?.substring(1)
+
+        setTimeout(() => {
+          smoothScroll(sections[id])
+        }, 100)
+
+        setActiveLink(targetId)
+      })
+    })
+  }
+
+  elementNavigation(navLinks)
+  elementNavigation(footerLinks)
 </script>

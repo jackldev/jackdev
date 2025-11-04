@@ -12,7 +12,7 @@ import {
 export function DarkMode() {
   const [theme, setThemeState] = React.useState<
     'theme-light' | 'dark' | 'system'
-  >('theme-light')
+  >('dark')
 
   React.useEffect(() => {
     const isDarkMode = document.documentElement.classList.contains('dark')

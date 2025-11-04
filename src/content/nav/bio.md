@@ -1,6 +1,6 @@
 ---
-  id: 0
+  id: 1
   slugs: "bio"
   title: "Bio"
-  link: "/bio"
+  link: "#bio"
 ---

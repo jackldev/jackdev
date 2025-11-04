@@ -8,18 +8,18 @@ const contact = await getCollection('contact')
 ---
 
 <section id={contact[0].data.slugs}>
-  <div class="wrapper">
-    <AnimationFadeIn class="mx-auto flex w-full flex-col gap-20 lg:w-3/5">
-      <div class="text-center">
-        <h2 class="text-7xl">
+  <div class="wrapper pt-20">
+    <AnimationFadeIn class="grid gap-20 md:gap-24 lg:grid-cols-2">
+      <div>
+        <h2 class="text-5xl">
           {contact[0].data.title}
         </h2>
-        <p class="mx-auto mt-2 max-w-[21rem] text-lg sm:text-xl">
+        <p class="mt-2 max-w-[15rem] text-sm">
           {contact[0].data.subtitle}
         </p>
       </div>
 
-      <Form client:load />
+      <Form client:only="react" />
     </AnimationFadeIn>
   </div>
 </section>

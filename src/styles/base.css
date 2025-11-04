@@ -74,7 +74,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --color-gradient: var(--background-gradient);
+  --color-gradient: var(--body-background);
 }
 
 :root {
@@ -98,7 +98,7 @@
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-2: oklch(61.237% 0.10485 219.807);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
@@ -111,31 +111,7 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  --background-gradient:
-    radial-gradient(
-      circle at top left,
-      oklch(91.583% 0.0001 271.152),
-      transparent,
-      oklch(90.67% 0.0001 271.152)
-    ),
-    radial-gradient(
-      circle at bottom,
-      oklch(96.646% 0.00319 15.315),
-      oklch(85.223% 0.01797 285.941),
-      transparent
-    ),
-    radial-gradient(
-      circle at left,
-      transparent,
-      oklch(93.1% 0.00011 271.152),
-      oklch(90.312% 0.01384 325.345)
-    ),
-    radial-gradient(
-      circle at right,
-      transparent,
-      oklch(91.303% 0.04718 318.188),
-      oklch(93.626% 0.02247 104.155)
-    );
+  --body-background: oklch(91.583% 0.0001 271.152);
 }
 
 .dark {
@@ -158,7 +134,7 @@
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
   --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-2: oklch(61.237% 0.10485 219.807);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
@@ -171,32 +147,7 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 
-  /* gradient */
-  --background-gradient:
-    radial-gradient(
-      circle at top left,
-      oklch(14.479% 0.00002 271.152),
-      transparent,
-      oklch(24.278% 0.04378 251.246)
-    ),
-    radial-gradient(
-      circle at bottom,
-      oklch(16.842% 0.00002 271.152),
-      oklch(24.228% 0.04215 241.799),
-      transparent
-    ),
-    radial-gradient(
-      circle at left,
-      transparent,
-      oklch(14.479% 0.00002 271.152),
-      oklch(17.849% 0.05364 254.457)
-    ),
-    radial-gradient(
-      circle at right,
-      transparent,
-      oklch(20.204% 0.09866 316.725),
-      oklch(30.919% 0.00004 271.152)
-    );
+  --body-background: oklch(14.479% 0.00002 271.152);
 }
 
 @layer base {
@@ -286,11 +237,16 @@
 
   /* NAVIGATION BACKGROUND */
   .body_bg {
-    background-image: var(--color-gradient);
+    background: var(--color-gradient);
   }
 
   #header.active {
-    background-image: var(--color-gradient);
+    background: var(--color-gradient);
+  }
+
+  .active-link {
+    color: var(--chart-2);
+    transition: 0.35s ease-in;
   }
 
   /* TOP BUTTON */

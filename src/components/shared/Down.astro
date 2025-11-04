@@ -1,23 +1,18 @@
----
-import IDown from 'components/shared/Icons/IDown.astro'
----
-
-<div
-  class="mx-auto mt-20 flex w-fit cursor-pointer justify-center"
-  id="down"
-  title="Scroll Down"
->
-  <IDown
-    class="scale-90 opacity-80 transition-[opacity] delay-150 duration-300 ease-out hover:opacity-100"
-    strokeColor="#1D93B1"
-  />
-</div>
+<button class="mx-auto mt-10 block w-fit cursor-pointer lg:mx-0" id="down">
+  <span
+    class="bg-teal text-light rounded-sm px-4 py-2 text-sm font-semibold capitalize sm:px-5 sm:py-2.5 sm:text-base"
+  >
+    See my projects
+  </span>
+</button>
 
 <script>
   const down = document.getElementById('down') as HTMLButtonElement
-  const section = document.getElementById('projects') as HTMLButtonElement
+  const projectSection = document.querySelector(
+    'section#projects'
+  ) as HTMLButtonElement
 
   down.addEventListener('click', () => {
-    section.scrollIntoView({ block: 'start', behavior: 'smooth' })
+    projectSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
   })
 </script>

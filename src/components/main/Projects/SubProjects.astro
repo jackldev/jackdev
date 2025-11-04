@@ -29,7 +29,7 @@ const { projects } = Astro.props as {
             />
 
             <Image
-              class="aspect-16/9 w-full rounded-md object-cover opacity-90 transition-all delay-200 ease-in group-hover:opacity-100"
+              class="aspect-16/9 w-full rounded-md object-cover"
               src={data.image.src}
               fallbackImg="/images/placeholder.webp"
               alt={data.image.alt}
@@ -41,12 +41,12 @@ const { projects } = Astro.props as {
 
           <div>
             <h3 class="text-xl">{data.title}</h3>
-            <p class="mt-2 text-base">{data.description}</p>
+            <p class="mt-2 text-sm">{data.description}</p>
           </div>
 
           <div class="mt-4 flex flex-row flex-wrap items-center gap-x-3 [&>p:last-child>span]:hidden">
             {data.techs.map((tech) => (
-              <p class="mt-1 text-left text-xs tracking-wide uppercase lg:text-sm">
+              <p class="mt-1 text-left text-xs tracking-wide uppercase">
                 {tech}
                 <span class="ml-1.5 inline-block opacity-70">|</span>
               </p>
@@ -54,7 +54,7 @@ const { projects } = Astro.props as {
           </div>
 
           <a
-            class="bg-teal ml-auto w-fit rounded-sm px-4 py-1 font-semibold"
+            class="bg-teal text-light ml-auto w-fit rounded-sm px-4 py-1 font-semibold"
             href={data.link}
             target="_blank"
             rel="prefetch"

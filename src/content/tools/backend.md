@@ -1,7 +1,9 @@
 ---
   id: 3
-  title: "Back End"
+  title: "Others"
   tools:
     - MongoDB
     - PostgreSQL
+    - Cloudinary
+    - Figma
 ---
