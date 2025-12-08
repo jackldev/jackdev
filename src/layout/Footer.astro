@@ -14,7 +14,7 @@ const [footer, navs] = await Promise.all([
 const pathname = Astro.url.pathname
 ---
 
-<footer class="mt-10 pb-8" id={footer[0].data.slugs}>
+<footer class="mt-40 pb-8" id={footer[0].data.slugs}>
   <div class="wrapper">
     <div class="pb-20">
       <div class="flex flex-col items-center justify-center gap-12 text-center">
@@ -52,7 +52,7 @@ const pathname = Astro.url.pathname
           }
         </ul>
 
-        <div class="flex items-center gap-6">
+        <div class="flex items-center gap-4">
           <Socials direction="flex-row" show loading="lazy" />
 
           <DarkMode client:load />

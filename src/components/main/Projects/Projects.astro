@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 
-import AnimationFadeIn from 'components/shared/AnimationFadeIn.astro'
+// import AnimationFadeIn from 'components/shared/AnimationFadeIn.astro'
 
 import { projectFormat } from 'lib/projectFormat'
 import SubProjects from './SubProjects.astro'
@@ -14,16 +14,17 @@ const [project, websites] = await Promise.all([
 const formattedWebsites = projectFormat({ projects: websites })
 ---
 
-<section id={project[0].data.slugs}>
+<section class="lg:-mt-32" id={project[0].data.slugs}>
+  <div class={`${project[0].data.slugs}`}></div>
   <div class="wrapper pt-20">
-    <AnimationFadeIn>
+    <!-- <AnimationFadeIn>
       <div>
         <h2 class="text-5xl">{project[0].data.title}</h2>
         <p class="mt-2 max-w-xs text-sm">
           {project[0].data.subtitle}
         </p>
       </div>
-    </AnimationFadeIn>
+    </AnimationFadeIn> -->
 
     <SubProjects projects={formattedWebsites} />
   </div>

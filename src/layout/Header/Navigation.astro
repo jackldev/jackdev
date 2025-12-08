@@ -82,7 +82,7 @@ const { navs } = Astro.props as NavProp
     sections.forEach((section) => {
       const sectionTop = (section as HTMLElement).offsetTop
 
-      if (pageYOffset >= sectionTop - 60) {
+      if (pageYOffset >= sectionTop - 150) {
         current = section.getAttribute('id')
       }
     })

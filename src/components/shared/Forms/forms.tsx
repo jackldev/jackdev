@@ -7,4 +7,4 @@ export const input =
 export const checkinput = 'border border-teal bg-transparent'
 
 export const error =
-  'mt-2 font-main text-red-500 text-sm font-light tracking-wide'
+  'mt-1 font-main text-red-500 text-xs font-light tracking-wide'

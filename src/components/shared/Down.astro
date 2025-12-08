@@ -1,18 +1,18 @@
-<button class="mx-auto mt-10 block w-fit cursor-pointer lg:mx-0" id="down">
-  <span
-    class="bg-teal text-light rounded-sm px-4 py-2 text-sm font-semibold capitalize sm:px-5 sm:py-2.5 sm:text-base"
-  >
-    See my projects
-  </span>
+---
+import IDown from 'components/shared/Icons/IDown.astro'
+---
+
+<button class="block w-fit cursor-pointer" id="down">
+  <IDown strokeColor="#1D93B1" />
 </button>
 
 <script>
   const down = document.getElementById('down') as HTMLButtonElement
   const projectSection = document.querySelector(
-    'section#projects'
+    '.projects'
   ) as HTMLButtonElement
 
   down.addEventListener('click', () => {
-    projectSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+    projectSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
   })
 </script>

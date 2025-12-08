@@ -10,13 +10,13 @@ import {
 } from 'components/ui/dropdown-menu.tsx'
 
 export function DarkMode() {
-  const [theme, setThemeState] = React.useState<
-    'theme-light' | 'dark' | 'system'
-  >('dark')
+  const [theme, setThemeState] = React.useState<'light' | 'dark' | 'system'>(
+    'dark'
+  )
 
   React.useEffect(() => {
     const isDarkMode = document.documentElement.classList.contains('dark')
-    setThemeState(isDarkMode ? 'dark' : 'theme-light')
+    setThemeState(isDarkMode ? 'dark' : 'light')
   }, [])
 
   React.useEffect(() => {
@@ -42,7 +42,7 @@ export function DarkMode() {
       </DropdownMenuTrigger>
 
       <DropdownMenuContent align="center">
-        <DropdownMenuItem onClick={() => setThemeState('theme-light')}>
+        <DropdownMenuItem onClick={() => setThemeState('light')}>
           Light
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setThemeState('dark')}>
