@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content'
 
 // import AnimationFadeIn from 'components/shared/AnimationFadeIn.astro'
 
-import { projectFormat } from 'lib/projectFormat'
+import { projectFormat } from 'lib/projectFormat.ts'
 import SubProjects from './SubProjects.astro'
 
 const [project, websites] = await Promise.all([

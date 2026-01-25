@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 
-import ILogo from 'components/shared/Icons/ILogo.astro'
+// import ILogo from 'components/shared/Icons/ILogo.astro'
 import Socials from 'components/shared/Socials.astro'
 import Top from 'components/shared/Top.astro'
 import { DarkMode } from 'components/shared/DarkMode.tsx'
@@ -20,8 +20,8 @@ const pathname = Astro.url.pathname
       <div class="flex flex-col items-center justify-center gap-12 text-center">
         <div class="flex flex-col items-center">
           <div class="flex items-center gap-1">
-            <span class="scale-110 invert dark:invert-0">
-              <ILogo strokeColor="#000" />
+            <span class="text-2xl font-semibold uppercase">
+              {footer[0].data.title}
             </span>
 
             <!-- <span class="font-main text-2xl font-semibold uppercase">

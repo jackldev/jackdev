@@ -1,5 +1,7 @@
 {
   "extends": "astro/tsconfigs/base",
+  "include": ["**/*"],
+  "exclude": ["node_modules", "dist"],
   "compilerOptions": {
     "types": ["vite/client"],
     "jsx": "react-jsx",
@@ -33,7 +35,5 @@
         "name": "@astrojs/ts-plugin"
       }
     ]
-  },
-  "include": ["env.d.ts", "**/*.ts", "**/*.tsx", "**/*.astro", ".astro/types.d.ts"],
-  "exclude": ["node_modules", "dist"]
+  }
 }
