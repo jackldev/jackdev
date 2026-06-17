@@ -12,7 +12,7 @@ const Textarea = ({ name, title, errors, ...rest }: TextAreaProp) => {
       </label>
 
       <textarea
-        className={`${input} ${errors ? '!border-red-500' : 'border-initial'} h-[9rem] resize-y placeholder:text-xs`}
+        className={`${input} ${errors ? 'border-red-500!' : 'border-initial'} h-36 resize-y placeholder:text-xs`}
         id={name}
         name={name}
         placeholder={title}

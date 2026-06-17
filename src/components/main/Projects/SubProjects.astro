@@ -18,18 +18,18 @@ const { projects } = Astro.props as {
           <h3 class="ml-auto text-sm">{data.subtitle}</h3>
 
           <a
-            class="[&>*]:grid-stack group grid rounded-md shadow-sm transition-shadow delay-150 ease-out hover:shadow-lg"
+            class="*:grid-stack group grid rounded-md shadow-sm transition-shadow delay-150 ease-out hover:shadow-lg"
             href={data.link}
             target="_blank"
             rel="prefetch"
           >
             <IView
-              class="invisible relative top-5 right-5 z-[1] ml-auto transition-all delay-200 ease-in group-hover:visible"
+              class="invisible relative top-5 right-5 z-1 ml-auto transition-all delay-200 ease-in group-hover:visible"
               link={data.link}
             />
 
             <Image
-              class="aspect-16/9 w-full rounded-md object-cover"
+              class="aspect-video w-full rounded-md object-cover"
               src={data.image.src}
               fallbackImg="/images/placeholder.webp"
               alt={data.image.alt}

@@ -98,7 +98,7 @@ const Form = () => {
           <Checksbox name="checkbox" errors={errors.checkbox}>
             <Checkbox
               {...register('checkbox')}
-              className={`cursor-pointer ${checkinput} ${errors.checkbox ? '!border-red-500' : 'border-teal'}`}
+              className={`cursor-pointer ${checkinput} ${errors.checkbox ? 'border-red-500!' : 'border-teal'}`}
               id="checkbox"
               name="checkbox"
               onCheckedChange={(checked) => {

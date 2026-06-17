@@ -12,7 +12,7 @@ const Input = ({ name, title, errors, ...rest }: InputProp) => {
       </label>
 
       <input
-        className={`${input} ${errors ? '!border-red-500' : 'border-initial'} placeholder:text-xs`}
+        className={`${input} ${errors ? 'border-red-500!' : 'border-initial'} placeholder:text-xs`}
         id={name}
         name={name}
         placeholder={title}

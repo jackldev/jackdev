@@ -31,7 +31,7 @@ export function DarkMode() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          className="size-6.5 mt-0.5 rounded-full bg-teal/70 hover:!bg-teal"
+          className="size-6.5 mt-0.5 rounded-full bg-teal/70 hover:bg-teal!"
           variant="none"
           size="icon"
         >

@@ -44,8 +44,7 @@ export interface InputProp extends InputHTMLAttributes<HTMLInputElement> {
   children?: React.ReactNode
 }
 
-export interface TextAreaProp
-  extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+export interface TextAreaProp extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   name: string
   title: string
   className?: string
