@@ -16,9 +16,10 @@
       "schema/*": ["./src/schema/*"]
     },
     "target": "esnext",
-    "strict": true,
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
+    "strict": false, // JSX.Element any error
+    "module": "commonjs", // nodenext
+    // "moduleResolution": "nodenext",
+    "verbatimModuleSyntax": false,
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
