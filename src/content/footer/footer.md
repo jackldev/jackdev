@@ -2,7 +2,7 @@
   id: 0
   slugs: "footer"
   title: "Codezen"
-  description: "Front-end developer skilled in HTML, CSS, JavaScript, and TypeScript, creating interactive and responsive user interfaces using React and Next.js."
+  description: "As a front-end developer, I focus in building responsive and modern websites using HTML, CSS and JavaScript. "
   copy: 'Codezen'
   link: 'https://codezen.work'
 ---

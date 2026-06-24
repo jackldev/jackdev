@@ -7,11 +7,11 @@ const { title, description } = Astro.props as {
 }
 ---
 
-<div
-  class="order-first flex flex-col gap-6 lg:sticky lg:top-20 lg:order-last lg:h-fit"
->
-  <h2 class="text-4xl">{title}</h2>
-  <p class="max-w-xl text-sm">
+<div class="order-first flex flex-col items-center gap-6">
+  <h2 class="text-5xl">{title}</h2>
+  <p
+    class="mx-auto max-w-xl text-center text-sm leading-6 whitespace-pre-line text-black/75 dark:text-white/75"
+  >
     {description}
   </p>
 

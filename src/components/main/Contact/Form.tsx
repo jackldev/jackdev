@@ -57,7 +57,7 @@ const Form = () => {
   return (
     <FormProvider {...methods}>
       <form
-        className="flex w-full flex-col gap-6"
+        className="flex lg:w-1/2 flex-col gap-6"
         name="contact"
         onSubmit={onSubmit}
       >

@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content'
 const tools = await getCollection('tools')
 ---
 
-<div class="grid grid-cols-2 items-start gap-20">
+<div class="grid grid-cols-4 items-start gap-24">
   {
     tools
       .sort((a, b) => a.data.id - b.data.id)
@@ -14,7 +14,9 @@ const tools = await getCollection('tools')
 
           <div class="flex flex-col gap-3">
             {data.tools.map((tool: unknown) => (
-              <p class="text-sm uppercase">{tool}</p>
+              <p class="text-sm text-black/75 uppercase dark:text-white/75">
+                {tool}
+              </p>
             ))}
           </div>
         </div>
