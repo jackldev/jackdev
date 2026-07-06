@@ -1,8 +1,6 @@
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'astro/config'
 
-import tsconfigPaths from 'vite-tsconfig-paths'
-
 import sitemap from '@astrojs/sitemap'
 
 // https://astro.build/config
@@ -27,7 +25,10 @@ export default defineConfig({
     })
   ],
   vite: {
-    plugins: [tailwindcss(), tsconfigPaths()]
+    plugins: [tailwindcss()],
+    resolve: {
+      tsconfigPaths: true
+    }
   },
   prefetch: true,
   output: 'static'
