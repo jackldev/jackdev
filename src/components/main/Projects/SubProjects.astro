@@ -18,7 +18,7 @@ const { projects } = Astro.props as {
           <h3 class="ml-auto text-sm">{data.subtitle}</h3>
 
           <a
-            class="*:grid-stack group grid rounded-md shadow-sm transition-shadow delay-150 ease-out hover:shadow-lg"
+            class="*:grid-stack group grid shadow-sm transition-shadow delay-150 ease-out hover:shadow-lg"
             href={data.link}
             target="_blank"
             rel="prefetch"
@@ -29,7 +29,7 @@ const { projects } = Astro.props as {
             />
 
             <Image
-              class="aspect-video w-full rounded-md object-cover"
+              class="aspect-16/10 w-full object-cover"
               src={data.image.src}
               fallbackImg="/images/placeholder.webp"
               alt={data.image.alt}
@@ -54,7 +54,7 @@ const { projects } = Astro.props as {
           </div>
 
           <a
-            class="bg-teal text-light ml-auto w-fit rounded-sm px-5 py-2 text-sm font-semibold uppercase"
+            class="bg-teal/80 hover:bg-teal text-light ml-auto w-fit px-5 py-3 text-xs font-semibold uppercase transition-all delay-75 ease-in"
             href={data.link}
             target="_blank"
             rel="prefetch"

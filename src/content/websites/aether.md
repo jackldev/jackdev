@@ -3,7 +3,7 @@
   date: 2025-11-01
   title: Aether
   subtitle: Services Landing Page
-  description: AETHER. A services landing page built with HTML, CSS, and JavaScript serves as a digital showcase of an individual's skills, projects, and experience. It typically includes key sections such as Projects, Services, and Contact, allowing visitors to explore the creator's work, understand their expertise, and get in touch.
+  description: AETHER. A services landing page built with HTML, CSS, and JavaScript serves as a digital showcase of an individual's skills, projects, and experience.
   techs: 
   - HTML
   - CSS
